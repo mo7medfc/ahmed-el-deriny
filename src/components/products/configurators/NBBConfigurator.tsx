@@ -22,6 +22,7 @@ import {
   sectionTitle,
   useDesignUpload,
 } from "./OrderExtras";
+import { getPricingFetchUrl } from "@/lib/pricing-url";
 
 export function NBBConfigurator({
   product,
@@ -50,7 +51,7 @@ export function NBBConfigurator({
   const [notes, setNotes] = useState("");
 
   useEffect(() => {
-    fetch("/api/pricing/notebooks_books_booklets")
+    fetch(getPricingFetchUrl("notebooks_books_booklets"))
       .then((r) => r.json())
       .then((d) => setPricing(d.config?.default || d.config || {}))
       .finally(() => setLoading(false));

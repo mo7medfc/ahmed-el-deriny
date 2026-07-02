@@ -1,21 +1,23 @@
 import { prisma } from "@/lib/prisma";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import { ProductSearch } from "@/components/products/ProductSearch";
-import { ProductsGrid } from "@/components/products/ProductsGrid";
+import { FilteredProductsGrid } from "@/components/products/FilteredProductsGrid";
 import { resolveProductImage, resolveProductImageAlt } from "@/lib/product-images";
 import {
   allowedCategoryFilter,
   allowedProductFilter,
   getStorefrontCategoryName,
 } from "@/lib/storefront-categories";
+import { Suspense } from "react";
 
 export default async function ProductsPage({
-  searchParams,
+  params,
 }: {
-  searchParams: Promise<{ category?: string; q?: string }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { category, q } = await searchParams;
-  const locale = await getLocale();
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const currentLocale = await getLocale();
   const t = await getTranslations("products");
 
   const categories = await prisma.category.findMany({
@@ -24,20 +26,7 @@ export default async function ProductsPage({
   });
 
   const products = await prisma.product.findMany({
-    where: {
-      ...allowedProductFilter,
-      ...(category ? { category: { slug: category, ...allowedCategoryFilter } } : {}),
-      ...(q
-        ? {
-            OR: [
-              { nameAr: { contains: q } },
-              { nameEn: { contains: q } },
-              { descriptionAr: { contains: q } },
-              { descriptionEn: { contains: q } },
-            ],
-          }
-        : {}),
-    },
+    where: allowedProductFilter,
     include: { category: true, options: true },
     orderBy: [{ featured: "desc" }, { sortOrder: "asc" }],
   });
@@ -55,16 +44,17 @@ export default async function ProductsPage({
     return {
       id: product.id,
       slug: product.slug,
-      name: locale === "ar" ? product.nameAr : product.nameEn,
+      name: currentLocale === "ar" ? product.nameAr : product.nameEn,
+      categorySlug: product.category.slug,
       categoryName: getStorefrontCategoryName(
         product.category.legacyId || product.category.slug,
-        locale,
+        currentLocale,
         { nameAr: product.category.nameAr, nameEn: product.category.nameEn }
       ),
-      description: locale === "ar" ? product.descriptionAr : product.descriptionEn,
+      description: currentLocale === "ar" ? product.descriptionAr : product.descriptionEn,
       basePrice: product.basePrice,
       image: resolveProductImage(imageInput),
-      imageAlt: resolveProductImageAlt(imageInput, locale),
+      imageAlt: resolveProductImageAlt(imageInput, currentLocale),
     };
   });
 
@@ -89,23 +79,26 @@ export default async function ProductsPage({
           <p className="text-heritage-200/55">{t("subtitle")}</p>
         </div>
 
-        <ProductSearch categories={searchCategories} activeCategory={category} />
+        <Suspense fallback={<div className="h-24" />}>
+          <ProductSearch categories={searchCategories} />
+        </Suspense>
 
-        {items.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-heritage-200/45 text-lg">{t("noProducts")}</p>
-          </div>
-        ) : (
-          <ProductsGrid
-            products={items}
-            locale={locale}
-            fromLabel={t("from")}
-            configureLabel={t("configure")}
-            showAllLabel={t("showAll")}
-            showLessLabel={t("showLess")}
-            initialCount={q ? items.length : 12}
-          />
-        )}
+        <Suspense fallback={<div className="text-center py-20 text-heritage-200/45">{t("calculating")}</div>}>
+          {items.length === 0 ? (
+            <div className="text-center py-20">
+              <p className="text-heritage-200/45 text-lg">{t("noProducts")}</p>
+            </div>
+          ) : (
+            <FilteredProductsGrid
+              products={items}
+              locale={currentLocale}
+              fromLabel={t("from")}
+              configureLabel={t("configure")}
+              showAllLabel={t("showAll")}
+              showLessLabel={t("showLess")}
+            />
+          )}
+        </Suspense>
       </div>
     </div>
   );

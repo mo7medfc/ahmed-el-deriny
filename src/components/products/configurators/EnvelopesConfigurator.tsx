@@ -19,6 +19,7 @@ import {
   selectClassName,
   useDesignUpload,
 } from "./OrderExtras";
+import { getPricingFetchUrl } from "@/lib/pricing-url";
 
 export function EnvelopesConfigurator({
   product,
@@ -42,7 +43,7 @@ export function EnvelopesConfigurator({
   const [notes, setNotes] = useState("");
 
   useEffect(() => {
-    fetch("/api/pricing/envelopes")
+    fetch(getPricingFetchUrl("envelopes"))
       .then((r) => r.json())
       .then((d) => setSellByDoc(d.sellByDoc || {}))
       .finally(() => setLoading(false));

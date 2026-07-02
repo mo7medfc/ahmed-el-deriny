@@ -8,6 +8,7 @@
     "clean": "node scripts/clean-next.mjs",
     "build": "node scripts/build-safe.mjs",
     "vercel-build": "node scripts/vercel-build.mjs",
+    "pages:build": "node scripts/pages-build.mjs",
     "start": "next start",
     "lint": "next lint",
     "db:push": "prisma db push",

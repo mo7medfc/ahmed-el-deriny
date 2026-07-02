@@ -2,6 +2,7 @@
 
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -15,15 +16,16 @@ interface Category {
 
 interface ProductSearchProps {
   categories: Category[];
-  activeCategory?: string;
 }
 
-export function ProductSearch({ categories, activeCategory }: ProductSearchProps) {
+export function ProductSearch({ categories }: ProductSearchProps) {
   const t = useTranslations("products");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [query, setQuery] = useState("");
+  const searchParams = useSearchParams();
+  const activeCategory = searchParams.get("category") ?? undefined;
+  const [query, setQuery] = useState(searchParams.get("q") ?? "");
 
   const setCategory = (slug?: string) => {
     const params = new URLSearchParams();

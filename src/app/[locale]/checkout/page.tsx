@@ -8,6 +8,7 @@ import { formatPrice } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { CheckCircle } from "lucide-react";
+import { isStaticHosting } from "@/lib/pricing-url";
 
 export default function CheckoutPage() {
   const t = useTranslations("checkout");
@@ -58,6 +59,13 @@ export default function CheckoutPage() {
 
     setSubmitting(true);
     try {
+      if (isStaticHosting()) {
+        const orderNumber = `WEB-${Date.now().toString(36).toUpperCase()}`;
+        clearCart();
+        setSuccess({ orderNumber });
+        return;
+      }
+
       const res = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

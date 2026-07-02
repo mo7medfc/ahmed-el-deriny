@@ -21,6 +21,7 @@ import {
   sectionTitle,
   useDesignUpload,
 } from "./OrderExtras";
+import { getPricingFetchUrl } from "@/lib/pricing-url";
 
 export function NotebooksInvoicesConfigurator({
   product,
@@ -46,7 +47,7 @@ export function NotebooksInvoicesConfigurator({
   const [notes, setNotes] = useState("");
 
   useEffect(() => {
-    fetch("/api/pricing/notebooks_invoices")
+    fetch(getPricingFetchUrl("notebooks_invoices"))
       .then((r) => r.json())
       .then((d) => setSellCfg(d.sellConfig?.default || d.sellConfig || {}))
       .finally(() => setLoading(false));

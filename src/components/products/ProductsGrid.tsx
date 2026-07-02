@@ -10,6 +10,7 @@ export interface ProductItem {
   slug: string;
   name: string;
   categoryName: string;
+  categorySlug: string;
   description: string;
   basePrice: number;
   image: string;

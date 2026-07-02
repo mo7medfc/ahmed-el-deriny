@@ -18,6 +18,7 @@ import {
   type StampSellDoc,
   type StampVariant,
 } from "@/lib/pricing/stamps-calculator";
+import { getPricingFetchUrl } from "@/lib/pricing-url";
 import { Upload, Check, ShoppingCart } from "lucide-react";
 
 interface StampsConfiguratorProps {
@@ -54,7 +55,7 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
   const [added, setAdded] = useState(false);
 
   useEffect(() => {
-    fetch("/api/pricing/Stamps")
+    fetch(getPricingFetchUrl("Stamps"))
       .then(async (r) => {
         if (!r.ok) throw new Error("pricing");
         return r.json();

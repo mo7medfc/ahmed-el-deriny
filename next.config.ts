@@ -4,10 +4,26 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const onOneDrive = process.cwd().includes("OneDrive");
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const basePath = isGitHubPages ? "/ahmed-el-deriny" : "";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [],
+  ...(isGitHubPages
+    ? {
+        output: "export",
+        basePath,
+        assetPrefix: basePath,
+        trailingSlash: true,
+        images: { unoptimized: true },
+      }
+    : {
+        images: {
+          remotePatterns: [],
+        },
+      }),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_STATIC_PRICING: isGitHubPages ? "true" : "false",
   },
   // Turbopack + OneDrive corrupts .next manifests → white page. Use webpack in dev.
   ...(onOneDrive

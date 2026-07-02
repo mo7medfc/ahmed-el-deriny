@@ -1,15 +1,21 @@
-import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslations, getLocale, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 
-export default async function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("about");
-  const locale = await getLocale();
+  const currentLocale = await getLocale();
 
   return (
     <div className="pt-28 pb-20 heritage-section min-h-screen">
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="heritage-badge mb-4">{locale === "ar" ? "منذ 1918" : "Since 1918"}</span>
+          <span className="heritage-badge mb-4">{currentLocale === "ar" ? "منذ 1918" : "Since 1918"}</span>
           <h1 className="font-display text-3xl sm:text-4xl font-bold text-heritage-50 mb-4">{t("title")}</h1>
           <div className="heritage-divider text-xs max-w-sm mx-auto mb-4">
             <span>{t("subtitle")}</span>
@@ -30,9 +36,9 @@ export default async function AboutPage() {
 
         <div className="grid sm:grid-cols-3 gap-6 mt-10">
           {[
-            { value: "1918", label: locale === "ar" ? "سنة التأسيس" : "Founded" },
-            { value: "5000+", label: locale === "ar" ? "عميل" : "Clients" },
-            { value: "50+", label: locale === "ar" ? "منتج" : "Products" },
+            { value: "1918", label: currentLocale === "ar" ? "سنة التأسيس" : "Founded" },
+            { value: "5000+", label: currentLocale === "ar" ? "عميل" : "Clients" },
+            { value: "50+", label: currentLocale === "ar" ? "منتج" : "Products" },
           ].map((stat) => (
             <div key={stat.label} className="heritage-card rounded-sm p-6 text-center">
               <p className="text-3xl font-display font-bold gradient-text">{stat.value}</p>

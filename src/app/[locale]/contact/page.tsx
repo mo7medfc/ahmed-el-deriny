@@ -1,14 +1,20 @@
-import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslations, getLocale, setRequestLocale } from "next-intl/server";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
-export default async function ContactPage() {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("contact");
-  const locale = await getLocale();
+  const currentLocale = await getLocale();
 
   const contacts = [
     { icon: Phone, label: t("phone"), value: "+20 100 000 0000", dir: "ltr" as const },
     { icon: Mail, label: t("email"), value: "info@ahmedderiny.com", dir: "ltr" as const },
-    { icon: MapPin, label: t("address"), value: locale === "ar" ? "القاهرة، مصر" : "Cairo, Egypt" },
+    { icon: MapPin, label: t("address"), value: currentLocale === "ar" ? "القاهرة، مصر" : "Cairo, Egypt" },
     { icon: Clock, label: t("hours"), value: t("hoursValue") },
   ];
 

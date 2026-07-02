@@ -20,6 +20,7 @@ import {
   sectionTitle,
   useDesignUpload,
 } from "./OrderExtras";
+import { getPricingFetchUrl } from "@/lib/pricing-url";
 
 export function DafaterConfigurator({
   product,
@@ -47,7 +48,7 @@ export function DafaterConfigurator({
   const [notes, setNotes] = useState("");
 
   useEffect(() => {
-    fetch("/api/pricing/dafater")
+    fetch(getPricingFetchUrl("dafater"))
       .then((r) => r.json())
       .then((d) => {
         setCostCfg(d.costConfig?.default || d.costConfig || {});
