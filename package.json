@@ -7,7 +7,7 @@
     "dev:clean": "node scripts/dev-safe.mjs --clean",
     "clean": "node scripts/clean-next.mjs",
     "build": "node scripts/build-safe.mjs",
-    "vercel-build": "prisma generate && prisma db push && tsx prisma/seed.ts && next build",
+    "vercel-build": "node scripts/vercel-build.mjs",
     "start": "next start",
     "lint": "next lint",
     "db:push": "prisma db push",

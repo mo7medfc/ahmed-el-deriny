@@ -64,12 +64,14 @@ function NumInput({
   );
 }
 
+type ProfitTierRow = { min: number | ""; max: number | "" | null; percent: number | "" };
+
 function ProfitTiersEditor({
   tiers,
   onChange,
 }: {
-  tiers: Array<{ min: number | ""; max: number | "" | null; percent: number | "" }>;
-  onChange: (tiers: typeof tiers) => void;
+  tiers: ProfitTierRow[];
+  onChange: (tiers: ProfitTierRow[]) => void;
 }) {
   return (
     <div className="space-y-2">
@@ -160,7 +162,7 @@ export function DafaterPricingEditor({
   );
 
   const [costFields, setCostFields] = useState<Record<string, string>>({});
-  const [tiers, setTiers] = useState(
+  const [tiers, setTiers] = useState<ProfitTierRow[]>(
     ((sellCfg.profitTiers as Array<{ min: number; max: number | null; percent: number }>) ||
       DAFATER_PROFIT_TIERS).map((t) => ({ ...t }))
   );
@@ -348,7 +350,7 @@ export function NBBPricingEditor({
     (customDocs.notebooks_books_booklets_prices?.default as Record<string, unknown>) ||
     defaultNBBConfig();
   const [fields, setFields] = useState<Record<string, string>>({});
-  const [tiers, setTiers] = useState(
+  const [tiers, setTiers] = useState<ProfitTierRow[]>(
     ((cfg.profitTiers as Array<{ min: number; max: number | null; percent: number }>) || []).map(
       (t) => ({ ...t })
     )

@@ -28,7 +28,7 @@ export function setDeepValue(
 export function parseNumberInput(raw: string): number | "" {
   if (raw === "" || raw === null || raw === undefined) return "";
   const n = Number(raw);
-  return Number.isFinite(n) ? n : raw;
+  return Number.isFinite(n) ? n : "";
 }
 
 export function fieldsToConfig(
