@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ahmed-deriny
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx prisma generate && npx prisma db push && npm run db:seed && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATABASE_URL
+        value: file:./prisma/prod.db
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@ahmedderiny.com
+      - key: ADMIN_PASSWORD
+        value: Admin@123
+      - key: ADMIN_NAME
+        value: مدير النظام

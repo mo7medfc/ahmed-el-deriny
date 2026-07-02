@@ -1,0 +1,3136 @@
+{
+  "categories": [
+    {
+      "module": "acrylic-badge",
+      "categoryId": "acrylic_badge",
+      "slug": "acrylic-badge",
+      "file": "acrylic-badge-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "annual-ads",
+      "categoryId": "annual_ads",
+      "slug": "annual-ads",
+      "file": "annual-ads-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "tier_50",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_100",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_150",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_200",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_300",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_500",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_2000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_3000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_5000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_10000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 11
+    },
+    {
+      "module": "boxes",
+      "categoryId": "boxes",
+      "slug": "boxes",
+      "file": "boxes-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "tier_50",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_100",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_150",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_200",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_300",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_500",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_2000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_3000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_5000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_10000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 11
+    },
+    {
+      "module": "brochures",
+      "categoryId": "brochures",
+      "slug": "brochures",
+      "file": "brochures-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "business-cards",
+      "categoryId": "BusinessCard",
+      "slug": "businesscard",
+      "file": "business-cards-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": [
+          {
+            "id": "coated_300",
+            "nameAr": "كوشيه 300 جرام"
+          },
+          {
+            "id": "coated_350",
+            "nameAr": "كوشيه 350 جرام"
+          },
+          {
+            "id": "glossy",
+            "nameAr": "ورق لامع"
+          },
+          {
+            "id": "laser",
+            "nameAr": "ورق ليزر"
+          },
+          {
+            "id": "crystal",
+            "nameAr": "ورق كريستال"
+          },
+          {
+            "id": "italian",
+            "nameAr": "ورق إيطالي"
+          },
+          {
+            "id": "bristol_coated_350",
+            "nameAr": "برستول كوشيه 350 جرام"
+          }
+        ],
+        "quantities": [
+          100,
+          200,
+          300,
+          400,
+          500,
+          600,
+          700,
+          800,
+          900,
+          1000,
+          2000
+        ]
+      },
+      "productCount": 0
+    },
+    {
+      "module": "card-rosary",
+      "categoryId": "card_rosary",
+      "slug": "card-rosary",
+      "file": "card-rosary-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "tier_50",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_100",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_150",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_200",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_250",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_300",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_350",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_400",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_450",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_500",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_550",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_600",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_650",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_700",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_750",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_800",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_850",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_900",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_950",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1100",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1200",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1300",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1400",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1500",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1600",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1700",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1800",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1900",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_2000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_3000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_4000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_5000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_6000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_7000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_8000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_9000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_10000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 38
+    },
+    {
+      "module": "catalogs",
+      "categoryId": "catalogs",
+      "slug": "catalogs",
+      "file": "catalogs-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "cup-quran-bags",
+      "categoryId": "cup_quran_bags",
+      "slug": "cup-quran-bags",
+      "file": "cup-quran-bags-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "dafater",
+      "categoryId": "dafater",
+      "slug": "dafater",
+      "file": "dafater-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "digital-printing",
+      "categoryId": "digital_printing",
+      "slug": "digital-printing",
+      "file": "digital-printing-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "dtf",
+      "categoryId": "DTF",
+      "slug": "dtf",
+      "file": "dtf-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": 135,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "envelopes",
+      "categoryId": "envelopes",
+      "slug": "envelopes",
+      "file": "envelopes-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "american_22_11",
+          "nameAr": "American 22 × 11",
+          "nameEn": "American 22 × 11",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "a5",
+          "nameAr": "A5 (22.9 × 16.2)",
+          "nameEn": "A5 (22.9 × 16.2)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "a4",
+          "nameAr": "A4 (32.4 × 22.9)",
+          "nameEn": "A4 (32.4 × 22.9)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "half_congratulations",
+          "nameAr": "Half Congratulations (17 × 25)",
+          "nameEn": "Half Congratulations (17 × 25)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "congratulations",
+          "nameAr": "Congratulations (25 × 35)",
+          "nameEn": "Congratulations (25 × 35)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "a3",
+          "nameAr": "A3 (33 × 45)",
+          "nameEn": "A3 (33 × 45)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 6
+    },
+    {
+      "module": "fabric-bag",
+      "categoryId": "FabricBag",
+      "slug": "fabricbag",
+      "file": "fabric-bag-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "flags",
+      "categoryId": "Flag",
+      "slug": "flag",
+      "file": "flags-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "id-card",
+      "categoryId": "IDCard",
+      "slug": "idcard",
+      "file": "id-card-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "indoor",
+      "categoryId": "Indoor",
+      "slug": "indoor",
+      "file": "indoor-pricing.js",
+      "groups": [
+        {
+          "id": "banner",
+          "nameAr": "مجموعة البانر",
+          "nameEn": "Banner Group",
+          "products": [
+            "banner-380g",
+            "reflective-banner"
+          ]
+        },
+        {
+          "id": "vinyl",
+          "nameAr": "مجموعة الفينيل",
+          "nameEn": "Vinyl Group",
+          "products": [
+            "white-vinyl",
+            "transparent-vinyl",
+            "frosted-vinyl-blank",
+            "frosted-vinyl-printed",
+            "reflective-vinyl"
+          ]
+        },
+        {
+          "id": "flex",
+          "nameAr": "مجموعة الفليكس",
+          "nameEn": "Flex Group",
+          "products": [
+            "flex",
+            "flex-coated"
+          ]
+        },
+        {
+          "id": "special",
+          "nameAr": "منتجات خاصة",
+          "nameEn": "Special Products",
+          "products": [
+            "see-through",
+            "glitter",
+            "glossy",
+            "lamination-only"
+          ]
+        },
+        {
+          "id": "cutterPlotter",
+          "nameAr": "كتر بلوتر",
+          "nameEn": "Cutter Plotter",
+          "products": [
+            "cutter-plotter"
+          ]
+        },
+        {
+          "id": "printCut",
+          "nameAr": "برنت اند كات",
+          "nameEn": "Print and Cut",
+          "products": [
+            "print-and-cut"
+          ]
+        }
+      ],
+      "addons": {
+        "banner": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "wooden-frame-5cm",
+            "nameAr": "إطار خشبي 5 سم",
+            "nameEn": "Wooden Frame 5 cm",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "wooden-frame-10cm",
+            "nameAr": "إطار خشبي 10 سم",
+            "nameEn": "Wooden Frame 10 cm",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "aluminum-edge",
+            "nameAr": "حافة ألومنيوم",
+            "nameEn": "Aluminum Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "plastic-edge",
+            "nameAr": "حافة بلاستيك",
+            "nameEn": "Plastic Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "glue-per-meter",
+            "nameAr": "صمغ لكل متر",
+            "nameEn": "Glue per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "installation-per-meter",
+            "nameAr": "تركيب لكل متر",
+            "nameEn": "Installation per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          }
+        ],
+        "vinyl": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glue-per-meter",
+            "nameAr": "صمغ لكل متر",
+            "nameEn": "Glue per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          }
+        ],
+        "flex": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "aluminum-edge",
+            "nameAr": "حافة ألومنيوم",
+            "nameEn": "Aluminum Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "plastic-edge",
+            "nameAr": "حافة بلاستيك",
+            "nameEn": "Plastic Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "full-metal-chassis-lighting",
+            "nameAr": "هيكل معدني كامل مع إضاءة",
+            "nameEn": "Full Metal Chassis with lighting",
+            "unit": "fixed",
+            "maxWidth": null
+          },
+          {
+            "id": "full-wooden-chassis-lighting",
+            "nameAr": "هيكل خشبي كامل مع إضاءة",
+            "nameEn": "Full Wooden Chassis with lighting",
+            "unit": "fixed",
+            "maxWidth": null
+          },
+          {
+            "id": "installation-per-meter",
+            "nameAr": "تركيب لكل متر",
+            "nameEn": "Installation per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          }
+        ],
+        "cutterPlotter": [
+          {
+            "id": "magic",
+            "nameAr": "ماجيك",
+            "nameEn": "Magic",
+            "unit": "fixed",
+            "maxWidth": null
+          }
+        ],
+        "printCut": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          }
+        ]
+      },
+      "products": [
+        {
+          "id": "banner-380g",
+          "nameAr": "بانر 380 جم (ثقيل)",
+          "nameEn": "Banner 380g (Heavy)",
+          "groupId": "banner",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "reflective-banner",
+          "nameAr": "بانر عاكس",
+          "nameEn": "Reflective Banner",
+          "groupId": "banner",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "white-vinyl",
+          "nameAr": "فينيل أبيض",
+          "nameEn": "White Vinyl",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "transparent-vinyl",
+          "nameAr": "فينيل شفاف",
+          "nameEn": "Transparent Vinyl",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "frosted-vinyl-blank",
+          "nameAr": "فينيل صقيل (فارغ)",
+          "nameEn": "Frosted Vinyl (Blank)",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "frosted-vinyl-printed",
+          "nameAr": "فينيل صقيل (مطبوع)",
+          "nameEn": "Frosted Vinyl (Printed)",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "reflective-vinyl",
+          "nameAr": "فينيل عاكس",
+          "nameEn": "Reflective Vinyl",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "flex",
+          "nameAr": "فليكس",
+          "nameEn": "Flex",
+          "groupId": "flex",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "flex-coated",
+          "nameAr": "فليكس كوتيد",
+          "nameEn": "Flex Coated",
+          "groupId": "flex",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "see-through",
+          "nameAr": "سي ثرو",
+          "nameEn": "See Through",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "glitter",
+          "nameAr": "جليتر",
+          "nameEn": "Glitter",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "glossy",
+          "nameAr": "لامع",
+          "nameEn": "Glossy",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "lamination-only",
+          "nameAr": "لامينيشن فقط",
+          "nameEn": "Lamination Only",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "cutter-plotter",
+          "nameAr": "كتر بلوتر",
+          "nameEn": "Cutter Plotter",
+          "groupId": "cutterPlotter",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "print-and-cut",
+          "nameAr": "برنت اند كات",
+          "nameEn": "Print and Cut",
+          "groupId": "printCut",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 15
+    },
+    {
+      "module": "inkjet-paper-printing",
+      "categoryId": "inkjet_paper_printing",
+      "slug": "inkjet-paper-printing",
+      "file": "inkjet-paper-printing-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "a4_80gsm_single_black",
+          "nameAr": "A4 80 جرام – وجه واحد – أسود",
+          "nameEn": "A4 80 جرام – وجه واحد – أسود",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "a4_80gsm_double_black",
+          "nameAr": "A4 80 جرام – وجهين – أسود",
+          "nameEn": "A4 80 جرام – وجهين – أسود",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "a4_80gsm_single_color",
+          "nameAr": "A4 80 جرام – وجه واحد – ملون",
+          "nameEn": "A4 80 جرام – وجه واحد – ملون",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "a4_80gsm_double_color",
+          "nameAr": "A4 80 جرام – وجهين – ملون",
+          "nameEn": "A4 80 جرام – وجهين – ملون",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "printing_only_single_black",
+          "nameAr": "طباعة فقط – وجه واحد – أسود",
+          "nameEn": "طباعة فقط – وجه واحد – أسود",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "printing_only_double_black",
+          "nameAr": "طباعة فقط – وجهين – أسود",
+          "nameEn": "طباعة فقط – وجهين – أسود",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "printing_only_single_color",
+          "nameAr": "طباعة فقط – وجه واحد – ملون",
+          "nameEn": "طباعة فقط – وجه واحد – ملون",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "printing_only_double_color",
+          "nameAr": "طباعة فقط – وجهين – ملون",
+          "nameEn": "طباعة فقط – وجهين – ملون",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 8
+    },
+    {
+      "module": "kraft-bags",
+      "categoryId": "kraft_bags",
+      "slug": "kraft-bags",
+      "file": "kraft-bags-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "tier_50",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_100",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_150",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_200",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_300",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_500",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_2000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_3000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_5000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_10000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 11
+    },
+    {
+      "module": "notebooks-books-booklets",
+      "categoryId": "notebooks_books_booklets",
+      "slug": "notebooks-books-booklets",
+      "file": "notebooks-books-booklets-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "notebooks-invoices",
+      "categoryId": "notebooks_invoices",
+      "slug": "notebooks-invoices",
+      "file": "notebooks-invoices-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "outdoor",
+      "categoryId": "Outdoor",
+      "slug": "outdoor",
+      "file": "outdoor-pricing.js",
+      "groups": [
+        {
+          "id": "banner",
+          "nameAr": "مجموعة البانر",
+          "nameEn": "Banner Group",
+          "products": [
+            "banner-280g",
+            "banner-380g",
+            "banner-coated-400g",
+            "reflective-banner",
+            "election-banner-light"
+          ]
+        },
+        {
+          "id": "vinyl",
+          "nameAr": "مجموعة الفينيل",
+          "nameEn": "Vinyl Group",
+          "products": [
+            "white-vinyl",
+            "transparent-vinyl",
+            "frosted-vinyl-blank",
+            "frosted-vinyl-printed",
+            "reflective-vinyl"
+          ]
+        },
+        {
+          "id": "flex",
+          "nameAr": "مجموعة الفليكس",
+          "nameEn": "Flex Group",
+          "products": [
+            "flex",
+            "flex-coated"
+          ]
+        },
+        {
+          "id": "special",
+          "nameAr": "منتجات خاصة",
+          "nameEn": "Special Products",
+          "products": [
+            "see-through",
+            "glitter",
+            "glossy",
+            "lamination-only"
+          ]
+        }
+      ],
+      "addons": {
+        "banner": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "wooden-frame-5cm",
+            "nameAr": "إطار خشبي 5 سم",
+            "nameEn": "Wooden Frame 5 cm",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "wooden-frame-10cm",
+            "nameAr": "إطار خشبي 10 سم",
+            "nameEn": "Wooden Frame 10 cm",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "aluminum-edge",
+            "nameAr": "حافة ألومنيوم",
+            "nameEn": "Aluminum Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "plastic-edge",
+            "nameAr": "حافة بلاستيك",
+            "nameEn": "Plastic Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "glue-per-meter",
+            "nameAr": "صمغ لكل متر",
+            "nameEn": "Glue per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "installation-per-meter",
+            "nameAr": "تركيب لكل متر",
+            "nameEn": "Installation per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          }
+        ],
+        "vinyl": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glue-per-meter",
+            "nameAr": "صمغ لكل متر",
+            "nameEn": "Glue per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          }
+        ],
+        "flex": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": 150
+          },
+          {
+            "id": "aluminum-edge",
+            "nameAr": "حافة ألومنيوم",
+            "nameEn": "Aluminum Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "plastic-edge",
+            "nameAr": "حافة بلاستيك",
+            "nameEn": "Plastic Edge",
+            "unit": "perMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "full-metal-chassis-lighting",
+            "nameAr": "هيكل معدني كامل مع إضاءة",
+            "nameEn": "Full Metal Chassis with lighting",
+            "unit": "fixed",
+            "maxWidth": null
+          },
+          {
+            "id": "full-wooden-chassis-lighting",
+            "nameAr": "هيكل خشبي كامل مع إضاءة",
+            "nameEn": "Full Wooden Chassis with lighting",
+            "unit": "fixed",
+            "maxWidth": null
+          },
+          {
+            "id": "installation-per-meter",
+            "nameAr": "تركيب لكل متر",
+            "nameEn": "Installation per meter",
+            "unit": "perMeter",
+            "maxWidth": null
+          }
+        ]
+      },
+      "products": [
+        {
+          "id": "banner-280g",
+          "nameAr": "بانر 280 جم (خفيف)",
+          "nameEn": "Banner 280g (Light)",
+          "groupId": "banner",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "banner-380g",
+          "nameAr": "بانر 380 جم (ثقيل)",
+          "nameEn": "Banner 380g (Heavy)",
+          "groupId": "banner",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "banner-coated-400g",
+          "nameAr": "بانر كوتيد 400 جم",
+          "nameEn": "Banner Coated 400g",
+          "groupId": "banner",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "reflective-banner",
+          "nameAr": "بانر عاكس",
+          "nameEn": "Reflective Banner",
+          "groupId": "banner",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "election-banner-light",
+          "nameAr": "بانر انتخابات (بدون إطار أرضي)",
+          "nameEn": "Election Banner (No ground frame)",
+          "groupId": "banner",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "white-vinyl",
+          "nameAr": "فينيل أبيض",
+          "nameEn": "White Vinyl",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "transparent-vinyl",
+          "nameAr": "فينيل شفاف",
+          "nameEn": "Transparent Vinyl",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "frosted-vinyl-blank",
+          "nameAr": "فينيل صقيل (فارغ)",
+          "nameEn": "Frosted Vinyl (Blank)",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "frosted-vinyl-printed",
+          "nameAr": "فينيل صقيل (مطبوع)",
+          "nameEn": "Frosted Vinyl (Printed)",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "reflective-vinyl",
+          "nameAr": "فينيل عاكس",
+          "nameEn": "Reflective Vinyl",
+          "groupId": "vinyl",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "flex",
+          "nameAr": "فليكس",
+          "nameEn": "Flex",
+          "groupId": "flex",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "flex-coated",
+          "nameAr": "فليكس كوتيد",
+          "nameEn": "Flex Coated",
+          "groupId": "flex",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "see-through",
+          "nameAr": "سي ثرو",
+          "nameEn": "See Through",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "glitter",
+          "nameAr": "جليتر",
+          "nameEn": "Glitter",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "glossy",
+          "nameAr": "لامع",
+          "nameEn": "Glossy",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "lamination-only",
+          "nameAr": "لامينيشن فقط",
+          "nameEn": "Lamination Only",
+          "groupId": "special",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 16
+    },
+    {
+      "module": "paper-bags",
+      "categoryId": "paper_bags",
+      "slug": "paper-bags",
+      "file": "paper-bags-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "plastic-bags",
+      "categoryId": "plastic_bags",
+      "slug": "plastic-bags",
+      "file": "plastic-bags-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "promotional-gifts",
+      "categoryId": "promotional_gifts",
+      "slug": "promotional-gifts",
+      "file": "promotional-gifts-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "enamel_name_tag",
+          "nameAr": "إنامل نيم تاج",
+          "nameEn": "إنامل نيم تاج",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "gold_silver_name_tag_pin",
+          "nameAr": "نيم تاج دهبي/فضي (دبوس)",
+          "nameEn": "نيم تاج دهبي/فضي (دبوس)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "gold_silver_name_tag_magnet",
+          "nameAr": "نيم تاج دهبي/فضي (مغناطيس)",
+          "nameEn": "نيم تاج دهبي/فضي (مغناطيس)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "acrylic_medal_custom_shapes",
+          "nameAr": "ميدالية اكريلك (أشكال مخصصة)",
+          "nameEn": "ميدالية اكريلك (أشكال مخصصة)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "wooden_medal_custom_shapes",
+          "nameAr": "ميدالية خشب (أشكال مخصصة)",
+          "nameEn": "ميدالية خشب (أشكال مخصصة)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "acrylic_coaster_velvet_back",
+          "nameAr": "كوستر اكريلك (ضهر قطيفة)",
+          "nameEn": "كوستر اكريلك (ضهر قطيفة)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "acrylic_coaster_double_layer",
+          "nameAr": "كوستر اكريلك (طبقتين)",
+          "nameEn": "كوستر اكريلك (طبقتين)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "wooden_coaster_laser_engraved",
+          "nameAr": "كوستر خشب (حفر ليزر)",
+          "nameEn": "كوستر خشب (حفر ليزر)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "acrylic_stand_a5",
+          "nameAr": "استاند اكريلك A5",
+          "nameEn": "استاند اكريلك A5",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "acrylic_stand_a4",
+          "nameAr": "استاند اكريلك A4",
+          "nameEn": "استاند اكريلك A4",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "balloon_min_500",
+          "nameAr": "بالون (أقل كمية 500 قطعة)",
+          "nameEn": "بالون (أقل كمية 500 قطعة)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "wristbands",
+          "nameAr": "أساور",
+          "nameEn": "أساور",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "swimming_pool_wristbands",
+          "nameAr": "أساور حمام سباحة",
+          "nameEn": "أساور حمام سباحة",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 13
+    },
+    {
+      "module": "ruler-frames",
+      "categoryId": "ruler_frames",
+      "slug": "ruler-frames",
+      "file": "ruler-frames-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "black_15x20",
+          "nameAr": "برواز مسطرة أسود 15×20",
+          "nameEn": "برواز مسطرة أسود 15×20",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "black_20x30",
+          "nameAr": "برواز مسطرة أسود 20×30",
+          "nameEn": "برواز مسطرة أسود 20×30",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "black_30x40",
+          "nameAr": "برواز مسطرة أسود 30×40",
+          "nameEn": "برواز مسطرة أسود 30×40",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "white_15x20",
+          "nameAr": "برواز مسطرة أبيض 15×20",
+          "nameEn": "برواز مسطرة أبيض 15×20",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "white_20x30",
+          "nameAr": "برواز مسطرة أبيض 20×30",
+          "nameEn": "برواز مسطرة أبيض 20×30",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "white_30x40",
+          "nameAr": "برواز مسطرة أبيض 30×40",
+          "nameEn": "برواز مسطرة أبيض 30×40",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "wall_clock_30x40",
+          "nameAr": "ساعة حائط 30×40",
+          "nameEn": "ساعة حائط 30×40",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 7
+    },
+    {
+      "module": "safety-printing",
+      "categoryId": "safety_printing",
+      "slug": "safety-printing",
+      "file": "safety-printing-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "worker_vest",
+          "nameAr": "فيست عمال",
+          "nameEn": "فيست عمال",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "engineer_vest",
+          "nameAr": "فيست مهندسين",
+          "nameEn": "فيست مهندسين",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "safety_helmet",
+          "nameAr": "خوذة",
+          "nameEn": "خوذة",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "vip_helmet",
+          "nameAr": "خوذة VIP",
+          "nameEn": "خوذة VIP",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 4
+    },
+    {
+      "module": "shipping-flyers-clear-bags",
+      "categoryId": "shipping_flyers_clear_bags",
+      "slug": "shipping-flyers-clear-bags",
+      "file": "shipping-flyers-clear-bags-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "shipping_flyer_25x35",
+          "nameAr": "فلاير شحن 25×35",
+          "nameEn": "فلاير شحن 25×35",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "shipping_flyer_35x40",
+          "nameAr": "فلاير شحن 35×40",
+          "nameEn": "فلاير شحن 35×40",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "clear_zipper_bag_20x25",
+          "nameAr": "كيس شفاف بسوستة 20×25",
+          "nameEn": "كيس شفاف بسوستة 20×25",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "clear_zipper_bag_27x35",
+          "nameAr": "كيس شفاف بسوستة 27×35",
+          "nameEn": "كيس شفاف بسوستة 27×35",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "clear_zipper_bag_35x40",
+          "nameAr": "كيس شفاف بسوستة 35×40",
+          "nameEn": "كيس شفاف بسوستة 35×40",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 5
+    },
+    {
+      "module": "stamps",
+      "categoryId": "Stamps",
+      "slug": "stamps",
+      "file": "stamps-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": 0.015,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "stands",
+      "categoryId": "Stands",
+      "slug": "stands",
+      "file": "stands-pricing.js",
+      "groups": [
+        {
+          "id": "rollUp",
+          "nameAr": "رول أب",
+          "nameEn": "Roll Up",
+          "products": []
+        },
+        {
+          "id": "xBanner",
+          "nameAr": "اكس بانر",
+          "nameEn": "X-Banner",
+          "products": []
+        },
+        {
+          "id": "popUp",
+          "nameAr": "بوب أب",
+          "nameEn": "Pop Up",
+          "products": []
+        }
+      ],
+      "addons": {
+        "rollUp": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": null
+          }
+        ],
+        "xBanner": [
+          {
+            "id": "matte-lamination",
+            "nameAr": "لامينيشن مط",
+            "nameEn": "Matte Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": null
+          },
+          {
+            "id": "glossy-lamination",
+            "nameAr": "لامينيشن لامع",
+            "nameEn": "Glossy Lamination",
+            "unit": "perSquareMeter",
+            "maxWidth": null
+          }
+        ],
+        "popUp": []
+      },
+      "products": [
+        {
+          "id": "roll-up-80-200-banner",
+          "nameAr": "رول أب 80×200 بانر",
+          "nameEn": "Roll Up 80×200 Banner",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 80,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-85-200-banner",
+          "nameAr": "رول أب 85×200 بانر",
+          "nameEn": "Roll Up 85×200 Banner",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 85,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-100-200-banner",
+          "nameAr": "رول أب 100×200 بانر",
+          "nameEn": "Roll Up 100×200 Banner",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 100,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-120-200-banner",
+          "nameAr": "رول أب 120×200 بانر",
+          "nameEn": "Roll Up 120×200 Banner",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 120,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-150-200-banner",
+          "nameAr": "رول أب 150×200 بانر",
+          "nameEn": "Roll Up 150×200 Banner",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 150,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-80-200-glossy",
+          "nameAr": "رول أب 80×200 لامع",
+          "nameEn": "Roll Up 80×200 Glossy",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 80,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-85-200-glossy",
+          "nameAr": "رول أب 85×200 لامع",
+          "nameEn": "Roll Up 85×200 Glossy",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 85,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-100-200-glossy",
+          "nameAr": "رول أب 100×200 لامع",
+          "nameEn": "Roll Up 100×200 Glossy",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 100,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-120-200-glossy",
+          "nameAr": "رول أب 120×200 لامع",
+          "nameEn": "Roll Up 120×200 Glossy",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 120,
+          "heightCm": 200
+        },
+        {
+          "id": "roll-up-150-200-glossy",
+          "nameAr": "رول أب 150×200 لامع",
+          "nameEn": "Roll Up 150×200 Glossy",
+          "groupId": null,
+          "subCategoryId": "rollUp",
+          "hasLamination": true,
+          "widthCm": 150,
+          "heightCm": 200
+        },
+        {
+          "id": "x-banner-60-160-banner",
+          "nameAr": "اكس بانر 60×160 بانر",
+          "nameEn": "X-Banner 60×160 Banner",
+          "groupId": null,
+          "subCategoryId": "xBanner",
+          "hasLamination": true,
+          "widthCm": 60,
+          "heightCm": 160
+        },
+        {
+          "id": "x-banner-80-180-banner",
+          "nameAr": "اكس بانر 80×180 بانر",
+          "nameEn": "X-Banner 80×180 Banner",
+          "groupId": null,
+          "subCategoryId": "xBanner",
+          "hasLamination": true,
+          "widthCm": 80,
+          "heightCm": 180
+        },
+        {
+          "id": "x-banner-60-160-glossy",
+          "nameAr": "اكس بانر 60×160 لامع",
+          "nameEn": "X-Banner 60×160 Glossy",
+          "groupId": null,
+          "subCategoryId": "xBanner",
+          "hasLamination": true,
+          "widthCm": 60,
+          "heightCm": 160
+        },
+        {
+          "id": "x-banner-80-180-glossy",
+          "nameAr": "اكس بانر 80×180 لامع",
+          "nameEn": "X-Banner 80×180 Glossy",
+          "groupId": null,
+          "subCategoryId": "xBanner",
+          "hasLamination": true,
+          "widthCm": 80,
+          "heightCm": 180
+        },
+        {
+          "id": "pop-up-2x3-straight",
+          "nameAr": "بوب أب 2×3 مستقيم",
+          "nameEn": "Pop Up 2×3 Straight",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-2x3-curve",
+          "nameAr": "بوب أب 2×3 منحني",
+          "nameEn": "Pop Up 2×3 Curve",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-3x3-straight",
+          "nameAr": "بوب أب 3×3 مستقيم",
+          "nameEn": "Pop Up 3×3 Straight",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-3x3-curve",
+          "nameAr": "بوب أب 3×3 منحني",
+          "nameEn": "Pop Up 3×3 Curve",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-3x4-straight",
+          "nameAr": "بوب أب 3×4 مستقيم",
+          "nameEn": "Pop Up 3×4 Straight",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-3x4-curve",
+          "nameAr": "بوب أب 3×4 منحني",
+          "nameEn": "Pop Up 3×4 Curve",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-3x5-straight",
+          "nameAr": "بوب أب 3×5 مستقيم",
+          "nameEn": "Pop Up 3×5 Straight",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-3x5-curve",
+          "nameAr": "بوب أب 3×5 منحني",
+          "nameEn": "Pop Up 3×5 Curve",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-counter",
+          "nameAr": "بوب أب كاونتر",
+          "nameEn": "Pop Up Counter",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "pop-up-promotion-table",
+          "nameAr": "طاولة ترويجية",
+          "nameEn": "Promotion Table",
+          "groupId": null,
+          "subCategoryId": "popUp",
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 24
+    },
+    {
+      "module": "sublimation-gift",
+      "categoryId": "SublimationGift",
+      "slug": "sublimationgift",
+      "file": "sublimation-gift-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "mug_white_printed",
+          "nameAr": "ماج أبيض (مطبوع)",
+          "nameEn": "ماج أبيض (مطبوع)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "mug_colored_printed",
+          "nameAr": "ماج ملون (مطبوع)",
+          "nameEn": "ماج ملون (مطبوع)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "mug_magic",
+          "nameAr": "ماج سحري",
+          "nameEn": "ماج سحري",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "coaster_wood",
+          "nameAr": "كوستر خشب",
+          "nameEn": "كوستر خشب",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "cap",
+          "nameAr": "كاب",
+          "nameEn": "كاب",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "medallion_wood_4x6_single",
+          "nameAr": "مادلية خشب 4×6 وجه واحد",
+          "nameEn": "مادلية خشب 4×6 وجه واحد",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "medallion_wood_4x6_double",
+          "nameAr": "مادلية خشب 4×6 وجهين",
+          "nameEn": "مادلية خشب 4×6 وجهين",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "mouse_pad",
+          "nameAr": "بادة ماوس",
+          "nameEn": "بادة ماوس",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "puzzle_small",
+          "nameAr": "بازل صغير",
+          "nameEn": "بازل صغير",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "puzzle_large",
+          "nameAr": "بازل كبير",
+          "nameEn": "بازل كبير",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "sublimation_paper",
+          "nameAr": "ورق سبلميشن",
+          "nameEn": "ورق سبلميشن",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "single_press",
+          "nameAr": "كبسة واحدة",
+          "nameEn": "كبسة واحدة",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "car_sun_visor",
+          "nameAr": "شماسة سيارة",
+          "nameEn": "شماسة سيارة",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 13
+    },
+    {
+      "module": "tableau",
+      "categoryId": "Tableaux",
+      "slug": "tableaux",
+      "file": "tableau-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "20x30_straight",
+          "nameAr": "تابلوة 20×30 (خشب عدل)",
+          "nameEn": "تابلوة 20×30 (خشب عدل)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "20x30_beveled",
+          "nameAr": "تابلوة 20×30 (خشب مشطوف)",
+          "nameEn": "تابلوة 20×30 (خشب مشطوف)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "30x40_straight",
+          "nameAr": "تابلوة 30×40 (خشب عدل)",
+          "nameEn": "تابلوة 30×40 (خشب عدل)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "30x40_beveled",
+          "nameAr": "تابلوة 30×40 (خشب مشطوف)",
+          "nameEn": "تابلوة 30×40 (خشب مشطوف)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "40x50_straight",
+          "nameAr": "تابلوة 40×50 (خشب عدل)",
+          "nameEn": "تابلوة 40×50 (خشب عدل)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "40x50_beveled",
+          "nameAr": "تابلوة 40×50 (خشب مشطوف)",
+          "nameEn": "تابلوة 40×50 (خشب مشطوف)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "50x60_straight",
+          "nameAr": "تابلوة 50×60 (خشب عدل)",
+          "nameEn": "تابلوة 50×60 (خشب عدل)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "50x60_beveled",
+          "nameAr": "تابلوة 50×60 (خشب مشطوف)",
+          "nameEn": "تابلوة 50×60 (خشب مشطوف)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "50x70_straight",
+          "nameAr": "تابلوة 50×70 (خشب عدل)",
+          "nameEn": "تابلوة 50×70 (خشب عدل)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "50x70_beveled",
+          "nameAr": "تابلوة 50×70 (خشب مشطوف)",
+          "nameEn": "تابلوة 50×70 (خشب مشطوف)",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 10
+    },
+    {
+      "module": "tshirt",
+      "categoryId": "TShirt",
+      "slug": "tshirt",
+      "file": "tshirt-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "uv-printing",
+      "categoryId": "UVPrinting",
+      "slug": "uvprinting",
+      "file": "uv-printing-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 0
+    },
+    {
+      "module": "zikr-medal",
+      "categoryId": "ZikrMedal",
+      "slug": "zikrmedal",
+      "file": "zikr-medal-pricing.js",
+      "groups": [],
+      "addons": {},
+      "products": [
+        {
+          "id": "tier_50",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_100",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_150",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_200",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_250",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_300",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_350",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_400",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_450",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_500",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_550",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_600",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_650",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_700",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_750",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_800",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_850",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_900",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_950",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1100",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1200",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1300",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1400",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1500",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1600",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1700",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1800",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_1900",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_2000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_3000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_4000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_5000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_6000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_7000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_8000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_9000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        },
+        {
+          "id": "tier_10000",
+          "groupId": null,
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null
+        }
+      ],
+      "defaults": {
+        "pricePerMeter": null,
+        "clicheSellPerCm2": null,
+        "paperTypes": null,
+        "quantities": null
+      },
+      "productCount": 38
+    }
+  ],
+  "generatedAt": "2026-07-02T01:03:59.767Z",
+  "totalProducts": 230
+}

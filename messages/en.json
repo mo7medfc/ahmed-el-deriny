@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Ahmed El-Deriny Printing | The Edifice of Printing Since 1918",
+    "description": "Ahmed El-Deriny Printing Press — Egyptian printing heritage since 1918. Banners, roll-ups, stamps, and all print products."
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart",
+    "orderNow": "Order Now"
+  },
+  "hero": {
+    "badge": "Since 1918",
+    "since": "Est. 1918",
+    "title": "Ahmed El-Deriny Printing",
+    "heritageLine": "The Edifice of Printing",
+    "subtitle": "Egyptian Printing Heritage — Banners, Roll-ups, Stamps & More",
+    "description": "For over a century we have carried the banner of quality and craftsmanship. Upload your design, set dimensions, and calculate price instantly.",
+    "cta": "Browse Products",
+    "ctaSecondary": "Calculate Your Price",
+    "stats": {
+      "clients": "Happy Clients",
+      "products": "Products Available",
+      "since": "Est. Year",
+      "orders": "Orders Completed"
+    }
+  },
+  "features": {
+    "badge": "Our Legacy",
+    "title": "Why Ahmed El-Deriny?",
+    "subtitle": "A complete printing experience from design to delivery",
+    "upload": {
+      "title": "Upload Design",
+      "desc": "Upload your design file in PDF, AI, PNG, JPG formats"
+    },
+    "calculator": {
+      "title": "Price Calculator",
+      "desc": "Get instant pricing based on dimensions and quantity"
+    },
+    "quality": {
+      "title": "Premium Quality",
+      "desc": "Latest printing machines and finest raw materials"
+    },
+    "delivery": {
+      "title": "Fast Delivery",
+      "desc": "Delivery across all governorates"
+    }
+  },
+  "categories": {
+    "badge": "Our Specialties",
+    "title": "Product Categories",
+    "subtitle": "Choose from a wide range of professional print products",
+    "viewAll": "View All"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "All print products with professional quality",
+    "search": "Search products...",
+    "all": "All",
+    "from": "From",
+    "configure": "Configure Order",
+    "addToCart": "Add to Cart",
+    "width": "Width",
+    "height": "Height",
+    "quantity": "Quantity",
+    "unit": "cm",
+    "options": "Options",
+    "uploadDesign": "Upload Design",
+    "uploadHint": "PDF, AI, EPS, PNG, JPG — Max 25MB",
+    "notes": "Additional Notes",
+    "notesPlaceholder": "Any special printing instructions...",
+    "totalPrice": "Total Price",
+    "calculating": "Calculating...",
+    "dimensions": "Dimensions",
+    "minMax": "Min {min} — Max {max} cm",
+    "noProducts": "No products in this category",
+    "featured": "Most Popular",
+    "showAll": "Show all",
+    "showLess": "Show less"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "emptyDesc": "Start adding products from our catalog",
+    "continueShopping": "Continue Shopping",
+    "item": "Product",
+    "price": "Price",
+    "qty": "Qty",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "clear": "Clear Cart"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "customerInfo": "Customer Information",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email (optional)",
+    "notes": "Order Notes",
+    "submit": "Place Order",
+    "submitting": "Submitting order...",
+    "success": "Order placed successfully!",
+    "successDesc": "Our team will contact you shortly to confirm details",
+    "orderNumber": "Order Number",
+    "backHome": "Back to Home"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Ahmed El-Deriny Printing — The Edifice of Printing Since 1918",
+    "p1": "Since 1918, we have been at the heart of Egypt's printing industry. Ahmed El-Deriny Printing is not just a press — it is a family legacy spanning over a century of craftsmanship.",
+    "p2": "From banners and roll-ups to stamps, business cards, and flyers — we blend the authenticity of the past with modern technology.",
+    "p3": "Our professional team carries the spirit of 1918 in every order. Upload your design and calculate your price instantly."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Working Hours",
+    "hoursValue": "Sat - Thu: 9 AM - 9 PM"
+  },
+  "footer": {
+    "tagline": "The Edifice of Printing & Its Origin",
+    "since": "Since 1918",
+    "rights": "All rights reserved",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "currency": "EGP"
+  }
+}

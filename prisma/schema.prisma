@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+}
+
+model Category {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  legacyId     String?   @unique
+  nameAr       String
+  nameEn       String
+  icon         String?
+  sortOrder    Int       @default(0)
+  pricingType  String    @default("unit")
+  products     Product[]
+  createdAt    DateTime  @default(now())
+}
+
+model PricingRecord {
+  collection String
+  docId      String
+  categoryId String?
+  data       String
+  updatedAt  DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@id([collection, docId])
+  @@index([categoryId])
+  @@index([collection])
+}
+
+model Product {
+  id              String          @id @default(cuid())
+  slug            String          @unique
+  legacyId        String?
+  categoryId      String
+  category        Category        @relation(fields: [categoryId], references: [id])
+  nameAr          String
+  nameEn          String
+  descriptionAr   String
+  descriptionEn   String
+  image           String?
+  pricingCategory String?
+  pricingData     String?
+  pricingType     String          @default("per_sqm")
+  basePrice       Float           @default(0)
+  costPrice       Float           @default(0)
+  minWidth        Float           @default(30)
+  maxWidth        Float           @default(500)
+  minHeight       Float           @default(30)
+  maxHeight       Float           @default(500)
+  minQuantity     Int             @default(1)
+  unit            String          @default("cm")
+  isActive        Boolean         @default(true)
+  featured        Boolean         @default(false)
+  sortOrder       Int             @default(0)
+  options         ProductOption[]
+  orderItems      OrderItem[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model ProductOption {
+  id         String  @id @default(cuid())
+  productId  String
+  product    Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  nameAr     String
+  nameEn     String
+  priceAddon Float   @default(0)
+  sortOrder  Int     @default(0)
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  orderNumber   String      @unique
+  customerName  String
+  customerPhone String
+  customerEmail String?
+  customerNotes String?
+  status        String      @default("pending")
+  totalAmount   Float
+  locale        String      @default("ar")
+  items         OrderItem[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model OrderItem {
+  id           String  @id @default(cuid())
+  orderId      String
+  order        Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId    String
+  product      Product @relation(fields: [productId], references: [id])
+  productName  String
+  width        Float?
+  height       Float?
+  quantity     Int     @default(1)
+  selectedOptions String?
+  unitPrice    Float
+  totalPrice   Float
+  designFile   String?
+  notes        String?
+}

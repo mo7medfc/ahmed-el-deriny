@@ -1,0 +1,145 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "@/i18n/navigation";
+import { Button } from "@/components/ui/Button";
+import { formatPrice } from "@/lib/utils";
+import { Upload, Check, ShoppingCart } from "lucide-react";
+
+export function useDesignUpload(isAr: boolean) {
+  const [designFile, setDesignFile] = useState("");
+  const [designFileName, setDesignFileName] = useState("");
+  const [uploading, setUploading] = useState(false);
+
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const res = await fetch("/api/upload", { method: "POST", body: formData });
+      const data = await res.json();
+      if (data.url) {
+        setDesignFile(data.url);
+        setDesignFileName(file.name);
+      }
+    } catch {
+      alert(isAr ? "فشل رفع الملف" : "Upload failed");
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return { designFile, designFileName, uploading, handleUpload };
+}
+
+export function OrderExtras({
+  locale,
+  notes,
+  onNotesChange,
+  designFile,
+  designFileName,
+  uploading,
+  onUpload,
+  totalPrice,
+  onAddToCart,
+  disabled,
+}: {
+  locale: string;
+  notes: string;
+  onNotesChange: (v: string) => void;
+  designFile: string;
+  designFileName: string;
+  uploading: boolean;
+  onUpload: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  totalPrice: number;
+  onAddToCart: () => void;
+  disabled?: boolean;
+}) {
+  const router = useRouter();
+  const isAr = locale === "ar";
+  const [added, setAdded] = useState(false);
+
+  const add = () => {
+    onAddToCart();
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
+  };
+
+  return (
+    <>
+      <div>
+        <p className="text-sm font-medium text-dark-200 mb-3">
+          {isAr ? "رفع التصميم" : "Upload design"}
+        </p>
+        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-dark-600 rounded-xl cursor-pointer hover:border-brand-500/50 transition-colors">
+          <input type="file" className="hidden" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.psd" onChange={onUpload} />
+          {uploading ? (
+            <p className="text-dark-400 text-sm">{isAr ? "جاري الرفع..." : "Uploading..."}</p>
+          ) : designFile ? (
+            <div className="flex items-center gap-2 text-brand-400">
+              <Check className="w-5 h-5" />
+              <span className="text-sm">{designFileName}</span>
+            </div>
+          ) : (
+            <>
+              <Upload className="w-8 h-8 text-dark-400 mb-2" />
+              <p className="text-sm text-dark-400">PDF, AI, EPS, PNG, JPG</p>
+            </>
+          )}
+        </label>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-dark-200 mb-1.5">
+          {isAr ? "ملاحظات إضافية" : "Notes"}
+        </label>
+        <textarea
+          value={notes}
+          onChange={(e) => onNotesChange(e.target.value)}
+          rows={3}
+          className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 resize-none"
+        />
+      </div>
+
+      <div className="flex items-center justify-between p-4 rounded-sm bg-heritage-900 border border-gold-500/20">
+        <span className="text-heritage-200 font-medium">{isAr ? "السعر الإجمالي" : "Total price"}</span>
+        <span className="text-2xl font-bold gradient-text">{formatPrice(totalPrice, locale)}</span>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-3">
+        <Button onClick={add} disabled={disabled} className="flex-1 gap-2" size="lg">
+          {added ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
+          {added ? (isAr ? "تمت الإضافة!" : "Added!") : isAr ? "أضف للسلة" : "Add to cart"}
+        </Button>
+        <Button variant="outline" size="lg" onClick={() => router.push("/cart")}>
+          {isAr ? "عرض السلة" : "View cart"}
+        </Button>
+      </div>
+    </>
+  );
+}
+
+export function ConfiguratorShell({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="heritage-card rounded-sm p-6 lg:p-8 space-y-6">
+      <h2 className="text-xl font-display font-bold text-heritage-50">{title}</h2>
+      {children}
+    </div>
+  );
+}
+
+export function selectClassName() {
+  return "w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 focus:border-gold-500/40 outline-none";
+}
+
+export function sectionTitle(text: string) {
+  return <h3 className="text-sm font-bold text-gold-400/90">{text}</h3>;
+}
