@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, Upload, Calculator, Award, Truck } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useRef, useEffect } from "react";
+import { publicPath } from "@/lib/public-path";
 
 export function HeroSection() {
   const t = useTranslations("hero");
@@ -29,9 +30,9 @@ export function HeroSection() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/logo/logo.png"
+        poster={publicPath("/logo/logo.png")}
       >
-        <source src="/videos/intro.mp4" type="video/mp4" />
+        <source src={publicPath("/videos/intro.mp4")} type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-heritage-950/85 via-heritage-900/75 to-heritage-950/95" />
@@ -94,7 +95,7 @@ export function HeroSection() {
               <div className="absolute -inset-3 border border-gold-500/10 rounded-sm -rotate-2" />
               <div className="relative p-6 bg-heritage-950/60 backdrop-blur border border-gold-500/25 rounded-sm shadow-2xl shadow-black/50">
                 <Image
-                  src="/logo/logo.png"
+                  src={publicPath("/logo/logo.png")}
                   alt="Ahmed El-Deriny Logo"
                   width={380}
                   height={380}

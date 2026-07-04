@@ -1,5 +1,6 @@
 import { getTranslations, getLocale, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
+import { publicPath } from "@/lib/public-path";
 
 export default async function AboutPage({
   params,
@@ -24,7 +25,7 @@ export default async function AboutPage({
 
         <div className="flex justify-center mb-10">
           <div className="p-4 border border-gold-500/20 bg-heritage-950/50 rounded-sm">
-            <Image src="/logo/logo.png" alt="Logo" width={200} height={200} className="w-40 h-40 object-contain" />
+            <Image src={publicPath("/logo/logo.png")} alt="Logo" width={200} height={200} className="w-40 h-40 object-contain" />
           </div>
         </div>
 

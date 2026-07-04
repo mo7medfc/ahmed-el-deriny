@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { publicPath } from "@/lib/public-path";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -19,7 +20,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <Image src="/logo/logo.png" alt="Logo" width={64} height={64} className="w-16 h-16 object-contain" />
+              <Image src={publicPath("/logo/logo.png")} alt="Logo" width={64} height={64} className="w-16 h-16 object-contain" />
             </Link>
             <p className="text-gold-400 text-sm font-display font-medium mb-1">{t("tagline")}</p>
             <p className="text-gold-500/60 text-xs tracking-[0.2em] uppercase mb-3">{t("since")}</p>

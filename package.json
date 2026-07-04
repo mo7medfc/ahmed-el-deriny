@@ -9,6 +9,7 @@
     "build": "node scripts/build-safe.mjs",
     "vercel-build": "node scripts/vercel-build.mjs",
     "pages:build": "node scripts/pages-build.mjs",
+    "pages:deploy": "node scripts/pages-build.mjs && npx gh-pages -d out --dotfiles -m \"Deploy site\"",
     "start": "next start",
     "lint": "next lint",
     "db:push": "prisma db push",

@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { publicPath } from "@/lib/public-path";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -36,7 +37,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <Image
-              src="/logo/logo.png"
+              src={publicPath("/logo/logo.png")}
               alt="Ahmed El-Deriny"
               width={52}
               height={52}
