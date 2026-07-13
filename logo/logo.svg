@@ -4,7 +4,7 @@
   <rect x="38" y="35" width="18" height="50" fill="url(#blueGrad)" rx="2"/>
   <path d="M56 35h30a15 15 0 0 1 15 15v5a15 15 0 0 1-15 15H56V35z" fill="url(#blueGrad)"/>
   <rect x="78" y="72" width="12" height="13" fill="#333" rx="1"/>
-  <text x="32" y="32" fill="#888" font-size="8" font-family="Arial">®</text>
+  <text x="32" y="32" fill="#888" font-size="8" font-family="Arial">ï¿½</text>
   <defs>
     <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#33CCFF"/>
