@@ -2,18 +2,15 @@
 
 import { useState, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
-import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { calculatePrice, formatPrice } from "@/lib/utils";
+import { calculatePrice, formatPrice, cn } from "@/lib/utils";
 import { useCartStore } from "@/store/cart";
-import { Upload, Check, ShoppingCart } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { StampsConfigurator } from "@/components/products/configurators/StampsConfigurator";
 import { DafaterConfigurator } from "@/components/products/configurators/DafaterConfigurator";
 import { NBBConfigurator } from "@/components/products/configurators/NBBConfigurator";
 import { EnvelopesConfigurator } from "@/components/products/configurators/EnvelopesConfigurator";
 import { NotebooksInvoicesConfigurator } from "@/components/products/configurators/NotebooksInvoicesConfigurator";
+import { OrderExtras, useDesignUpload } from "@/components/products/configurators/OrderExtras";
 
 interface ProductOption {
   id: string;
@@ -71,18 +68,15 @@ export function ProductConfigurator({ product }: ProductConfiguratorProps) {
 function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
   const t = useTranslations("products");
   const locale = useLocale();
-  const router = useRouter();
   const addItem = useCartStore((s) => s.addItem);
 
   const [width, setWidth] = useState(product.minWidth);
   const [height, setHeight] = useState(product.minHeight);
   const [quantity, setQuantity] = useState(product.minQuantity);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-  const [designFile, setDesignFile] = useState<string>("");
-  const [designFileName, setDesignFileName] = useState("");
   const [notes, setNotes] = useState("");
-  const [uploading, setUploading] = useState(false);
-  const [added, setAdded] = useState(false);
+  const isAr = locale === "ar";
+  const { designFile, designFileName, uploading, handleUpload, setDesignFromUrl } = useDesignUpload(isAr);
 
   const isDimensional = product.pricingType === "per_sqm" || product.pricingType === "per_meter";
 
@@ -111,27 +105,6 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
     );
   };
 
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    setUploading(true);
-    try {
-      const formData = new FormData();
-      formData.append("file", file);
-      const res = await fetch("/api/upload", { method: "POST", body: formData });
-      const data = await res.json();
-      if (data.url) {
-        setDesignFile(data.url);
-        setDesignFileName(file.name);
-      }
-    } catch {
-      alert("Upload failed");
-    } finally {
-      setUploading(false);
-    }
-  };
-
   const handleAddToCart = () => {
     const selectedOpts = product.options
       .filter((o) => selectedOptions.includes(o.id))
@@ -155,9 +128,6 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
       designFileName: designFileName || undefined,
       notes: notes || undefined,
     });
-
-    setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
   };
 
   return (
@@ -235,51 +205,26 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
         </div>
       )}
 
-      <div>
-        <p className="text-sm font-medium text-dark-200 mb-3">{t("uploadDesign")}</p>
-        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-dark-600 rounded-xl cursor-pointer hover:border-brand-500/50 transition-colors">
-          <input type="file" className="hidden" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.psd" onChange={handleUpload} />
-          {uploading ? (
-            <p className="text-dark-400 text-sm">{t("calculating")}</p>
-          ) : designFile ? (
-            <div className="flex items-center gap-2 text-brand-400">
-              <Check className="w-5 h-5" />
-              <span className="text-sm">{designFileName}</span>
-            </div>
-          ) : (
-            <>
-              <Upload className="w-8 h-8 text-dark-400 mb-2" />
-              <p className="text-sm text-dark-400">{t("uploadHint")}</p>
-            </>
-          )}
-        </label>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-dark-200 mb-1.5">{t("notes")}</label>
-        <textarea
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-          placeholder={t("notesPlaceholder")}
-          rows={3}
-          className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 focus:ring-1 focus:ring-gold-500/20 transition-all resize-none"
-        />
-      </div>
-
-      <div className="flex items-center justify-between p-4 rounded-sm bg-heritage-900 border border-gold-500/20">
-        <span className="text-heritage-200 font-medium">{t("totalPrice")}</span>
-        <span className="text-2xl font-bold gradient-text">{formatPrice(totalPrice, locale)}</span>
-      </div>
-
-      <div className="flex flex-col sm:flex-row gap-3">
-        <Button onClick={handleAddToCart} className="flex-1 gap-2" size="lg">
-          {added ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
-          {added ? (locale === "ar" ? "تمت الإضافة!" : "Added!") : t("addToCart")}
-        </Button>
-        <Button variant="outline" size="lg" onClick={() => router.push("/cart")}>
-          {locale === "ar" ? "عرض السلة" : "View Cart"}
-        </Button>
-      </div>
+      <OrderExtras
+        locale={locale}
+        notes={notes}
+        onNotesChange={setNotes}
+        designFile={designFile}
+        designFileName={designFileName}
+        uploading={uploading}
+        onUpload={handleUpload}
+        totalPrice={totalPrice}
+        onAddToCart={handleAddToCart}
+        productName={locale === "ar" ? product.nameAr : product.nameEn}
+        productSlug={product.slug}
+        pricingCategory={product.pricingCategory}
+        configurationSummary={
+          isDimensional
+            ? `${width}×${height} cm · ${quantity} ${isAr ? "قطعة" : "pcs"}`
+            : `${quantity} ${isAr ? "قطعة" : "pcs"}`
+        }
+        onDesignFromAi={setDesignFromUrl}
+      />
     </div>
   );
 }

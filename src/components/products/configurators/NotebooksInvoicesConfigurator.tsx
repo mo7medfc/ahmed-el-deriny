@@ -31,7 +31,7 @@ export function NotebooksInvoicesConfigurator({
   const locale = useLocale();
   const isAr = locale === "ar";
   const addItem = useCartStore((s) => s.addItem);
-  const { designFile, designFileName, uploading, handleUpload } = useDesignUpload(isAr);
+  const { designFile, designFileName, uploading, handleUpload, setDesignFromUrl } = useDesignUpload(isAr);
 
   const [sellCfg, setSellCfg] = useState<Record<string, unknown>>({});
   const [loading, setLoading] = useState(true);
@@ -186,6 +186,11 @@ export function NotebooksInvoicesConfigurator({
         totalPrice={result?.total ?? 0}
         onAddToCart={addToCart}
         disabled={!result}
+        productName={isAr ? product.nameAr : product.nameEn}
+        productSlug={product.slug}
+        pricingCategory="notebooks_invoices"
+        configurationSummary={result ? formatNiSummary(locale, { band: effectiveBand, widthCm: width, heightCm: height, notebooks, internalPages }) : undefined}
+        onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>
   );

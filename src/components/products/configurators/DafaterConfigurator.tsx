@@ -30,7 +30,7 @@ export function DafaterConfigurator({
   const locale = useLocale();
   const isAr = locale === "ar";
   const addItem = useCartStore((s) => s.addItem);
-  const { designFile, designFileName, uploading, handleUpload } = useDesignUpload(isAr);
+  const { designFile, designFileName, uploading, handleUpload, setDesignFromUrl } = useDesignUpload(isAr);
 
   const [loading, setLoading] = useState(true);
   const [costCfg, setCostCfg] = useState<Record<string, unknown>>({});
@@ -196,6 +196,11 @@ export function DafaterConfigurator({
         totalPrice={result?.sellingPrice ?? 0}
         onAddToCart={addToCart}
         disabled={!result}
+        productName={isAr ? product.nameAr : product.nameEn}
+        productSlug={product.slug}
+        pricingCategory="dafater"
+        configurationSummary={result ? formatDafaterSummary(locale, { type, widthCm: width, heightCm: height, quantity, internalSheets: sheets }) : undefined}
+        onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>
   );

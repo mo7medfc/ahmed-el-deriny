@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useLocale } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { formatPrice } from "@/lib/utils";
@@ -19,7 +18,7 @@ import {
   type StampVariant,
 } from "@/lib/pricing/stamps-calculator";
 import { getPricingFetchUrl } from "@/lib/pricing-url";
-import { Upload, Check, ShoppingCart } from "lucide-react";
+import { OrderExtras, useDesignUpload } from "./OrderExtras";
 
 interface StampsConfiguratorProps {
   product: {
@@ -33,9 +32,9 @@ interface StampsConfiguratorProps {
 
 export function StampsConfigurator({ product }: StampsConfiguratorProps) {
   const locale = useLocale();
-  const router = useRouter();
   const addItem = useCartStore((s) => s.addItem);
   const isAr = locale === "ar";
+  const { designFile, designFileName, uploading, handleUpload, setDesignFromUrl } = useDesignUpload(isAr);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -48,11 +47,7 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
   const [clicheWidth, setClicheWidth] = useState(3);
   const [clicheHeight, setClicheHeight] = useState(3);
   const [quantity, setQuantity] = useState(product.minQuantity || 1);
-  const [designFile, setDesignFile] = useState("");
-  const [designFileName, setDesignFileName] = useState("");
   const [notes, setNotes] = useState("");
-  const [uploading, setUploading] = useState(false);
-  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     fetch(getPricingFetchUrl("Stamps"))
@@ -101,26 +96,6 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
 
   const showInk = band === "automatic_machine" && variant !== "serial";
 
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setUploading(true);
-    try {
-      const formData = new FormData();
-      formData.append("file", file);
-      const res = await fetch("/api/upload", { method: "POST", body: formData });
-      const data = await res.json();
-      if (data.url) {
-        setDesignFile(data.url);
-        setDesignFileName(file.name);
-      }
-    } catch {
-      alert(isAr ? "فشل رفع الملف" : "Upload failed");
-    } finally {
-      setUploading(false);
-    }
-  };
-
   const handleAddToCart = () => {
     if (!pricing.valid) return;
 
@@ -157,9 +132,6 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
         summary,
       },
     });
-
-    setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
   };
 
   const variantOnlyLabel =
@@ -340,59 +312,23 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
         </div>
       )}
 
-      <div>
-        <p className="text-sm font-medium text-dark-200 mb-3">{isAr ? "رفع التصميم" : "Upload design"}</p>
-        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-dark-600 rounded-xl cursor-pointer hover:border-brand-500/50 transition-colors">
-          <input type="file" className="hidden" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.psd" onChange={handleUpload} />
-          {uploading ? (
-            <p className="text-dark-400 text-sm">{isAr ? "جاري الرفع..." : "Uploading..."}</p>
-          ) : designFile ? (
-            <div className="flex items-center gap-2 text-brand-400">
-              <Check className="w-5 h-5" />
-              <span className="text-sm">{designFileName}</span>
-            </div>
-          ) : (
-            <>
-              <Upload className="w-8 h-8 text-dark-400 mb-2" />
-              <p className="text-sm text-dark-400">PDF, AI, EPS, PNG, JPG</p>
-            </>
-          )}
-        </label>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-dark-200 mb-1.5">
-          {isAr ? "ملاحظات إضافية" : "Notes"}
-        </label>
-        <textarea
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-          rows={3}
-          className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 resize-none"
-        />
-      </div>
-
-      <div className="flex items-center justify-between p-4 rounded-sm bg-heritage-900 border border-gold-500/20">
-        <span className="text-heritage-200 font-medium">{isAr ? "السعر الإجمالي" : "Total price"}</span>
-        <span className="text-2xl font-bold gradient-text">
-          {pricing.valid ? formatPrice(pricing.totalPrice, locale) : formatPrice(0, locale)}
-        </span>
-      </div>
-
-      <div className="flex flex-col sm:flex-row gap-3">
-        <Button
-          onClick={handleAddToCart}
-          disabled={!pricing.valid}
-          className="flex-1 gap-2"
-          size="lg"
-        >
-          {added ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
-          {added ? (isAr ? "تمت الإضافة!" : "Added!") : isAr ? "أضف للسلة" : "Add to cart"}
-        </Button>
-        <Button variant="outline" size="lg" onClick={() => router.push("/cart")}>
-          {isAr ? "عرض السلة" : "View cart"}
-        </Button>
-      </div>
+      <OrderExtras
+        locale={locale}
+        notes={notes}
+        onNotesChange={setNotes}
+        designFile={designFile}
+        designFileName={designFileName}
+        uploading={uploading}
+        onUpload={handleUpload}
+        totalPrice={pricing.valid ? pricing.totalPrice : 0}
+        onAddToCart={handleAddToCart}
+        disabled={!pricing.valid}
+        productName={isAr ? product.nameAr : product.nameEn}
+        productSlug={product.slug}
+        pricingCategory="Stamps"
+        configurationSummary={pricing.valid ? formatStampSummary(locale, { band, variant, inkColor: showInk ? inkColor : undefined }) : undefined}
+        onDesignFromAi={setDesignFromUrl}
+      />
     </div>
   );
 }

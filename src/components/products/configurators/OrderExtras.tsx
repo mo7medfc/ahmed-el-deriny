@@ -4,7 +4,9 @@ import { useState } from "react";
 import { useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/utils";
-import { Upload, Check, ShoppingCart } from "lucide-react";
+import { Upload, Check, ShoppingCart, Sparkles } from "lucide-react";
+import { DesignChatPanel } from "./DesignChatPanel";
+import { cn } from "@/lib/utils";
 
 export function useDesignUpload(isAr: boolean) {
   const [designFile, setDesignFile] = useState("");
@@ -31,8 +33,15 @@ export function useDesignUpload(isAr: boolean) {
     }
   };
 
-  return { designFile, designFileName, uploading, handleUpload };
+  const setDesignFromUrl = (url: string, filename: string) => {
+    setDesignFile(url);
+    setDesignFileName(filename);
+  };
+
+  return { designFile, designFileName, uploading, handleUpload, setDesignFromUrl };
 }
+
+type DesignMode = "upload" | "ai";
 
 export function OrderExtras({
   locale,
@@ -45,6 +54,11 @@ export function OrderExtras({
   totalPrice,
   onAddToCart,
   disabled,
+  productName,
+  productSlug,
+  pricingCategory,
+  configurationSummary,
+  onDesignFromAi,
 }: {
   locale: string;
   notes: string;
@@ -56,10 +70,17 @@ export function OrderExtras({
   totalPrice: number;
   onAddToCart: () => void;
   disabled?: boolean;
+  productName?: string;
+  productSlug?: string;
+  pricingCategory?: string | null;
+  configurationSummary?: string;
+  onDesignFromAi?: (url: string, filename: string) => void;
 }) {
   const router = useRouter();
   const isAr = locale === "ar";
   const [added, setAdded] = useState(false);
+  const [designMode, setDesignMode] = useState<DesignMode>("upload");
+  const showAiStudio = Boolean(productName && productSlug && onDesignFromAi);
 
   const add = () => {
     onAddToCart();
@@ -71,24 +92,75 @@ export function OrderExtras({
     <>
       <div>
         <p className="text-sm font-medium text-dark-200 mb-3">
-          {isAr ? "رفع التصميم" : "Upload design"}
+          {isAr ? "التصميم" : "Design"}
         </p>
-        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-dark-600 rounded-xl cursor-pointer hover:border-brand-500/50 transition-colors">
-          <input type="file" className="hidden" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.psd" onChange={onUpload} />
-          {uploading ? (
-            <p className="text-dark-400 text-sm">{isAr ? "جاري الرفع..." : "Uploading..."}</p>
-          ) : designFile ? (
-            <div className="flex items-center gap-2 text-brand-400">
-              <Check className="w-5 h-5" />
-              <span className="text-sm">{designFileName}</span>
-            </div>
-          ) : (
-            <>
-              <Upload className="w-8 h-8 text-dark-400 mb-2" />
-              <p className="text-sm text-dark-400">PDF, AI, EPS, PNG, JPG</p>
-            </>
-          )}
-        </label>
+
+        {showAiStudio && (
+          <div className="flex gap-2 mb-4">
+            <button
+              type="button"
+              onClick={() => setDesignMode("upload")}
+              className={cn(
+                "flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-sm text-sm font-medium transition-all border",
+                designMode === "upload"
+                  ? "border-gold-500/40 bg-gold-500/10 text-gold-300"
+                  : "border-gold-500/10 text-heritage-200/60 hover:border-gold-500/25"
+              )}
+            >
+              <Upload className="w-4 h-4" />
+              {isAr ? "رفع ملف" : "Upload file"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setDesignMode("ai")}
+              className={cn(
+                "flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-sm text-sm font-medium transition-all border",
+                designMode === "ai"
+                  ? "border-gold-500/40 bg-gold-500/10 text-gold-300"
+                  : "border-gold-500/10 text-heritage-200/60 hover:border-gold-500/25"
+              )}
+            >
+              <Sparkles className="w-4 h-4" />
+              {isAr ? "تصميم بالذكاء الاصطناعي" : "AI design"}
+            </button>
+          </div>
+        )}
+
+        {designMode === "ai" && showAiStudio ? (
+          <DesignChatPanel
+            locale={locale}
+            productName={productName!}
+            productSlug={productSlug!}
+            pricingCategory={pricingCategory}
+            configurationSummary={configurationSummary}
+            onDesignReady={onDesignFromAi!}
+            onBriefChange={onNotesChange}
+          />
+        ) : (
+          <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-dark-600 rounded-xl cursor-pointer hover:border-brand-500/50 transition-colors">
+            <input type="file" className="hidden" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.psd" onChange={onUpload} />
+            {uploading ? (
+              <p className="text-dark-400 text-sm">{isAr ? "جاري الرفع..." : "Uploading..."}</p>
+            ) : designFile ? (
+              <div className="flex items-center gap-2 text-brand-400">
+                <Check className="w-5 h-5" />
+                <span className="text-sm">{designFileName}</span>
+              </div>
+            ) : (
+              <>
+                <Upload className="w-8 h-8 text-dark-400 mb-2" />
+                <p className="text-sm text-dark-400">PDF, AI, EPS, PNG, JPG</p>
+              </>
+            )}
+          </label>
+        )}
+
+        {designFile && designMode === "ai" && (
+          <p className="text-xs text-brand-400 mt-2 flex items-center gap-1">
+            <Check className="w-3 h-3" />
+            {designFileName}
+          </p>
+        )}
       </div>
 
       <div>
@@ -99,6 +171,7 @@ export function OrderExtras({
           value={notes}
           onChange={(e) => onNotesChange(e.target.value)}
           rows={3}
+          placeholder={isAr ? "تفاصيل التصميم أو تعليمات الطباعة..." : "Design details or print instructions..."}
           className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 resize-none"
         />
       </div>

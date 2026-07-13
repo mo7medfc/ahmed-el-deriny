@@ -1,19 +1,14 @@
 /**
- * Vercel production build: requires DATABASE_URL (Neon Postgres recommended).
+ * Vercel / production build — uses SQLite by default for trial deploys.
  */
 import { execSync } from "child_process";
 
 if (!process.env.DATABASE_URL) {
-  console.error(
-    "\n✗ DATABASE_URL is missing on Vercel.\n" +
-      "  Add a Postgres URL (Neon free): Vercel → Project → Settings → Environment Variables\n" +
-      "  Example: postgresql://user:pass@host/db?sslmode=require\n"
-  );
-  process.exit(1);
+  process.env.DATABASE_URL = "file:./prisma/vercel.db";
 }
 
 function run(cmd) {
-  execSync(cmd, { stdio: "inherit" });
+  execSync(cmd, { stdio: "inherit", env: process.env });
 }
 
 run("npx prisma generate");

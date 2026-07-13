@@ -32,7 +32,7 @@ export function NBBConfigurator({
   const locale = useLocale();
   const isAr = locale === "ar";
   const addItem = useCartStore((s) => s.addItem);
-  const { designFile, designFileName, uploading, handleUpload } = useDesignUpload(isAr);
+  const { designFile, designFileName, uploading, handleUpload, setDesignFromUrl } = useDesignUpload(isAr);
 
   const [pricing, setPricing] = useState<Record<string, unknown>>({});
   const [loading, setLoading] = useState(true);
@@ -219,6 +219,11 @@ export function NBBConfigurator({
         totalPrice={calc?.totals.sellingPrice ?? 0}
         onAddToCart={addToCart}
         disabled={!calc}
+        productName={isAr ? product.nameAr : product.nameEn}
+        productSlug={product.slug}
+        pricingCategory="notebooks_books_booklets"
+        configurationSummary={calc ? formatNbbSummary(locale, { mainType, coverType, widthCm: width, heightCm: height, quantity, finishingType: finishing }) : undefined}
+        onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>
   );

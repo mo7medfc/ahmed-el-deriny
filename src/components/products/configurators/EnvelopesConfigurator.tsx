@@ -31,7 +31,7 @@ export function EnvelopesConfigurator({
   const locale = useLocale();
   const isAr = locale === "ar";
   const addItem = useCartStore((s) => s.addItem);
-  const { designFile, designFileName, uploading, handleUpload } = useDesignUpload(isAr);
+  const { designFile, designFileName, uploading, handleUpload, setDesignFromUrl } = useDesignUpload(isAr);
 
   const [sellByDoc, setSellByDoc] = useState<Record<string, EnvelopeSellDoc>>({});
   const [loading, setLoading] = useState(true);
@@ -153,6 +153,11 @@ export function EnvelopesConfigurator({
         totalPrice={pricing.valid ? pricing.totalPrice : 0}
         onAddToCart={addToCart}
         disabled={!pricing.valid}
+        productName={isAr ? product.nameAr : product.nameEn}
+        productSlug={product.slug}
+        pricingCategory="envelopes"
+        configurationSummary={pricing.valid ? formatEnvelopeSummary(locale, { sizeNameAr: selectedProduct?.nameAr, sizeNameEn: selectedProduct?.nameEn, printingType, colorOption, tier: pricing.tier }) : undefined}
+        onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>
   );
