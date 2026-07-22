@@ -1,10 +1,5 @@
 {
-  "regions": ["fra1"],
-  "services": {
-    "ahmed-deriny": {
-      "root": ".",
-      "framework": "nextjs",
-      "buildCommand": "npm run vercel-build"
-    }
-  }
+  "framework": "nextjs",
+  "buildCommand": "npm run vercel-build",
+  "regions": ["fra1"]
 }
