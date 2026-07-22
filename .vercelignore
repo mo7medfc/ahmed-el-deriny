@@ -5,10 +5,10 @@ node_modules
 .git
 .vercel
 *.db
+!prisma/vercel.db
 *.db-journal
 prisma/pages.db
 prisma/dev.db
-prisma/vercel.db
 public/uploads/*
 !public/uploads/.gitkeep
 استخد_*.mp4
