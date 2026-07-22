@@ -75,18 +75,18 @@ export default async function ProductsPage({
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
           <span className="heritage-badge mb-3">{locale === "ar" ? "منذ 1918" : "Since 1918"}</span>
-          <h1 className="font-display text-3xl sm:text-4xl font-bold text-heritage-50 mb-2">{t("title")}</h1>
-          <p className="text-heritage-200/55">{t("subtitle")}</p>
+          <h1 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 mb-2">{t("title")}</h1>
+          <p className="text-brand-700/60">{t("subtitle")}</p>
         </div>
 
         <Suspense fallback={<div className="h-24" />}>
           <ProductSearch categories={searchCategories} />
         </Suspense>
 
-        <Suspense fallback={<div className="text-center py-20 text-heritage-200/45">{t("calculating")}</div>}>
+        <Suspense fallback={<div className="text-center py-20 text-brand-600/50">{t("calculating")}</div>}>
           {items.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-heritage-200/45 text-lg">{t("noProducts")}</p>
+              <p className="text-brand-600/50 text-lg">{t("noProducts")}</p>
             </div>
           ) : (
             <FilteredProductsGrid

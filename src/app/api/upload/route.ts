@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
 import path from "path";
-import { v4 as uuidv4 } from "uuid";
+import { isServerlessRuntime, saveUploadBuffer, toDataUrl } from "@/lib/server-upload";
 
 const MAX_SIZE = 25 * 1024 * 1024;
 const ALLOWED_TYPES = [
@@ -13,6 +12,18 @@ const ALLOWED_TYPES = [
   "application/illustrator",
   "image/vnd.adobe.photoshop",
 ];
+
+function mimeFromExt(ext: string) {
+  const map: Record<string, string> = {
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".pdf": "application/pdf",
+    ".gif": "image/gif",
+    ".webp": "image/webp",
+  };
+  return map[ext.toLowerCase()] || "application/octet-stream";
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,15 +39,22 @@ export async function POST(request: NextRequest) {
     }
 
     const ext = path.extname(file.name) || ".bin";
-    const filename = `${uuidv4()}${ext}`;
-    const uploadDir = path.join(process.cwd(), "public", "uploads");
-
-    await mkdir(uploadDir, { recursive: true });
-
     const buffer = Buffer.from(await file.arrayBuffer());
-    await writeFile(path.join(uploadDir, filename), buffer);
+    const mime = file.type || mimeFromExt(ext);
+    const saved = await saveUploadBuffer(buffer, ext, "upload");
+    const dataUrl = toDataUrl(buffer, mime);
 
-    return NextResponse.json({ url: `/uploads/${filename}`, filename: file.name });
+    // On Vercel, filesystem is ephemeral — prefer data URL so the cart keeps the file.
+    const url =
+      !isServerlessRuntime() && saved.publicPath
+        ? saved.publicPath
+        : dataUrl;
+
+    return NextResponse.json({
+      url,
+      dataUrl,
+      filename: file.name,
+    });
   } catch (error) {
     console.error("Upload error:", error);
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });

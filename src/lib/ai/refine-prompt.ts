@@ -1,11 +1,26 @@
 const REFINE_URL = "https://api.openai.com/v1/chat/completions";
 
+import type { DesignConfigurationState } from "./design-studio";
+import {
+  buildDimensionPromptBlock,
+  resolveDimensions,
+  NEGATIVE_AVOID_BLOCK,
+} from "./design-dimensions";
+import { getRefineModel } from "./openai-models";
+
 export async function refineDesignPromptForImage(
   apiKey: string,
   designPrompt: string,
   productType: string,
-  imageSize: string
+  imageSize: string,
+  configurationState?: DesignConfigurationState,
+  pricingCategory?: string | null,
+  customerDescription?: string
 ): Promise<string> {
+  const dims = resolveDimensions(configurationState, pricingCategory);
+  const dimBlock = buildDimensionPromptBlock(dims, pricingCategory);
+  const isStamp = dims.isStamp || productType === "stamp";
+
   const res = await fetch(REFINE_URL, {
     method: "POST",
     headers: {
@@ -13,28 +28,33 @@ export async function refineDesignPromptForImage(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: process.env.OPENAI_REFINE_MODEL || process.env.OPENAI_CHAT_MODEL || "gpt-4o",
-      temperature: 0.4,
+      model: getRefineModel(),
+      temperature: 0.45,
       messages: [
         {
           role: "system",
-          content: `You are a senior graphic designer at a professional Egyptian print house (est. 1918).
-Transform the brief into ONE ultra-detailed DALL-E 3 image prompt for a FLAT print-ready artwork.
+          content: `You are the final quality gate — senior art director at Ahmed El-Deriny print house (est. 1918).
+Polish into the PERFECT gpt-image-2 image prompt (highest quality print artwork). Output ONLY the prompt text.
 
-Rules:
-- Output ONLY the final prompt text, no JSON, no explanation.
-- FLAT 2D design viewed straight-on (no mockups, no devices, no hands, no 3D room, no folded paper perspective).
-- Specify: layout grid, visual hierarchy, exact headline/subhead/body text in quotes, color palette (hex or names), typography style (serif/sans, weight), decorative elements, margins/bleed, background treatment.
-- For Arabic text mention "elegant Arabic RTL typography" when relevant.
-- For brochures: tri-fold or bi-fold FLAT layout showing all panels side by side.
-- For business cards: front face only, standard 9:5 ratio composition centered in frame.
-- For banners/posters: bold headline zone, CTA area, brand block.
-- Style: premium commercial print, crisp vector-like clarity, professional Egyptian/Gulf market aesthetic.
-- End with: "Ultra high resolution flat print artwork, clean edges, no watermark, no mockup frame, no photograph of a product."`,
+ENHANCE: richer colors (hex), sharper layout zones, more decorative flair, stunning typography.
+Make it BREATHTAKING — world-class print design, NOT generic template.
+Preserve all Arabic print text exactly. Preserve exact dimensions.
+FLAT 2D, no mockup.
+${isStamp ? "STAMP: black ink on white cliche only." : ""}
+${NEGATIVE_AVOID_BLOCK}
+End with: "Masterpiece flat print artwork, exact aspect ratio, ultra high resolution, no watermark."`,
         },
         {
           role: "user",
-          content: `Product type: ${productType}\nCanvas: ${imageSize}\nBrief:\n${designPrompt}`,
+          content: [
+            `Product: ${productType}`,
+            `Canvas: ${imageSize}`,
+            customerDescription ? `Customer said: ${customerDescription}` : "",
+            dimBlock,
+            `Creative prompt to polish:\n${designPrompt}`,
+          ]
+            .filter(Boolean)
+            .join("\n\n"),
         },
       ],
     }),

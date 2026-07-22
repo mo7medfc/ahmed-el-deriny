@@ -25,12 +25,12 @@ export async function CategoriesSection() {
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
           <div>
             <span className="heritage-badge mb-3">{t("badge")}</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-heritage-50 mb-2">{t("title")}</h2>
-            <p className="text-heritage-200/55">{t("subtitle")}</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 mb-2">{t("title")}</h2>
+            <p className="text-brand-700/55">{t("subtitle")}</p>
           </div>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-medium text-sm transition-colors"
+            className="inline-flex items-center gap-2 text-brand-600 hover:text-brand-500 font-medium text-sm transition-colors"
           >
             {t("viewAll")}
             {locale === "ar" ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
@@ -54,16 +54,16 @@ export async function CategoriesSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="300px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-heritage-950 via-heritage-950/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-brand-900/20 to-transparent" />
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-display font-semibold text-heritage-50 mb-1 group-hover:text-gold-300 transition-colors">
+                  <h3 className="text-lg font-display font-semibold text-brand-900 mb-1 group-hover:text-brand-600 transition-colors">
                     {getStorefrontCategoryName(cat.legacyId || cat.slug, locale, {
                       nameAr: cat.nameAr,
                       nameEn: cat.nameEn,
                     })}
                   </h3>
-                  <p className="text-heritage-200/45 text-sm">{cat._count.products} {locale === "ar" ? "منتج" : "products"}</p>
+                  <p className="text-brand-700/45 text-sm">{cat._count.products} {locale === "ar" ? "منتج" : "products"}</p>
                 </div>
               </Link>
             );
@@ -87,11 +87,11 @@ export async function FeaturedProducts() {
   if (products.length === 0) return null;
 
   return (
-    <section className="py-24 bg-heritage-900/40 border-t border-gold-500/10 heritage-section">
+    <section className="py-24 bg-white border-t border-brand-100 heritage-section">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="heritage-badge mb-4">{t("featured")}</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-heritage-50 mt-2">{t("title")}</h2>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 mt-2">{t("title")}</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

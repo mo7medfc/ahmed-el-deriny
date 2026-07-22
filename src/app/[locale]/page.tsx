@@ -1,4 +1,6 @@
-import { HeroSection, FeaturesSection } from "@/components/home/HeroSection";
+import { FeaturesSection } from "@/components/home/HeroSection";
+import { HeroProductSlider } from "@/components/home/HeroProductSlider";
+import { IntroSection } from "@/components/home/IntroSection";
 import { CategoriesSection, FeaturedProducts } from "@/components/home/CategoriesSection";
 import { setRequestLocale } from "next-intl/server";
 
@@ -12,7 +14,8 @@ export default async function HomePage({
 
   return (
     <>
-      <HeroSection />
+      <HeroProductSlider />
+      <IntroSection />
       <FeaturesSection />
       <CategoriesSection />
       <FeaturedProducts />

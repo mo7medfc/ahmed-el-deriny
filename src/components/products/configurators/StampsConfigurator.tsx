@@ -19,6 +19,7 @@ import {
 } from "@/lib/pricing/stamps-calculator";
 import { getPricingFetchUrl } from "@/lib/pricing-url";
 import { OrderExtras, useDesignUpload } from "./OrderExtras";
+import { parseStampSizeId } from "@/lib/ai/design-studio";
 
 interface StampsConfiguratorProps {
   product: {
@@ -169,7 +170,7 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
 
   return (
     <div className="heritage-card rounded-sm p-6 lg:p-8 space-y-6">
-      <h2 className="text-xl font-display font-bold text-heritage-50">
+      <h2 className="text-xl font-display font-bold text-brand-900">
         {isAr ? "تخصيص الطلب" : "Configure order"}
       </h2>
 
@@ -326,7 +327,52 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
         productName={isAr ? product.nameAr : product.nameEn}
         productSlug={product.slug}
         pricingCategory="Stamps"
-        configurationSummary={pricing.valid ? formatStampSummary(locale, { band, variant, inkColor: showInk ? inkColor : undefined }) : undefined}
+        configurationSummary={
+          pricing.valid
+            ? formatStampSummary(locale, {
+                band,
+                variant,
+                sizeNameAr: selectedSize?.nameAr,
+                sizeNameEn: selectedSize?.nameEn,
+                inkColor: showInk ? inkColor : undefined,
+                widthCm: band === "cliche_only" ? clicheWidth : undefined,
+                heightCm: band === "cliche_only" ? clicheHeight : undefined,
+              })
+            : undefined
+        }
+        configurationState={{
+          category: "Stamps",
+          productSlug: product.slug,
+          productName: isAr ? product.nameAr : product.nameEn,
+          band,
+          bandLabel: isAr
+            ? band === "automatic_machine"
+              ? "ماكينة أوتوماتيك"
+              : band === "wooden_handle"
+                ? "مقبض خشبي"
+                : "كليشيه فقط"
+            : band === "automatic_machine"
+              ? "Automatic machine"
+              : band === "wooden_handle"
+                ? "Wooden handle"
+                : "Cliche only",
+          sizeLabel: isAr ? selectedSize?.nameAr : selectedSize?.nameEn,
+          sizeId: selectedSize?.sizeId,
+          variant,
+          variantLabel:
+            variant === "only"
+              ? variantOnlyLabel
+              : variant === "stamp"
+                ? variantStampLabel
+                : isAr
+                  ? "سيريال"
+                  : "Serial",
+          inkColor: showInk ? inkColor : undefined,
+          quantity,
+          ...(band === "cliche_only"
+            ? { widthCm: clicheWidth, heightCm: clicheHeight }
+            : parseStampSizeId(selectedSize?.sizeId)),
+        }}
         onDesignFromAi={setDesignFromUrl}
       />
     </div>

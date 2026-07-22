@@ -157,6 +157,16 @@ export function EnvelopesConfigurator({
         productSlug={product.slug}
         pricingCategory="envelopes"
         configurationSummary={pricing.valid ? formatEnvelopeSummary(locale, { sizeNameAr: selectedProduct?.nameAr, sizeNameEn: selectedProduct?.nameEn, printingType, colorOption, tier: pricing.tier }) : undefined}
+        configurationState={pricing.valid && selectedProduct ? {
+          category: "envelopes",
+          productSlug: product.slug,
+          productName: isAr ? product.nameAr : product.nameEn,
+          sizeId: selectedProduct.id,
+          sizeLabel: isAr ? selectedProduct.nameAr : selectedProduct.nameEn,
+          variant: printingType,
+          variantLabel: printingType === "offset" ? (isAr ? "أوفست" : "Offset") : (isAr ? "إنك جيت" : "Inkjet"),
+          quantity,
+        } : undefined}
         onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>

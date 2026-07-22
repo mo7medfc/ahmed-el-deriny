@@ -80,6 +80,16 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
 
   const isDimensional = product.pricingType === "per_sqm" || product.pricingType === "per_meter";
 
+  const isFixedSize =
+    product.minWidth === product.maxWidth &&
+    product.minHeight === product.maxHeight &&
+    product.minWidth > 1 &&
+    product.minHeight > 1;
+
+  const designWidthCm = isDimensional ? width : isFixedSize ? product.minWidth : undefined;
+  const designHeightCm = isDimensional ? height : isFixedSize ? product.minHeight : undefined;
+  const productDisplayName = locale === "ar" ? product.nameAr : product.nameEn;
+
   const optionAddons = useMemo(() => {
     return product.options
       .filter((o) => selectedOptions.includes(o.id))
@@ -132,7 +142,7 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
 
   return (
     <div className="heritage-card rounded-sm p-6 lg:p-8 space-y-6">
-      <h2 className="text-xl font-display font-bold text-heritage-50">{t("configure")}</h2>
+      <h2 className="text-xl font-display font-bold text-brand-900">{t("configure")}</h2>
 
       {isDimensional && (
         <div>
@@ -215,14 +225,31 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
         onUpload={handleUpload}
         totalPrice={totalPrice}
         onAddToCart={handleAddToCart}
-        productName={locale === "ar" ? product.nameAr : product.nameEn}
+        productName={productDisplayName}
         productSlug={product.slug}
         pricingCategory={product.pricingCategory}
         configurationSummary={
-          isDimensional
-            ? `${width}×${height} cm · ${quantity} ${isAr ? "قطعة" : "pcs"}`
-            : `${quantity} ${isAr ? "قطعة" : "pcs"}`
+          designWidthCm && designHeightCm
+            ? `${designWidthCm}×${designHeightCm} cm · ${quantity} ${isAr ? "قطعة" : "pcs"}`
+            : isDimensional
+              ? `${width}×${height} cm · ${quantity} ${isAr ? "قطعة" : "pcs"}`
+              : `${quantity} ${isAr ? "قطعة" : "pcs"}`
         }
+        configurationState={{
+          category: product.pricingCategory,
+          productSlug: product.slug,
+          productName: productDisplayName,
+          pricingType: product.pricingType,
+          minWidth: product.minWidth,
+          maxWidth: product.maxWidth,
+          minHeight: product.minHeight,
+          maxHeight: product.maxHeight,
+          width: designWidthCm,
+          height: designHeightCm,
+          widthCm: designWidthCm,
+          heightCm: designHeightCm,
+          quantity,
+        }}
         onDesignFromAi={setDesignFromUrl}
       />
     </div>

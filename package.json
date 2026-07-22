@@ -18,6 +18,7 @@
     "db:seed": "tsx prisma/seed.ts",
     "db:import": "npm run db:export && npm run db:catalog && npm run db:push && npm run db:seed",
     "images:download": "node scripts/download-product-images.mjs",
+    "images:generate": "node scripts/generate-product-images.mjs",
     "postinstall": "prisma generate"
   },
   "dependencies": {

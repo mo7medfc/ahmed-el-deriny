@@ -52,6 +52,7 @@ next-env.d.ts
 /public/uploads/*
 !/public/uploads/.gitkeep
 
-# large local media (not for repo)
-*.mp4
+# large local source media in project root only (site videos live in public/videos/)
+استخد_*.mp4
 ChatGPT*.png
+.env*

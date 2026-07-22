@@ -27,6 +27,29 @@
       "orders": "Orders Completed"
     }
   },
+  "slider": {
+    "badge": "Featured Products",
+    "title": "Ahmed El-Deriny Printing",
+    "subtitle": "Discover our finest print products — professional quality since 1918",
+    "cta": "Order Now"
+  },
+  "intro": {
+    "badge": "Our Story",
+    "title": "The Edifice of Printing",
+    "subtitle": "Over a century of craftsmanship and quality in Egyptian printing",
+    "since": "Est. 1918",
+    "heritageLine": "Ahmed El-Deriny Printing",
+    "tagline": "Egyptian Printing Heritage",
+    "description": "For over a century we have carried the banner of quality and craftsmanship. Upload your design, set dimensions, and calculate price instantly.",
+    "cta": "Browse Products",
+    "videoLabel": "Print House Tour",
+    "stats": {
+      "clients": "Happy Clients",
+      "products": "Products Available",
+      "since": "Est. Year",
+      "orders": "Orders Completed"
+    }
+  },
   "features": {
     "badge": "Our Legacy",
     "title": "Why Ahmed El-Deriny?",

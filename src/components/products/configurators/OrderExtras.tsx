@@ -5,7 +5,8 @@ import { useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/utils";
 import { Upload, Check, ShoppingCart, Sparkles } from "lucide-react";
-import { DesignChatPanel } from "./DesignChatPanel";
+import { DesignStudioPanel } from "./DesignStudioPanel";
+import type { DesignConfigurationState } from "@/lib/ai/design-studio";
 import { cn } from "@/lib/utils";
 
 export function useDesignUpload(isAr: boolean) {
@@ -58,6 +59,7 @@ export function OrderExtras({
   productSlug,
   pricingCategory,
   configurationSummary,
+  configurationState,
   onDesignFromAi,
 }: {
   locale: string;
@@ -74,12 +76,13 @@ export function OrderExtras({
   productSlug?: string;
   pricingCategory?: string | null;
   configurationSummary?: string;
+  configurationState?: DesignConfigurationState;
   onDesignFromAi?: (url: string, filename: string) => void;
 }) {
   const router = useRouter();
   const isAr = locale === "ar";
   const [added, setAdded] = useState(false);
-  const [designMode, setDesignMode] = useState<DesignMode>("upload");
+  const [designMode, setDesignMode] = useState<DesignMode>("ai");
   const showAiStudio = Boolean(productName && productSlug && onDesignFromAi);
 
   const add = () => {
@@ -127,12 +130,13 @@ export function OrderExtras({
         )}
 
         {designMode === "ai" && showAiStudio ? (
-          <DesignChatPanel
+          <DesignStudioPanel
             locale={locale}
             productName={productName!}
             productSlug={productSlug!}
             pricingCategory={pricingCategory}
             configurationSummary={configurationSummary}
+            configurationState={configurationState}
             onDesignReady={onDesignFromAi!}
             onBriefChange={onNotesChange}
           />
@@ -203,7 +207,7 @@ export function ConfiguratorShell({
 }) {
   return (
     <div className="heritage-card rounded-sm p-6 lg:p-8 space-y-6">
-      <h2 className="text-xl font-display font-bold text-heritage-50">{title}</h2>
+      <h2 className="text-xl font-display font-bold text-brand-900">{title}</h2>
       {children}
     </div>
   );
@@ -214,5 +218,5 @@ export function selectClassName() {
 }
 
 export function sectionTitle(text: string) {
-  return <h3 className="text-sm font-bold text-gold-400/90">{text}</h3>;
+  return <h3 className="text-sm font-bold text-brand-700">{text}</h3>;
 }

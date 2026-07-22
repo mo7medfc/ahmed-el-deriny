@@ -1,0 +1,20 @@
+# Keep Vercel uploads small (CLI deploy)
+.next
+out
+node_modules
+.git
+.vercel
+*.db
+*.db-journal
+prisma/pages.db
+prisma/dev.db
+prisma/vercel.db
+public/uploads/*
+!public/uploads/.gitkeep
+استخد_*.mp4
+ChatGPT*.png
+src/app/_api_pages_build_bak
+src/middleware.ts.pages-build-bak
+agent-transcripts
+*.pack
+*.pack.gz

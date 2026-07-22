@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
         images: {
           remotePatterns: [],
         },
+        // Include seeded SQLite so Vercel serverless can copy it to /tmp at runtime
+        outputFileTracingIncludes: {
+          "/**": ["./prisma/vercel.db", "./prisma/dev.db"],
+        },
       }),
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,

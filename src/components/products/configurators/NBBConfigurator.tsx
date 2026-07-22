@@ -223,6 +223,15 @@ export function NBBConfigurator({
         productSlug={product.slug}
         pricingCategory="notebooks_books_booklets"
         configurationSummary={calc ? formatNbbSummary(locale, { mainType, coverType, widthCm: width, heightCm: height, quantity, finishingType: finishing }) : undefined}
+        configurationState={calc ? {
+          widthCm: width,
+          heightCm: height,
+          quantity,
+          variant: mainType,
+          variantLabel: NBB_MAIN_TYPES.find((t) => t.id === mainType)?.nameAr,
+          band: coverType,
+          bandLabel: coverType === "soft" ? (isAr ? "غلاف ناعم" : "Soft cover") : (isAr ? "غلاف صلب" : "Hard cover"),
+        } : undefined}
         onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>

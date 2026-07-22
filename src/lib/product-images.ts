@@ -1,3 +1,7 @@
+/**
+ * Product image resolver — maps each product to a photorealistic montage photo.
+ * Images generated via: npm run images:generate (GPT Image 2)
+ */
 import { publicPath } from "./public-path";
 
 const BASE = publicPath("/images/products");
@@ -239,4 +243,4 @@ export function getProductImageAlt(slug: string, locale: string) {
 export function getCategoryImage(categorySlug: string): string {
   return categoryImages[categorySlug] || DEFAULT_IMAGE;
 }
-
+

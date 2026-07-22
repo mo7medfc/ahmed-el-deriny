@@ -6,6 +6,7 @@ import {
   type DesignImageSize,
   type DesignProductType,
 } from "@/lib/ai/design-prompts";
+import { getChoicesModel } from "@/lib/ai/openai-models";
 
 const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
 
@@ -85,7 +86,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_CHAT_MODEL || "gpt-4o",
+        model: getChoicesModel(),
         temperature: 0.65,
         response_format: { type: "json_object" },
         messages: openaiMessages,

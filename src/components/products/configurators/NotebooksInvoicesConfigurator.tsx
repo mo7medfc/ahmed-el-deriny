@@ -190,6 +190,14 @@ export function NotebooksInvoicesConfigurator({
         productSlug={product.slug}
         pricingCategory="notebooks_invoices"
         configurationSummary={result ? formatNiSummary(locale, { band: effectiveBand, widthCm: width, heightCm: height, notebooks, internalPages }) : undefined}
+        configurationState={result ? {
+          widthCm: width,
+          heightCm: height,
+          quantity: notebooks,
+          band: effectiveBand,
+          bandLabel: NI_BANDS.find((b) => b.id === effectiveBand)?.nameAr,
+          variantLabel: `${internalPages} ${isAr ? "صفحة" : "pages"}`,
+        } : undefined}
         onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>

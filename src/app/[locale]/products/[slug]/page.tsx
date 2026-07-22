@@ -49,17 +49,17 @@ export default async function ProductDetailPage({
         <div className="grid lg:grid-cols-2 gap-10">
           <div>
             <span className="heritage-badge mb-4">{currentLocale === "ar" ? "منذ 1918" : "Since 1918"}</span>
-            <p className="text-gold-400 text-sm font-medium mb-2 tracking-wide uppercase">
+            <p className="text-brand-600 text-sm font-medium mb-2 tracking-wide uppercase">
               {currentLocale === "ar" ? product.category.nameAr : product.category.nameEn}
             </p>
-            <h1 className="font-display text-3xl sm:text-4xl font-bold text-heritage-50 mb-4">
+            <h1 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 mb-4">
               {currentLocale === "ar" ? product.nameAr : product.nameEn}
             </h1>
-            <p className="text-heritage-200/65 leading-relaxed mb-8">
+            <p className="text-brand-700/70 leading-relaxed mb-8">
               {currentLocale === "ar" ? product.descriptionAr : product.descriptionEn}
             </p>
 
-            <div className="relative h-72 sm:h-96 rounded-sm overflow-hidden border border-gold-500/20 shadow-2xl shadow-black/40">
+            <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden border border-brand-200 shadow-lg">
               <Image
                   src={image}
                   alt={imageAlt}

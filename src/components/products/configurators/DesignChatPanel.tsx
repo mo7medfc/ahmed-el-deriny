@@ -129,8 +129,15 @@ export function DesignChatPanel({
       const imageUrl = data.dataUrl || data.url;
       setPreviewUrl(imageUrl);
       onDesignReady(imageUrl, data.filename || "ai-design.png");
-    } catch {
-      setError(isAr ? "فشل إنشاء التصميم، حاول مرة أخرى" : "Design generation failed, try again");
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "";
+      setError(
+        msg && msg !== "generate failed"
+          ? msg
+          : isAr
+            ? "فشل إنشاء التصميم، حاول مرة أخرى"
+            : "Design generation failed, try again"
+      );
     } finally {
       setGenerating(false);
     }

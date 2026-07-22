@@ -200,6 +200,16 @@ export function DafaterConfigurator({
         productSlug={product.slug}
         pricingCategory="dafater"
         configurationSummary={result ? formatDafaterSummary(locale, { type, widthCm: width, heightCm: height, quantity, internalSheets: sheets }) : undefined}
+        configurationState={result ? {
+          category: "dafater",
+          productSlug: product.slug,
+          productName: isAr ? product.nameAr : product.nameEn,
+          widthCm: width,
+          heightCm: height,
+          quantity,
+          variant: type,
+          variantLabel: DAFATER_TYPES.find((t) => t.id === type)?.nameAr,
+        } : undefined}
         onDesignFromAi={setDesignFromUrl}
       />
     </ConfiguratorShell>

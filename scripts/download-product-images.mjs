@@ -52,25 +52,26 @@ const DOWNLOADS = {
   "kraft-bags.jpg":
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bag%2C_shopping_%28AM_2015.37.2-4%29.jpg/960px-Bag%2C_shopping_%28AM_2015.37.2-4%29.jpg",
   // Curated Unsplash — verified outdoor banner + vinyl rolls in print shop
-  "flex-banner.jpg":
-    "https://images.unsplash.com/photo-1611532736597-de2d996a877f?w=1200&q=80",
+  // outdoor / flex banner — fallback alias from vinyl-banner if download fails
+  "outdoor-banner-src.jpg":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Plotter_A0_nouvelle_g%C3%A9n%C3%A9ration_%282020%29.jpg/1280px-Plotter_A0_nouvelle_g%C3%A9n%C3%A9ration_%282020%29.jpg",
   "vinyl-banner.jpg":
     "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
 };
 
 const ALIASES = [
-  ["flex-banner.jpg", "outdoor-banner.jpg"],
-  ["flex-banner.jpg", "vinyl-flex.jpg"],
-  ["flex-banner.jpg", "banners.jpg"],
-  ["vinyl-banner.jpg", "vinyl-roll.jpg"],
-  ["roll-up.jpg", "rollup-85x200.jpg"],
+  ["outdoor-banner-src.jpg", "outdoor-banner.jpg"],
+  ["outdoor-banner-src.jpg", "flex-banner.jpg"],
+  ["outdoor-banner-src.jpg", "banners.jpg"],
+  ["vinyl-banner.jpg", "vinyl-flex.jpg"],
   ["rollup-100x200.jpg", "roll-ups.jpg"],
-  ["poster-a2.jpg", "indoor-print.jpg"],
-  ["poster-a2.jpg", "posters.jpg"],
-  ["poster-a2.jpg", "tableaux.jpg"],
-  ["flyer-a5.jpg", "brochures.jpg"],
-  ["flyer-a5.jpg", "flyers.jpg"],
-  ["flyer-a5.jpg", "catalogs.jpg"],
+  ["lamination.jpg", "indoor-print.jpg"],
+  ["lamination.jpg", "posters.jpg"],
+  ["lamination.jpg", "tableaux.jpg"],
+  ["business-cards.jpg", "brochures.jpg"],
+  ["business-cards.jpg", "flyers.jpg"],
+  ["notebooks.jpg", "catalogs.jpg"],
+  ["roll-up.jpg", "rollup-85x200.jpg"],
   ["dtf-tshirt.jpg", "tshirt.jpg"],
   ["safety-vest.jpg", "safety-printing.jpg"],
   ["business-cards.jpg", "business-card.jpg"],

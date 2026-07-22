@@ -60,8 +60,20 @@ try {
   run("node scripts/export-static-pricing.mjs");
   run("npx next build");
 
+  const heroSrc = path.join(root, "public", "videos", "hero-intro.mp4");
+  const heroOut = path.join(root, "out", "videos", "hero-intro.mp4");
+  if (fs.existsSync(heroSrc)) {
+    fs.mkdirSync(path.dirname(heroOut), { recursive: true });
+    fs.copyFileSync(heroSrc, heroOut);
+    console.log("✓ Hero video copied to out/videos/hero-intro.mp4");
+  } else {
+    console.warn("⚠ Missing public/videos/hero-intro.mp4 — hero video will not show on Pages");
+  }
+
   const noJekyll = path.join(root, "out", ".nojekyll");
   fs.writeFileSync(noJekyll, "");
+  // Override repo .gitignore on gh-pages so *.mp4 video assets are included
+  fs.writeFileSync(path.join(root, "out", ".gitignore"), "# deploy all static assets\n");
   console.log("\n✓ GitHub Pages build complete → out/\n");
 } finally {
   if (apiHidden) restoreDir(apiPath, apiBackup);
