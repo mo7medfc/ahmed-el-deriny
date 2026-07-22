@@ -61,7 +61,7 @@ function ImageLightbox({
       <button
         type="button"
         onClick={onClose}
-        className="absolute top-4 end-4 p-2 rounded-full bg-heritage-900/80 text-heritage-100 hover:bg-heritage-800"
+        className="absolute top-4 end-4 p-2 rounded-full bg-brand-50 text-brand-800 hover:bg-brand-100"
         aria-label={isAr ? "إغلاق" : "Close"}
       >
         <X className="w-5 h-5" />
@@ -75,7 +75,7 @@ function ImageLightbox({
           unoptimized
         />
       </div>
-      <p className="absolute bottom-4 text-xs text-heritage-200/60">
+      <p className="absolute bottom-4 text-xs text-brand-500">
         {isAr ? "اضغط خارج الصورة للإغلاق" : "Click outside to close"}
       </p>
     </div>
@@ -85,10 +85,10 @@ function ImageLightbox({
 function AssistantBubble({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex gap-3">
-      <div className="shrink-0 w-8 h-8 rounded-full bg-gold-500/15 border border-gold-500/30 flex items-center justify-center">
+      <div className="shrink-0 w-8 h-8 rounded-full bg-gold-500/15 border border-brand-300 flex items-center justify-center">
         <Bot className="w-4 h-4 text-gold-400" />
       </div>
-      <div className="flex-1 p-4 rounded-sm border border-gold-500/20 bg-heritage-900/80 border-r-4 border-r-gold-500/50">
+      <div className="flex-1 p-4 rounded-sm border border-brand-200 bg-brand-50 border-r-4 border-r-gold-500/50">
         {children}
       </div>
     </div>
@@ -145,7 +145,7 @@ export function DesignStudioPanel({
 
   if (isStaticHosting()) {
     return (
-      <p className="text-sm text-heritage-200/50 p-4 border border-gold-500/10 rounded-sm">
+      <p className="text-sm text-brand-500 p-4 border border-brand-200 rounded-sm">
         {isAr
           ? "استوديو التصميم متاح على النسخة الكاملة من الموقع."
           : "Design studio is available on the full site version."}
@@ -446,7 +446,7 @@ export function DesignStudioPanel({
                 "relative rounded-sm overflow-hidden border-2 transition-all group text-start",
                 selectedIndex === i
                   ? "border-gold-500 shadow-lg shadow-gold-500/20"
-                  : "border-gold-500/20 hover:border-gold-500/50"
+                  : "border-brand-200 hover:border-gold-500/50"
               )}
             >
               <div
@@ -461,8 +461,8 @@ export function DesignStudioPanel({
                   <ZoomIn className="w-8 h-8 text-white drop-shadow" />
                 </div>
               </div>
-              <div className="p-2 flex items-center justify-between bg-heritage-950/80">
-                <span className="text-xs text-heritage-200">
+              <div className="p-2 flex items-center justify-between bg-brand-50/80">
+                <span className="text-xs text-brand-700">
                   {isAr ? `تصميم ${i + 1}` : `Design ${i + 1}`}
                   {i === 0 ? (isAr ? " — كلاسيكي" : " — Classic") : isAr ? " — عصري" : " — Modern"}
                 </span>
@@ -483,12 +483,12 @@ export function DesignStudioPanel({
               : "Use selected design"}
         </Button>
 
-        <div className="p-4 rounded-sm border border-gold-500/20 bg-heritage-950/50 space-y-3">
+        <div className="p-4 rounded-sm border border-brand-200 bg-brand-50 space-y-3">
           <div className="flex items-center gap-2 text-gold-400">
             <Pencil className="w-4 h-4" />
             <p className="text-sm font-medium">{isAr ? "عدّل التصميم" : "Edit design"}</p>
           </div>
-          <p className="text-xs text-heritage-200/60">
+          <p className="text-xs text-brand-500">
             {isAr
               ? "اكتب التعديل المطلوب — مثال: غيّر اللون للأزرق، كبّر الخط، أضف إطار مزخرف"
               : "Describe changes — e.g. change color to blue, bigger font, add ornate border"}
@@ -498,7 +498,7 @@ export function DesignStudioPanel({
             onChange={(e) => setEditInstructions(e.target.value)}
             rows={2}
             placeholder={isAr ? "صف التعديل..." : "Describe edit..."}
-            className="w-full px-3 py-2 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 text-sm resize-none outline-none focus:border-gold-500/40"
+            className="w-full px-3 py-2 rounded-sm bg-white border border-brand-200 text-brand-900 text-sm resize-none outline-none focus:border-gold-500/40"
           />
           <Button
             variant="outline"
@@ -541,14 +541,14 @@ export function DesignStudioPanel({
         <p className="text-sm font-medium">{isAr ? "استوديو التصميم" : "Design Studio"}</p>
       </div>
 
-      <div className="p-3 rounded-sm border border-gold-500/20 bg-heritage-950/50 space-y-1">
+      <div className="p-3 rounded-sm border border-brand-200 bg-brand-50 space-y-1">
         <div className="flex items-center gap-2 text-xs text-gold-400/90">
           <Package className="w-3.5 h-3.5" />
           {isAr ? "المنتج المختار" : "Selected product"}
         </div>
-        <p className="text-sm text-heritage-100 font-medium">{productName}</p>
+        <p className="text-sm text-brand-800 font-medium">{productName}</p>
         {configurationSummary && (
-          <p className="text-xs text-heritage-200/70">{configurationSummary}</p>
+          <p className="text-xs text-brand-600">{configurationSummary}</p>
         )}
         {dims.widthCm && dims.heightCm && (
           <p className="text-xs text-gold-400/70">
@@ -576,7 +576,7 @@ export function DesignStudioPanel({
       {history.length > 0 && (
         <div className="space-y-1 max-h-24 overflow-y-auto">
           {history.map((h, i) => (
-            <p key={i} className="text-xs text-heritage-200/50 text-end">
+            <p key={i} className="text-xs text-brand-500 text-end">
               ✓ {h.label}
             </p>
           ))}
@@ -586,7 +586,7 @@ export function DesignStudioPanel({
       {phase === "intro" && (
         <>
           <AssistantBubble>
-            <p className="text-sm text-heritage-100">
+            <p className="text-sm text-brand-800">
               {dims.widthCm && dims.heightCm
                 ? isAr
                   ? `المقاس ${dims.widthCm} × ${dims.heightCm} سم محدد من اختيارك. وصّف التصميم اللي عايزه (النص، الألوان، الأسلوب) — مش محتاج تذكر المقاس تاني.`
@@ -606,7 +606,7 @@ export function DesignStudioPanel({
       {phase === "describe" && (
         <>
           <AssistantBubble>
-            <p className="text-sm text-heritage-100">
+            <p className="text-sm text-brand-800">
               {dims.widthCm && dims.heightCm
                 ? isAr
                   ? `وصّف التصميم على مقاس ${dims.widthCm}×${dims.heightCm} سم — مثال: بانر عصري لمطعم، أو شعار وعنوان واضح`
@@ -625,7 +625,7 @@ export function DesignStudioPanel({
                 ? "اكتب وصف التصميم هنا..."
                 : "Write your design description here..."
             }
-            className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 outline-none text-sm resize-none"
+            className="w-full px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 placeholder:text-brand-400 focus:border-gold-500/40 outline-none text-sm resize-none"
           />
           <div className="flex gap-2">
             <Button onClick={submitDescription} disabled={loading || generating} className="flex-1 gap-2" size="lg">
@@ -654,7 +654,7 @@ export function DesignStudioPanel({
 
       {(phase === "question" || phase === "ready") && (current || readyPayload) && (
         <AssistantBubble>
-          <p className="text-sm text-heritage-100 leading-relaxed">
+          <p className="text-sm text-brand-800 leading-relaxed">
             {phase === "ready"
               ? readyPayload?.message ||
                 (isAr ? "جاهز لإنشاء التصميم!" : "Ready to generate!")
@@ -672,7 +672,7 @@ export function DesignStudioPanel({
                 type="button"
                 disabled={loading || generating}
                 onClick={() => pickOption(opt.id, isAr ? opt.labelAr : opt.labelEn)}
-                className="px-4 py-3 rounded-sm text-sm font-medium border border-gold-500/20 bg-heritage-900/60 text-heritage-100 hover:border-gold-500/50 hover:bg-gold-500/10 transition-all text-start disabled:opacity-50"
+                className="px-4 py-3 rounded-sm text-sm font-medium border border-brand-200 bg-brand-50 text-brand-800 hover:border-gold-500/50 hover:bg-gold-500/10 transition-all text-start disabled:opacity-50"
               >
                 {isAr ? opt.labelAr : opt.labelEn}
               </button>
@@ -703,7 +703,7 @@ export function DesignStudioPanel({
             onChange={(e) => setTextDraft(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && submitTextAnswer()}
             placeholder={isAr ? current.placeholderAr : current.placeholderEn}
-            className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 outline-none text-sm"
+            className="w-full px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 placeholder:text-brand-400 focus:border-gold-500/40 outline-none text-sm"
             autoFocus
           />
           <div className="flex gap-2">
@@ -732,7 +732,7 @@ export function DesignStudioPanel({
       )}
 
       {loading && phase === "question" && !current?.options.length && current?.stepType !== "text" && (
-        <div className="flex items-center gap-2 text-sm text-heritage-200/60">
+        <div className="flex items-center gap-2 text-sm text-brand-500">
           <Loader2 className="w-4 h-4 animate-spin" />
           {isAr ? "جاري تجهيز السؤال التالي..." : "Preparing next question..."}
         </div>
@@ -745,7 +745,7 @@ export function DesignStudioPanel({
           type="button"
           onClick={goBack}
           disabled={loading}
-          className="flex items-center gap-1 text-xs text-heritage-200/50 hover:text-gold-400 transition-colors disabled:opacity-40"
+          className="flex items-center gap-1 text-xs text-brand-500 hover:text-gold-400 transition-colors disabled:opacity-40"
         >
           <ChevronLeft className="w-3.5 h-3.5" />
           {isAr ? "رجوع" : "Back"}

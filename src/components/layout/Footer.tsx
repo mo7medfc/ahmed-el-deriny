@@ -24,7 +24,7 @@ export function Footer() {
             </Link>
             <p className="text-brand-600 text-sm font-display font-medium mb-1">{t("tagline")}</p>
             <p className="text-brand-500/70 text-xs tracking-[0.2em] uppercase mb-3">{t("since")}</p>
-            <p className="text-brand-800/55 text-sm leading-relaxed">
+            <p className="text-brand-700 text-sm leading-relaxed">
               {locale === "ar"
                 ? "مطابع أحمد الدريني — تراث طباعة مصري منذ 1918"
                 : "Ahmed El-Deriny Printing — Egyptian printing heritage since 1918"}
@@ -41,7 +41,7 @@ export function Footer() {
                 { href: "/contact", label: tNav("contact") },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-brand-700/60 hover:text-brand-600 text-sm transition-colors">
+                  <Link href={link.href} className="text-brand-700 hover:text-brand-600 text-sm transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -52,15 +52,15 @@ export function Footer() {
           <div>
             <h3 className="text-brand-900 font-display font-semibold mb-4">{t("contactUs")}</h3>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-brand-700/60 text-sm">
+              <li className="flex items-center gap-2 text-brand-700 text-sm">
                 <Phone className="w-4 h-4 text-brand-500 shrink-0" />
                 <span dir="ltr">+20 100 000 0000</span>
               </li>
-              <li className="flex items-center gap-2 text-brand-700/60 text-sm">
+              <li className="flex items-center gap-2 text-brand-700 text-sm">
                 <Mail className="w-4 h-4 text-brand-500 shrink-0" />
                 info@ahmedderiny.com
               </li>
-              <li className="flex items-start gap-2 text-brand-700/60 text-sm">
+              <li className="flex items-start gap-2 text-brand-700 text-sm">
                 <MapPin className="w-4 h-4 text-brand-500 shrink-0 mt-0.5" />
                 {locale === "ar" ? "القاهرة، مصر" : "Cairo, Egypt"}
               </li>
@@ -69,7 +69,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-brand-900 font-display font-semibold mb-4">{tContact("hours")}</h3>
-            <p className="text-brand-700/60 text-sm">{tContact("hoursValue")}</p>
+            <p className="text-brand-700 text-sm">{tContact("hoursValue")}</p>
           </div>
         </div>
 

@@ -63,7 +63,7 @@ export default function CartPage() {
                     </p>
                   )}
                   {item.designFileName && (
-                    <p className="text-xs text-dark-400 mt-1">📎 {item.designFileName}</p>
+                    <p className="text-xs text-brand-500 mt-1">📎 {item.designFileName}</p>
                   )}
                 </div>
                 <div className="text-end">

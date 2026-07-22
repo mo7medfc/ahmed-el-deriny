@@ -102,7 +102,7 @@ export function NotebooksInvoicesConfigurator({
   return (
     <ConfiguratorShell title={isAr ? "تخصيص الطلب" : "Configure order"}>
       <div>
-        <label className="block text-sm font-medium text-dark-200 mb-1">{isAr ? "النوع" : "Band"}</label>
+        <label className="block text-sm font-medium text-brand-700 mb-1">{isAr ? "النوع" : "Band"}</label>
         <select
           value={band}
           onChange={(e) => setBand(e.target.value as NiBand)}
@@ -160,13 +160,13 @@ export function NotebooksInvoicesConfigurator({
         </div>
       )}
 
-      <label className="flex items-center gap-2 text-sm text-heritage-100">
+      <label className="flex items-center gap-2 text-sm text-brand-800">
         <input type="checkbox" checked={serialEnabled} onChange={(e) => setSerialEnabled(e.target.checked)} className="accent-gold-500" />
         {isAr ? "تفعيل النمرة" : "Serial numbering"}
       </label>
 
       {result && (
-        <div className="text-sm space-y-1 p-3 rounded-lg bg-heritage-900/60 text-heritage-200">
+        <div className="text-sm space-y-1 p-3 rounded-lg bg-brand-50 text-brand-700">
           <div className="flex justify-between"><span>{isAr ? "ورق" : "Paper"}</span><span>{result.paperCost.toFixed(2)}</span></div>
           {"printingCost" in result && (
             <div className="flex justify-between"><span>{isAr ? "طباعة" : "Print"}</span><span>{(result.printingCost ?? 0).toFixed(2)}</span></div>

@@ -41,7 +41,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <LocaleHtmlAttributes>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen storefront-ui">{children}</main>
         <Footer />
       </LocaleHtmlAttributes>
     </NextIntlClientProvider>

@@ -106,14 +106,14 @@ export function DafaterConfigurator({
   return (
     <ConfiguratorShell title={isAr ? "تخصيص الطلب" : "Configure order"}>
       <div>
-        <label className="block text-sm font-medium text-dark-200 mb-2">{isAr ? "نوع الدفتر" : "Notebook type"}</label>
+        <label className="block text-sm font-medium text-brand-700 mb-2">{isAr ? "نوع الدفتر" : "Notebook type"}</label>
         <div className="grid grid-cols-2 gap-2">
           {DAFATER_TYPES.map((t) => (
             <button
               key={t.id}
               type="button"
               onClick={() => setType(t.id)}
-              className={`p-3 rounded-lg border text-sm font-bold transition ${type === t.id ? "border-gold-500 bg-gold-500/20 text-gold-300" : "border-dark-600 text-dark-300"}`}
+              className={`p-3 rounded-lg border text-sm font-bold transition ${type === t.id ? "border-gold-500 bg-gold-500/20 text-gold-300" : "border-brand-200 text-brand-600"}`}
             >
               {isAr ? t.nameAr : t.nameEn}
             </button>
@@ -135,7 +135,7 @@ export function DafaterConfigurator({
       </div>
 
       {type === "carbon" && (
-        <div className="grid grid-cols-2 gap-3 p-4 rounded-lg bg-heritage-900/50 border border-gold-500/10">
+        <div className="grid grid-cols-2 gap-3 p-4 rounded-lg bg-brand-50 border border-brand-200">
           {sectionTitle(isAr ? "إعدادات المكربن" : "Carbon settings")}
           <select value={totalCopies} onChange={(e) => setTotalCopies(Number(e.target.value))} className={selectClassName()}>
             {DAFATER_CARBON_COPIES.map((c) => (
@@ -150,7 +150,7 @@ export function DafaterConfigurator({
       )}
 
       {(type === "normal" || type === "rashta") && (
-        <div className="p-4 rounded-lg bg-heritage-900/50 border border-gold-500/10 space-y-2">
+        <div className="p-4 rounded-lg bg-brand-50 border border-brand-200 space-y-2">
           {sectionTitle(isAr ? "نوع الورق" : "Paper weight")}
           <select value={paperWeight} onChange={(e) => setPaperWeight(e.target.value)} className={selectClassName()}>
             {PAPER_WEIGHTS.map((p) => (
@@ -161,7 +161,7 @@ export function DafaterConfigurator({
       )}
 
       {type === "offset" && (
-        <div className="p-4 rounded-lg bg-heritage-900/50 border border-gold-500/10 space-y-2">
+        <div className="p-4 rounded-lg bg-brand-50 border border-brand-200 space-y-2">
           {sectionTitle(isAr ? "ورق أوفست 70×100" : "Offset paper")}
           <select value={paperWeight} onChange={(e) => setPaperWeight(e.target.value)} className={selectClassName()}>
             {PAPER_WEIGHTS.map((p) => (
@@ -172,14 +172,14 @@ export function DafaterConfigurator({
       )}
 
       {type !== "offset" && (
-        <label className="flex items-center gap-2 text-sm text-heritage-100">
+        <label className="flex items-center gap-2 text-sm text-brand-800">
           <input type="checkbox" checked={serialEnabled} onChange={(e) => setSerialEnabled(e.target.checked)} className="accent-gold-500" />
           {isAr ? "تفعيل النمرة (سيريال)" : "Serial numbering"}
         </label>
       )}
 
       {result && (
-        <div className="text-sm space-y-1 p-4 rounded-lg bg-heritage-900/60 border border-gold-500/15 text-heritage-200">
+        <div className="text-sm space-y-1 p-4 rounded-lg bg-brand-50 border border-brand-200 text-brand-700">
           <div className="flex justify-between"><span>{isAr ? "التكلفة" : "Cost"}</span><span>{result.totalCost.toFixed(2)}</span></div>
           <div className="flex justify-between"><span>{isAr ? "نسبة الربح" : "Profit"}</span><span>{result.percent.toFixed(1)}%</span></div>
         </div>

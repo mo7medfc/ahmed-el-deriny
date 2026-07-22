@@ -111,7 +111,7 @@ export function NBBConfigurator({
     <ConfiguratorShell title={isAr ? "تخصيص الطلب" : "Configure order"}>
       <div className="grid sm:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs text-dark-400 mb-1">{isAr ? "النوع" : "Type"}</label>
+          <label className="block text-xs text-brand-500 mb-1">{isAr ? "النوع" : "Type"}</label>
           <select value={mainType} onChange={(e) => setMainType(e.target.value)} className={selectClassName()}>
             {NBB_MAIN_TYPES.map((t) => (
               <option key={t.id} value={t.id}>{isAr ? t.nameAr : t.nameEn}</option>
@@ -119,7 +119,7 @@ export function NBBConfigurator({
           </select>
         </div>
         <div>
-          <label className="block text-xs text-dark-400 mb-1">{isAr ? "الغلاف" : "Cover"}</label>
+          <label className="block text-xs text-brand-500 mb-1">{isAr ? "الغلاف" : "Cover"}</label>
           <select value={coverType} onChange={(e) => setCoverType(e.target.value as "soft" | "hard")} className={selectClassName()}>
             {NBB_COVER_TYPES.map((t) => (
               <option key={t.id} value={t.id}>{isAr ? t.nameAr : t.nameEn}</option>
@@ -134,7 +134,7 @@ export function NBBConfigurator({
         <Input label={isAr ? "الكمية" : "Qty"} type="number" min={1} value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} />
       </div>
 
-      <div className="space-y-2 p-4 rounded-lg border border-gold-500/10 bg-heritage-900/40">
+      <div className="space-y-2 p-4 rounded-lg border border-brand-200 bg-brand-50">
         {sectionTitle(isAr ? "الغلاف (ديجيتال 32×47)" : "Cover")}
         <div className="grid sm:grid-cols-3 gap-2">
           {coverType === "soft" && (
@@ -156,7 +156,7 @@ export function NBBConfigurator({
         </div>
       </div>
 
-      <div className="space-y-3 p-4 rounded-lg border border-gold-500/10 bg-heritage-900/40">
+      <div className="space-y-3 p-4 rounded-lg border border-brand-200 bg-brand-50">
         <div className="flex justify-between items-center">
           {sectionTitle(isAr ? "الداخلي" : "Inner")}
           <Button type="button" size="sm" variant="outline" onClick={() => setInnerEntries((p) => [...p, { sheetsPerNotebook: 50, paperTypeId: "60g", printType: "ink", inkColor: "one", sides: "single", designMode: "fixed" }])}>
@@ -191,7 +191,7 @@ export function NBBConfigurator({
       </div>
 
       <div>
-        <label className="block text-xs text-dark-400 mb-1">{isAr ? "التشطيب" : "Finishing"}</label>
+        <label className="block text-xs text-brand-500 mb-1">{isAr ? "التشطيب" : "Finishing"}</label>
         <select value={finishing} onChange={(e) => setFinishing(e.target.value)} className={selectClassName()}>
           {NBB_FINISHING_TYPES.map((f) => (
             <option key={f.id} value={f.id}>{f.nameAr}</option>
@@ -200,7 +200,7 @@ export function NBBConfigurator({
       </div>
 
       {calc && (
-        <div className="text-sm space-y-1 p-3 rounded-lg bg-heritage-900/60 text-heritage-200">
+        <div className="text-sm space-y-1 p-3 rounded-lg bg-brand-50 text-brand-700">
           <div className="flex justify-between"><span>{isAr ? "غلاف" : "Cover"}</span><span>{calc.totals.coverCost.toFixed(2)}</span></div>
           <div className="flex justify-between"><span>{isAr ? "داخلي" : "Inner"}</span><span>{calc.totals.innerCost.toFixed(2)}</span></div>
           <div className="flex justify-between"><span>{isAr ? "تشطيب" : "Finish"}</span><span>{calc.totals.finishingCost.toFixed(2)}</span></div>

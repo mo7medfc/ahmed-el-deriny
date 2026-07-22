@@ -44,13 +44,13 @@ export function ProductSearch({ categories }: ProductSearchProps) {
   return (
     <div className="space-y-4">
       <form onSubmit={handleSearch} className="relative">
-        <Search className="absolute start-4 top-1/2 -translate-y-1/2 w-5 h-5 text-dark-400" />
+        <Search className="absolute start-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-500" />
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t("search")}
-          className="w-full ps-12 pe-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 transition-all"
+          className="w-full ps-12 pe-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 placeholder:text-brand-400 focus:border-gold-500/40 transition-all"
         />
       </form>
 
@@ -61,7 +61,7 @@ export function ProductSearch({ categories }: ProductSearchProps) {
             "px-4 py-2 rounded-full text-sm font-medium transition-all",
             !activeCategory
               ? "gradient-bg text-heritage-950"
-              : "bg-heritage-900 text-heritage-200/60 hover:text-gold-300 border border-gold-500/10"
+              : "bg-white text-brand-500 hover:text-gold-300 border border-brand-200"
           )}
         >
           {t("all")}
@@ -74,7 +74,7 @@ export function ProductSearch({ categories }: ProductSearchProps) {
               "px-4 py-2 rounded-full text-sm font-medium transition-all",
               activeCategory === cat.slug
                 ? "gradient-bg text-heritage-950"
-                : "bg-heritage-900 text-heritage-200/60 hover:text-gold-300 border border-gold-500/10"
+                : "bg-white text-brand-500 hover:text-gold-300 border border-brand-200"
             )}
           >
             {locale === "ar" ? cat.nameAr : cat.nameEn}

@@ -94,7 +94,7 @@ export function OrderExtras({
   return (
     <>
       <div>
-        <p className="text-sm font-medium text-dark-200 mb-3">
+        <p className="text-sm font-medium text-brand-700 mb-3">
           {isAr ? "التصميم" : "Design"}
         </p>
 
@@ -106,8 +106,8 @@ export function OrderExtras({
               className={cn(
                 "flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-sm text-sm font-medium transition-all border",
                 designMode === "upload"
-                  ? "border-gold-500/40 bg-gold-500/10 text-gold-300"
-                  : "border-gold-500/10 text-heritage-200/60 hover:border-gold-500/25"
+                  ? "border-brand-500 bg-brand-50 text-brand-800"
+                  : "border-brand-200 text-brand-600 hover:border-brand-400"
               )}
             >
               <Upload className="w-4 h-4" />
@@ -119,8 +119,8 @@ export function OrderExtras({
               className={cn(
                 "flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-sm text-sm font-medium transition-all border",
                 designMode === "ai"
-                  ? "border-gold-500/40 bg-gold-500/10 text-gold-300"
-                  : "border-gold-500/10 text-heritage-200/60 hover:border-gold-500/25"
+                  ? "border-brand-500 bg-brand-50 text-brand-800"
+                  : "border-brand-200 text-brand-600 hover:border-brand-400"
               )}
             >
               <Sparkles className="w-4 h-4" />
@@ -141,10 +141,10 @@ export function OrderExtras({
             onBriefChange={onNotesChange}
           />
         ) : (
-          <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-dark-600 rounded-xl cursor-pointer hover:border-brand-500/50 transition-colors">
+          <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-brand-200 rounded-xl cursor-pointer hover:border-brand-500/50 transition-colors">
             <input type="file" className="hidden" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.psd" onChange={onUpload} />
             {uploading ? (
-              <p className="text-dark-400 text-sm">{isAr ? "جاري الرفع..." : "Uploading..."}</p>
+              <p className="text-brand-500 text-sm">{isAr ? "جاري الرفع..." : "Uploading..."}</p>
             ) : designFile ? (
               <div className="flex items-center gap-2 text-brand-400">
                 <Check className="w-5 h-5" />
@@ -152,8 +152,8 @@ export function OrderExtras({
               </div>
             ) : (
               <>
-                <Upload className="w-8 h-8 text-dark-400 mb-2" />
-                <p className="text-sm text-dark-400">PDF, AI, EPS, PNG, JPG</p>
+                <Upload className="w-8 h-8 text-brand-500 mb-2" />
+                <p className="text-sm text-brand-500">PDF, AI, EPS, PNG, JPG</p>
               </>
             )}
           </label>
@@ -168,7 +168,7 @@ export function OrderExtras({
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-dark-200 mb-1.5">
+        <label className="block text-sm font-medium text-brand-700 mb-1.5">
           {isAr ? "ملاحظات إضافية" : "Notes"}
         </label>
         <textarea
@@ -176,12 +176,12 @@ export function OrderExtras({
           onChange={(e) => onNotesChange(e.target.value)}
           rows={3}
           placeholder={isAr ? "تفاصيل التصميم أو تعليمات الطباعة..." : "Design details or print instructions..."}
-          className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 resize-none"
+          className="w-full px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 placeholder:text-brand-400 focus:border-gold-500/40 resize-none"
         />
       </div>
 
-      <div className="flex items-center justify-between p-4 rounded-sm bg-heritage-900 border border-gold-500/20">
-        <span className="text-heritage-200 font-medium">{isAr ? "السعر الإجمالي" : "Total price"}</span>
+      <div className="flex items-center justify-between p-4 rounded-sm bg-white border border-brand-200">
+        <span className="text-brand-700 font-medium">{isAr ? "السعر الإجمالي" : "Total price"}</span>
         <span className="text-2xl font-bold gradient-text">{formatPrice(totalPrice, locale)}</span>
       </div>
 
@@ -214,7 +214,7 @@ export function ConfiguratorShell({
 }
 
 export function selectClassName() {
-  return "w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 focus:border-gold-500/40 outline-none";
+  return "w-full px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 focus:border-gold-500/40 outline-none";
 }
 
 export function sectionTitle(text: string) {

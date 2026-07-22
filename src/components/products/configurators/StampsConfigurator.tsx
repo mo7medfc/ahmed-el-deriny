@@ -175,13 +175,13 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
       </h2>
 
       <div>
-        <label className="block text-sm font-medium text-dark-200 mb-1.5">
+        <label className="block text-sm font-medium text-brand-700 mb-1.5">
           {isAr ? "النوع" : "Type"} <span className="text-red-400">*</span>
         </label>
         <select
           value={band}
           onChange={(e) => setBand(e.target.value as StampBand)}
-          className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 focus:border-gold-500/40 outline-none"
+          className="w-full px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 focus:border-gold-500/40 outline-none"
         >
           <option value="automatic_machine">{isAr ? "ماكينة أوتوماتيك" : "Automatic machine"}</option>
           <option value="wooden_handle">{isAr ? "مقبض خشبي" : "Wooden handle"}</option>
@@ -191,13 +191,13 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
 
       {band !== "cliche_only" && (
         <div>
-          <label className="block text-sm font-medium text-dark-200 mb-1.5">
+          <label className="block text-sm font-medium text-brand-700 mb-1.5">
             {isAr ? "المقاس" : "Size"} <span className="text-red-400">*</span>
           </label>
           <select
             value={sizeDocId}
             onChange={(e) => setSizeDocId(e.target.value)}
-            className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 focus:border-gold-500/40 outline-none"
+            className="w-full px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 focus:border-gold-500/40 outline-none"
           >
             {sizeOptions.map((s) => (
               <option key={s.docId} value={s.docId}>
@@ -210,7 +210,7 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
 
       {band !== "cliche_only" && (
         <div>
-          <p className="text-sm font-medium text-dark-200 mb-3">{isAr ? "الخيار" : "Variant"}</p>
+          <p className="text-sm font-medium text-brand-700 mb-3">{isAr ? "الخيار" : "Variant"}</p>
           <div className="flex flex-wrap gap-4">
             {(
               [
@@ -219,7 +219,7 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
                 { value: "serial", label: isAr ? "سيريال" : "Serial" },
               ] as const
             ).map((opt) => (
-              <label key={opt.value} className="flex items-center gap-2 cursor-pointer text-sm text-heritage-100">
+              <label key={opt.value} className="flex items-center gap-2 cursor-pointer text-sm text-brand-800">
                 <input
                   type="radio"
                   name="stampVariant"
@@ -237,13 +237,13 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
 
       {showInk && (
         <div>
-          <label className="block text-sm font-medium text-dark-200 mb-1.5">
+          <label className="block text-sm font-medium text-brand-700 mb-1.5">
             {isAr ? "لون الحبر" : "Ink color"}
           </label>
           <select
             value={inkColor}
             onChange={(e) => setInkColor(e.target.value as InkColor)}
-            className="w-full px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 focus:border-gold-500/40 outline-none"
+            className="w-full px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 focus:border-gold-500/40 outline-none"
           >
             <option value="black">{isAr ? "أسود" : "Black"}</option>
             <option value="red">{isAr ? "أحمر" : "Red"}</option>
@@ -254,7 +254,7 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
 
       {band === "cliche_only" && (
         <div>
-          <p className="text-sm font-medium text-dark-200 mb-3">
+          <p className="text-sm font-medium text-brand-700 mb-3">
             {isAr ? "الأبعاد (سم)" : "Dimensions (cm)"}
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -287,7 +287,7 @@ export function StampsConfigurator({ product }: StampsConfiguratorProps) {
       />
 
       {pricing.valid && (
-        <div className="rounded-sm bg-heritage-900 border border-gold-500/15 p-4 space-y-1 text-sm text-heritage-200">
+        <div className="rounded-sm bg-white border border-brand-200 p-4 space-y-1 text-sm text-brand-700">
           {band === "cliche_only" && "area" in pricing && typeof pricing.area === "number" && (
             <div className="flex justify-between">
               <span>{isAr ? "المساحة" : "Area"}</span>

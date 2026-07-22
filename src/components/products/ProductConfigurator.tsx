@@ -146,7 +146,7 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
 
       {isDimensional && (
         <div>
-          <p className="text-sm font-medium text-dark-200 mb-3">{t("dimensions")}</p>
+          <p className="text-sm font-medium text-brand-700 mb-3">{t("dimensions")}</p>
           <div className="grid grid-cols-2 gap-4">
             <Input
               label={t("width")}
@@ -165,7 +165,7 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
               onChange={(e) => setHeight(Number(e.target.value))}
             />
           </div>
-          <p className="text-xs text-dark-400 mt-2">
+          <p className="text-xs text-brand-500 mt-2">
             {t("minMax", { min: product.minWidth, max: product.maxWidth })}
           </p>
         </div>
@@ -181,7 +181,7 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
 
       {product.options.length > 0 && (
         <div>
-          <p className="text-sm font-medium text-dark-200 mb-3">{t("options")}</p>
+          <p className="text-sm font-medium text-brand-700 mb-3">{t("options")}</p>
           <div className="space-y-2">
             {product.options.map((option) => (
               <label
@@ -190,7 +190,7 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
                   "flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-all",
                   selectedOptions.includes(option.id)
                     ? "border-brand-500 bg-brand-500/10"
-                    : "border-dark-600 hover:border-dark-500"
+                    : "border-brand-200 hover:border-brand-300"
                 )}
               >
                 <div className="flex items-center gap-3">
@@ -200,7 +200,7 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
                     onChange={() => toggleOption(option.id)}
                     className="w-4 h-4 accent-brand-500"
                   />
-                  <span className="text-sm text-white">
+                  <span className="text-sm text-brand-900">
                     {locale === "ar" ? option.nameAr : option.nameEn}
                   </span>
                 </div>

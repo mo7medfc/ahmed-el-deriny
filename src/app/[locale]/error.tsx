@@ -24,7 +24,7 @@ export default function LocaleError({
       <h1 className="mb-3 text-2xl font-bold text-heritage-900">
         {isAr ? "تعذّر تحميل الصفحة" : "Page failed to load"}
       </h1>
-      <p className="mb-8 max-w-md text-dark-300">
+      <p className="mb-8 max-w-md text-brand-600">
         {isAr
           ? "حدث خطأ مؤقت. جرّب إعادة المحاولة أو العودة للرئيسية."
           : "A temporary error occurred. Try again or return home."}

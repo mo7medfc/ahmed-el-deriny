@@ -27,7 +27,7 @@ export default function CheckoutPage() {
   if (items.length === 0 && !success) {
     return (
       <div className="pt-28 pb-20 text-center">
-        <p className="text-dark-400">{tCart("empty")}</p>
+        <p className="text-brand-500">{tCart("empty")}</p>
         <Link href="/products" className="inline-block mt-4">
           <Button>{tCart("continueShopping")}</Button>
         </Link>
@@ -40,8 +40,8 @@ export default function CheckoutPage() {
       <div className="pt-28 pb-20 min-h-[60vh] flex items-center justify-center">
         <div className="text-center max-w-md">
           <CheckCircle className="w-16 h-16 text-brand-400 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-white mb-2">{t("success")}</h1>
-          <p className="text-dark-300 mb-4">{t("successDesc")}</p>
+          <h1 className="text-2xl font-bold text-brand-900 mb-2">{t("success")}</h1>
+          <p className="text-brand-600 mb-4">{t("successDesc")}</p>
           <p className="text-brand-400 font-bold text-lg mb-6">
             {t("orderNumber")}: {success.orderNumber}
           </p>
@@ -109,25 +109,25 @@ export default function CheckoutPage() {
   return (
     <div className="pt-28 pb-20">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-white mb-8">{t("title")}</h1>
+        <h1 className="text-3xl font-bold text-brand-900 mb-8">{t("title")}</h1>
 
         <div className="glass rounded-2xl p-6 mb-6">
-          <p className="text-dark-300 text-sm mb-2">{items.length} items</p>
+          <p className="text-brand-600 text-sm mb-2">{items.length} items</p>
           <p className="text-2xl font-bold gradient-text">{formatPrice(total, locale)}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 space-y-4">
-          <h2 className="text-lg font-semibold text-white mb-2">{t("customerInfo")}</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">{t("customerInfo")}</h2>
           <Input label={t("name")} value={name} onChange={(e) => setName(e.target.value)} required />
           <Input label={t("phone")} type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required dir="ltr" />
           <Input label={t("email")} type="email" value={email} onChange={(e) => setEmail(e.target.value)} dir="ltr" />
           <div>
-            <label className="block text-sm font-medium text-dark-200 mb-1.5">{t("notes")}</label>
+            <label className="block text-sm font-medium text-brand-700 mb-1.5">{t("notes")}</label>
             <textarea
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               rows={3}
-              className="w-full px-4 py-3 rounded-xl bg-dark-800 border border-dark-600 text-white placeholder:text-dark-400 focus:border-brand-500 transition-all resize-none"
+              className="w-full px-4 py-3 rounded-xl bg-white border border-brand-200 text-brand-900 placeholder:text-brand-400 focus:border-brand-500 transition-all resize-none"
             />
           </div>
           <Button type="submit" className="w-full" size="lg" disabled={submitting}>

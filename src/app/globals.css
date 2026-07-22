@@ -55,6 +55,9 @@ body {
   background-color: #ffffff;
   color: var(--color-brand-900);
   font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
   background-image:
     radial-gradient(ellipse at 10% 0%, color-mix(in srgb, var(--color-brand-100) 40%, transparent), transparent 55%),
     radial-gradient(ellipse at 90% 100%, color-mix(in srgb, var(--color-brand-50) 50%, transparent), transparent 55%);
@@ -67,6 +70,12 @@ body {
 
 .font-display {
   font-family: var(--font-display);
+}
+
+/* Arabic UI: Playfair has no Arabic glyphs — use Amiri/Cairo so text doesn't look broken */
+[dir="rtl"] .font-display,
+[dir="rtl"] .font-arabic {
+  font-family: var(--font-arabic);
 }
 
 .font-arabic {
@@ -213,6 +222,11 @@ body {
 
 input, textarea, select {
   outline: none;
+}
+
+/* Storefront default text — readable navy on white */
+.storefront-ui {
+  color: var(--color-brand-900);
 }
 
 ::-webkit-scrollbar {

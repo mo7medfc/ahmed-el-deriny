@@ -103,7 +103,7 @@ export function EnvelopesConfigurator({
   return (
     <ConfiguratorShell title={isAr ? "تخصيص الطلب" : "Configure order"}>
       <div>
-        <label className="block text-sm font-medium text-dark-200 mb-1">{isAr ? "مقاس الظرف" : "Envelope size"}</label>
+        <label className="block text-sm font-medium text-brand-700 mb-1">{isAr ? "مقاس الظرف" : "Envelope size"}</label>
         <select value={sizeId} onChange={(e) => setSizeId(e.target.value)} className={selectClassName()}>
           {ENVELOPE_PRODUCTS.map((p) => (
             <option key={p.id} value={p.id}>{isAr ? p.nameAr : p.nameEn}</option>
@@ -113,14 +113,14 @@ export function EnvelopesConfigurator({
 
       <div className="grid sm:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs text-dark-400 mb-1">{isAr ? "نوع الطباعة" : "Print type"}</label>
+          <label className="block text-xs text-brand-500 mb-1">{isAr ? "نوع الطباعة" : "Print type"}</label>
           <select value={printingType} onChange={(e) => setPrintingType(e.target.value as "offset" | "inkjet")} className={selectClassName()}>
             <option value="offset">{isAr ? `أوفست (أقل ${ENVELOPE_OFFSET_MIN})` : `Offset (min ${ENVELOPE_OFFSET_MIN})`}</option>
             {supportsInkjet && <option value="inkjet">{isAr ? "إنك جيت" : "Inkjet"}</option>}
           </select>
         </div>
         <div>
-          <label className="block text-xs text-dark-400 mb-1">{isAr ? "اللون" : "Color"}</label>
+          <label className="block text-xs text-brand-500 mb-1">{isAr ? "اللون" : "Color"}</label>
           <select value={colorOption} onChange={(e) => setColorOption(e.target.value as "one" | "full")} className={selectClassName()}>
             <option value="one">{isAr ? "لون واحد" : "One color"}</option>
             <option value="full">{isAr ? "4 ألوان" : "Full color"}</option>

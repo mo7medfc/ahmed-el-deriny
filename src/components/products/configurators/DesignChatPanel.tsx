@@ -50,7 +50,7 @@ export function DesignChatPanel({
 
   if (isStaticHosting()) {
     return (
-      <p className="text-sm text-heritage-200/50 p-4 border border-gold-500/10 rounded-sm">
+      <p className="text-sm text-brand-500 p-4 border border-brand-200 rounded-sm">
         {isAr
           ? "استوديو التصميم بالذكاء الاصطناعي متاح على النسخة الكاملة من الموقع."
           : "AI design studio is available on the full site version."}
@@ -164,7 +164,7 @@ export function DesignChatPanel({
         </p>
       </div>
 
-      <p className="text-xs text-heritage-200/50">
+      <p className="text-xs text-brand-500">
         {isAr
           ? "صف اللي عايزه بالكلام — بروشور، كرت، بانر، أي مطبوع — والمساعد هيسألك ويصمم فعلياً."
           : "Describe what you need — brochure, card, banner, any print item — and the assistant will ask questions and create a real design."}
@@ -177,7 +177,7 @@ export function DesignChatPanel({
               key={prompt}
               type="button"
               onClick={() => sendMessage(prompt)}
-              className="px-3 py-1.5 text-xs rounded-full border border-gold-500/20 text-heritage-200/70 hover:border-gold-500/40 hover:text-gold-300 transition-colors"
+              className="px-3 py-1.5 text-xs rounded-full border border-brand-200 text-brand-600 hover:border-gold-500/40 hover:text-gold-300 transition-colors"
             >
               {prompt}
             </button>
@@ -185,9 +185,9 @@ export function DesignChatPanel({
         </div>
       )}
 
-      <div className="h-64 overflow-y-auto rounded-sm border border-gold-500/15 bg-heritage-950/60 p-3 space-y-3">
+      <div className="h-64 overflow-y-auto rounded-sm border border-brand-200 bg-brand-50/60 p-3 space-y-3">
         {messages.length === 0 && (
-          <p className="text-sm text-heritage-200/40 text-center py-8">
+          <p className="text-sm text-brand-700/40 text-center py-8">
             {isAr ? "ابدأ بوصف التصميم اللي محتاجه..." : "Start by describing the design you need..."}
           </p>
         )}
@@ -196,15 +196,15 @@ export function DesignChatPanel({
             key={i}
             className={`text-sm leading-relaxed whitespace-pre-wrap ${
               msg.role === "user"
-                ? "ms-8 p-3 rounded-sm bg-gold-500/10 text-heritage-50"
-                : "me-8 p-3 rounded-sm bg-heritage-900 text-heritage-200/80"
+                ? "ms-8 p-3 rounded-sm bg-gold-500/10 text-brand-900"
+                : "me-8 p-3 rounded-sm bg-white text-brand-700"
             }`}
           >
             {msg.content}
           </div>
         ))}
         {loading && (
-          <div className="flex items-center gap-2 text-heritage-200/50 text-sm">
+          <div className="flex items-center gap-2 text-brand-500 text-sm">
             <Loader2 className="w-4 h-4 animate-spin" />
             {isAr ? "المساعد بيفكر..." : "Assistant is thinking..."}
           </div>
@@ -216,13 +216,13 @@ export function DesignChatPanel({
 
       {readyState?.designPrompt && !previewUrl && (
         <div className="p-4 rounded-sm border border-gold-500/25 bg-gold-500/5 space-y-3">
-          <p className="text-sm text-heritage-100">
+          <p className="text-sm text-brand-800">
             {isAr
               ? "جاهزين نصمم! اضغط الزر عشان يتولد التصميم الفعلي."
               : "Ready to design! Click to generate the actual artwork."}
           </p>
           {readyState.designBrief && (
-            <p className="text-xs text-heritage-200/60">{readyState.designBrief}</p>
+            <p className="text-xs text-brand-500">{readyState.designBrief}</p>
           )}
           <Button onClick={generateDesign} disabled={generating} className="gap-2 w-full">
             {generating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Wand2 className="w-4 h-4" />}
@@ -242,8 +242,8 @@ export function DesignChatPanel({
           <p className="text-sm text-brand-400 font-medium">
             {isAr ? "تم إنشاء التصميم بنجاح" : "Design created successfully"}
           </p>
-          <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-gold-500/20">
-            <Image src={previewUrl} alt="AI design" fill className="object-contain bg-heritage-950" unoptimized />
+          <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-brand-200">
+            <Image src={previewUrl} alt="AI design" fill className="object-contain bg-brand-50" unoptimized />
           </div>
           <div className="flex gap-2">
             <Button variant="outline" size="sm" onClick={generateDesign} disabled={generating} className="gap-2">
@@ -263,7 +263,7 @@ export function DesignChatPanel({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && sendMessage()}
           placeholder={isAr ? "اكتب وصف التصميم..." : "Describe your design..."}
-          className="flex-1 px-4 py-3 rounded-sm bg-heritage-900 border border-gold-500/15 text-heritage-50 placeholder:text-heritage-200/30 focus:border-gold-500/40 outline-none text-sm"
+          className="flex-1 px-4 py-3 rounded-sm bg-white border border-brand-200 text-brand-900 placeholder:text-brand-400 focus:border-gold-500/40 outline-none text-sm"
         />
         <Button onClick={() => sendMessage()} disabled={loading || !input.trim()} size="lg" className="px-4">
           <Send className="w-4 h-4" />
