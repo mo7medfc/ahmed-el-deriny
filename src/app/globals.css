@@ -245,3 +245,27 @@ input, textarea, select {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-600);
 }
+
+/* Partners logo marquee — continuous horizontal scroll */
+@keyframes partners-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.partners-marquee {
+  direction: ltr;
+}
+
+.partners-marquee-track {
+  animation: partners-marquee-scroll 45s linear infinite;
+}
+
+.partners-marquee:hover .partners-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee-track {
+    animation: none;
+  }
+}

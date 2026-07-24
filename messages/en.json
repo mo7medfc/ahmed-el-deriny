@@ -133,10 +133,15 @@
   },
   "about": {
     "title": "About Us",
-    "subtitle": "Ahmed El-Deriny Printing — The Edifice of Printing Since 1918",
-    "p1": "Since 1918, we have been at the heart of Egypt's printing industry. Ahmed El-Deriny Printing is not just a press — it is a family legacy spanning over a century of craftsmanship.",
-    "p2": "From banners and roll-ups to stamps, business cards, and flyers — we blend the authenticity of the past with modern technology.",
-    "p3": "Our professional team carries the spirit of 1918 in every order. Upload your design and calculate your price instantly."
+    "subtitle": "The edifice of printing — since 1918",
+    "p1": "Ahmed El-Deriny Printing is a heritage institution passed from generation to generation. Founded in 1918, we have built deep expertise in delivering comprehensive, high-quality print solutions. Over the years we became a symbol of excellence and a leading print company for individuals and businesses.",
+    "p2": "We offer a full range of services including stationery, brochures, books, notebooks, pens, paper and fabric bags, folders, letterheads, envelopes, and more. With precision and innovation, we aim to be our clients’ first choice for professional printing.",
+    "visionTitle": "Our Vision",
+    "vision": "We strive for leadership in printing through innovation and quality. We continuously develop our services to meet diverse client needs while keeping the highest standards of accuracy and speed — with Egypt’s largest print raw-material warehouses and branches that make every project easier, faster, and more flexible.",
+    "branchesTitle": "Our Branches",
+    "branchesSubtitle": "Across Cairo & Giza — closer to you",
+    "partnersTitle": "Success Partners",
+    "partnersSubtitle": "Trusted by leading brands and institutions"
   },
   "contact": {
     "title": "Contact Us",
