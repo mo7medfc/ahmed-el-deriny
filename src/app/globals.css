@@ -246,10 +246,10 @@ input, textarea, select {
   background: var(--color-brand-600);
 }
 
-/* Partners logo marquee — continuous horizontal scroll */
+/* Partners logo marquee — continuous full-bleed scroll */
 @keyframes partners-marquee-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-33.333%); }
+  to { transform: translateX(-25%); }
 }
 
 .partners-marquee {
@@ -257,7 +257,7 @@ input, textarea, select {
 }
 
 .partners-marquee-track {
-  animation: partners-marquee-scroll 35s linear infinite;
+  animation: partners-marquee-scroll 28s linear infinite;
   will-change: transform;
 }
 
@@ -266,30 +266,55 @@ input, textarea, select {
 }
 
 .home-partners-strip {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--color-brand-50) 70%, white) 0%, white 100%);
-  border-block: 1px solid color-mix(in srgb, var(--color-brand-200) 80%, transparent);
+  background: linear-gradient(
+    180deg,
+    #f4f8fc 0%,
+    #eef4fa 45%,
+    #ffffff 100%
+  );
 }
 
-.partners-marquee--fullbleed {
-  margin-inline: 0;
-  width: 100%;
+.home-partners-kicker {
+  font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-brand-600);
+}
+
+.home-partners-title {
+  font-family: "Amiri", "Cairo", Georgia, serif;
+  font-size: clamp(2.1rem, 5.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-brand-950);
+}
+
+.partners-marquee--edge {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .home-partner-tile {
-  min-width: 170px;
-  background: transparent;
-  transition: background 0.25s ease, transform 0.25s ease;
+  width: clamp(150px, 18vw, 220px);
+  height: clamp(88px, 12vw, 112px);
+  padding-inline: 1.25rem;
+  border-inline-end: 1px solid color-mix(in srgb, var(--color-brand-200) 85%, transparent);
 }
 
-.home-partner-tile:hover {
-  background: color-mix(in srgb, var(--color-brand-50) 90%, white);
-  transform: translateY(-2px);
+.home-partner-logo {
+  width: auto !important;
+  height: auto !important;
+  max-height: 64px;
+  max-width: 170px;
+  object-fit: contain;
 }
 
 @media (min-width: 640px) {
-  .home-partner-tile {
-    min-width: 200px;
+  .home-partner-logo {
+    max-height: 72px;
+    max-width: 190px;
   }
 }
 
