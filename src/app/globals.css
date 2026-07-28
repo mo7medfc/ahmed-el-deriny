@@ -249,7 +249,7 @@ input, textarea, select {
 /* Partners logo marquee — continuous horizontal scroll */
 @keyframes partners-marquee-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-33.333%); }
 }
 
 .partners-marquee {
@@ -257,11 +257,40 @@ input, textarea, select {
 }
 
 .partners-marquee-track {
-  animation: partners-marquee-scroll 45s linear infinite;
+  animation: partners-marquee-scroll 35s linear infinite;
+  will-change: transform;
 }
 
 .partners-marquee:hover .partners-marquee-track {
   animation-play-state: paused;
+}
+
+.home-partners-strip {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-brand-50) 70%, white) 0%, white 100%);
+  border-block: 1px solid color-mix(in srgb, var(--color-brand-200) 80%, transparent);
+}
+
+.partners-marquee--fullbleed {
+  margin-inline: 0;
+  width: 100%;
+}
+
+.home-partner-tile {
+  min-width: 170px;
+  background: transparent;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.home-partner-tile:hover {
+  background: color-mix(in srgb, var(--color-brand-50) 90%, white);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 640px) {
+  .home-partner-tile {
+    min-width: 200px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
