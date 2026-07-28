@@ -15,10 +15,10 @@ export default async function HomePage({
   return (
     <>
       <HeroProductSlider />
-      <IntroSection />
-      <FeaturesSection />
       <CategoriesSection />
       <FeaturedProducts />
+      <IntroSection />
+      <FeaturesSection />
     </>
   );
 }
