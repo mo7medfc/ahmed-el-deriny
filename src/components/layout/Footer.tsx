@@ -19,13 +19,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-block mb-4 rounded-lg overflow-hidden ring-1 ring-brand-200/60">
               <Image
                 src={publicPath("/logo/logo-full.png")}
                 alt="مطابع أحمد الدريني — صرح الطباعة وأصلها"
-                width={260}
-                height={70}
-                className="h-14 w-auto max-w-[240px] object-contain"
+                width={280}
+                height={90}
+                className="h-16 w-auto max-w-[260px] object-contain bg-black"
               />
             </Link>
             <p className="text-brand-500/70 text-xs tracking-[0.2em] uppercase mb-3">{t("since")}</p>
