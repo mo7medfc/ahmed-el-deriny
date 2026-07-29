@@ -62,13 +62,22 @@ export function ProductCard({
           {name}
         </h3>
         <p className="text-brand-700/55 text-sm line-clamp-2 mb-4 leading-relaxed">{description}</p>
-        <div className="flex items-center justify-between pt-3 border-t border-brand-100">
-          <span className="text-brand-600 font-semibold">
-            {fromLabel} {formatPrice(basePrice, locale)}
-          </span>
-          {configureLabel && (
-            <span className="text-xs text-brand-500/70 group-hover:text-brand-600 transition-colors">
-              {configureLabel} →
+        <div className="flex items-end justify-between gap-3 pt-4 border-t border-brand-100">
+          <div>
+            {basePrice > 0 ? (
+              <>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-brand-500 mb-0.5">{fromLabel}</p>
+                <p className="text-xl sm:text-2xl font-display font-bold text-brand-800 leading-none">
+                  {formatPrice(basePrice, locale)}
+                </p>
+              </>
+            ) : (
+              <p className="text-sm font-medium text-brand-600">{configureLabel || fromLabel}</p>
+            )}
+          </div>
+          {configureLabel && basePrice > 0 && (
+            <span className="text-xs font-medium text-brand-500 group-hover:text-brand-700 transition-colors shrink-0 pb-0.5">
+              {configureLabel}
             </span>
           )}
         </div>

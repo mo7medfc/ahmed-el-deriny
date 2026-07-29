@@ -6,10 +6,10 @@
         "docId": "Flag_flag_2.5_feather",
         "data": {
           "categoryId": "Flag",
-          "updatedAt": "2026-02-07T03:48:37.147Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "productId": "flag_2.5_feather",
           "currency": "EGP",
-          "sellingPrice": 100
+          "sellingPrice": 2000
         }
       },
       {
@@ -113,12 +113,13 @@
       {
         "docId": "Indoor_banner-380g",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 135,
           "currency": "EGP",
           "productId": "banner-380g",
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
-          "groupId": "banner"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "groupId": "banner",
+          "sellingPrice": 135
         }
       },
       {
@@ -126,21 +127,24 @@
         "data": {
           "productId": "cutter-plotter",
           "currency": "EGP",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "pricePerMeter": 200,
           "categoryId": "Indoor",
-          "groupId": "cutterPlotter"
+          "groupId": "cutterPlotter",
+          "pricePerSquareMeter": 130,
+          "sellingPrice": 130
         }
       },
       {
         "docId": "Indoor_flex",
         "data": {
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "groupId": "flex",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 160,
           "currency": "EGP",
-          "productId": "flex"
+          "productId": "flex",
+          "sellingPrice": 160
         }
       },
       {
@@ -148,98 +152,108 @@
         "data": {
           "groupId": "flex",
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "productId": "flex-coated",
           "currency": "EGP",
-          "pricePerSquareMeter": 0
+          "pricePerSquareMeter": 240,
+          "sellingPrice": 240
         }
       },
       {
         "docId": "Indoor_frosted-vinyl-blank",
         "data": {
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "groupId": "vinyl",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 240,
           "productId": "frosted-vinyl-blank",
-          "currency": "EGP"
+          "currency": "EGP",
+          "sellingPrice": 240
         }
       },
       {
         "docId": "Indoor_frosted-vinyl-printed",
         "data": {
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "categoryId": "Indoor",
           "groupId": "vinyl",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 300,
           "productId": "frosted-vinyl-printed",
-          "currency": "EGP"
+          "currency": "EGP",
+          "sellingPrice": 300
         }
       },
       {
         "docId": "Indoor_glitter",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 290,
           "currency": "EGP",
           "productId": "glitter",
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
-          "groupId": "special"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "groupId": "special",
+          "sellingPrice": 290
         }
       },
       {
         "docId": "Indoor_glossy",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 280,
           "productId": "glossy",
           "currency": "EGP",
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
-          "groupId": "special"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "groupId": "special",
+          "sellingPrice": 280
         }
       },
       {
         "docId": "Indoor_lamination-only",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 90,
           "productId": "lamination-only",
           "currency": "EGP",
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
-          "groupId": "special"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "groupId": "special",
+          "sellingPrice": 90
         }
       },
       {
         "docId": "Indoor_print-and-cut",
         "data": {
           "groupId": "printCut",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "pricePerMeter": 200,
           "categoryId": "Indoor",
           "productId": "print-and-cut",
-          "currency": "EGP"
+          "currency": "EGP",
+          "pricePerSquareMeter": 200,
+          "sellingPrice": 200
         }
       },
       {
         "docId": "Indoor_reflective-banner",
         "data": {
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "categoryId": "Indoor",
           "groupId": "banner",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 350,
           "productId": "reflective-banner",
-          "currency": "EGP"
+          "currency": "EGP",
+          "sellingPrice": 350
         }
       },
       {
         "docId": "Indoor_reflective-vinyl",
         "data": {
           "groupId": "vinyl",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "categoryId": "Indoor",
           "productId": "reflective-vinyl",
           "currency": "EGP",
-          "pricePerSquareMeter": 0
+          "pricePerSquareMeter": 450,
+          "sellingPrice": 450
         }
       },
       {
@@ -247,32 +261,35 @@
         "data": {
           "currency": "EGP",
           "productId": "see-through",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 150,
           "groupId": "special",
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 150
         }
       },
       {
         "docId": "Indoor_transparent-vinyl",
         "data": {
           "categoryId": "Indoor",
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "groupId": "vinyl",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 165,
           "productId": "transparent-vinyl",
-          "currency": "EGP"
+          "currency": "EGP",
+          "sellingPrice": 165
         }
       },
       {
         "docId": "Indoor_white-vinyl",
         "data": {
-          "updatedAt": "2026-02-05T20:04:37.725Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "categoryId": "Indoor",
           "groupId": "vinyl",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 180,
           "productId": "white-vinyl",
-          "currency": "EGP"
+          "currency": "EGP",
+          "sellingPrice": 180
         }
       },
       {
@@ -363,10 +380,11 @@
         "data": {
           "productId": "banner-280g",
           "currency": "EGP",
-          "pricePerSquareMeter": 100,
+          "pricePerSquareMeter": 55,
           "groupId": "banner",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
-          "categoryId": "Outdoor"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "categoryId": "Outdoor",
+          "sellingPrice": 55
         }
       },
       {
@@ -374,32 +392,35 @@
         "data": {
           "productId": "banner-380g",
           "currency": "EGP",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 65,
           "groupId": "banner",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
-          "categoryId": "Outdoor"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "categoryId": "Outdoor",
+          "sellingPrice": 65
         }
       },
       {
         "docId": "Outdoor_banner-coated-400g",
         "data": {
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "groupId": "banner",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 130,
           "productId": "banner-coated-400g",
-          "currency": "EGP"
+          "currency": "EGP",
+          "sellingPrice": 130
         }
       },
       {
         "docId": "Outdoor_election-banner-light",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 65,
           "productId": "election-banner-light",
           "currency": "EGP",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "categoryId": "Outdoor",
-          "groupId": "banner"
+          "groupId": "banner",
+          "sellingPrice": 65
         }
       },
       {
@@ -407,21 +428,23 @@
         "data": {
           "productId": "flex",
           "currency": "EGP",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 120,
           "groupId": "flex",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
-          "categoryId": "Outdoor"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "categoryId": "Outdoor",
+          "sellingPrice": 120
         }
       },
       {
         "docId": "Outdoor_flex-coated",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 220,
           "productId": "flex-coated",
           "currency": "EGP",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "categoryId": "Outdoor",
-          "groupId": "flex"
+          "groupId": "flex",
+          "sellingPrice": 220
         }
       },
       {
@@ -429,10 +452,11 @@
         "data": {
           "productId": "frosted-vinyl-blank",
           "currency": "EGP",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 220,
           "groupId": "vinyl",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 220
         }
       },
       {
@@ -440,43 +464,47 @@
         "data": {
           "groupId": "vinyl",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "currency": "EGP",
           "productId": "frosted-vinyl-printed",
-          "pricePerSquareMeter": 0
+          "pricePerSquareMeter": 280,
+          "sellingPrice": 280
         }
       },
       {
         "docId": "Outdoor_glitter",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 160,
           "currency": "EGP",
           "productId": "glitter",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
-          "groupId": "special"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "groupId": "special",
+          "sellingPrice": 160
         }
       },
       {
         "docId": "Outdoor_glossy",
         "data": {
           "groupId": "special",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "categoryId": "Outdoor",
           "productId": "glossy",
           "currency": "EGP",
-          "pricePerSquareMeter": 0
+          "pricePerSquareMeter": 70,
+          "sellingPrice": 70
         }
       },
       {
         "docId": "Outdoor_lamination-only",
         "data": {
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 70,
           "currency": "EGP",
           "productId": "lamination-only",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
-          "groupId": "special"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "groupId": "special",
+          "sellingPrice": 70
         }
       },
       {
@@ -484,21 +512,23 @@
         "data": {
           "groupId": "banner",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "productId": "reflective-banner",
           "currency": "EGP",
-          "pricePerSquareMeter": 0
+          "pricePerSquareMeter": 350,
+          "sellingPrice": 350
         }
       },
       {
         "docId": "Outdoor_reflective-vinyl",
         "data": {
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "groupId": "vinyl",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 450,
           "productId": "reflective-vinyl",
-          "currency": "EGP"
+          "currency": "EGP",
+          "sellingPrice": 450
         }
       },
       {
@@ -506,10 +536,11 @@
         "data": {
           "currency": "EGP",
           "productId": "see-through",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 130,
           "groupId": "special",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 130
         }
       },
       {
@@ -517,10 +548,11 @@
         "data": {
           "currency": "EGP",
           "productId": "transparent-vinyl",
-          "pricePerSquareMeter": 0,
+          "pricePerSquareMeter": 110,
           "groupId": "vinyl",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z"
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 110
         }
       },
       {
@@ -528,10 +560,11 @@
         "data": {
           "groupId": "vinyl",
           "categoryId": "Outdoor",
-          "updatedAt": "2026-02-04T21:06:17.817Z",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
           "productId": "white-vinyl",
           "currency": "EGP",
-          "pricePerSquareMeter": 0
+          "pricePerSquareMeter": 95,
+          "sellingPrice": 95
         }
       },
       {
@@ -962,6 +995,593 @@
           "currency": "EGP",
           "categoryId": "ZikrMedal",
           "updatedAt": "2026-02-07T04:29:09.722Z"
+        }
+      },
+      {
+        "docId": "Stands_roll-up-80-200-banner",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-80-200-banner",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 750
+        }
+      },
+      {
+        "docId": "Stands_roll-up-85-200-banner",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-85-200-banner",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 850
+        }
+      },
+      {
+        "docId": "Stands_roll-up-100-200-banner",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-100-200-banner",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1050
+        }
+      },
+      {
+        "docId": "Stands_roll-up-120-200-banner",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-120-200-banner",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1350
+        }
+      },
+      {
+        "docId": "Stands_roll-up-150-200-banner",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-150-200-banner",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1550
+        }
+      },
+      {
+        "docId": "Stands_roll-up-80-200-glossy",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-80-200-glossy",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1150
+        }
+      },
+      {
+        "docId": "Stands_roll-up-85-200-glossy",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-85-200-glossy",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1230
+        }
+      },
+      {
+        "docId": "Stands_roll-up-100-200-glossy",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-100-200-glossy",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1350
+        }
+      },
+      {
+        "docId": "Stands_roll-up-120-200-glossy",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-120-200-glossy",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1700
+        }
+      },
+      {
+        "docId": "Stands_roll-up-150-200-glossy",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "roll-up-150-200-glossy",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1900
+        }
+      },
+      {
+        "docId": "Stands_x-banner-60-160-banner",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "x-banner-60-160-banner",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 800
+        }
+      },
+      {
+        "docId": "Stands_x-banner-80-180-banner",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "x-banner-80-180-banner",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 900
+        }
+      },
+      {
+        "docId": "Stands_x-banner-60-160-glossy",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "x-banner-60-160-glossy",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 950
+        }
+      },
+      {
+        "docId": "Stands_x-banner-80-180-glossy",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "x-banner-80-180-glossy",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 1050
+        }
+      },
+      {
+        "docId": "Stands_pop-up-2x3-straight",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-2x3-straight",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 10000
+        }
+      },
+      {
+        "docId": "Stands_pop-up-2x3-curve",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-2x3-curve",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 10100
+        }
+      },
+      {
+        "docId": "Stands_pop-up-3x3-straight",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-3x3-straight",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 10900
+        }
+      },
+      {
+        "docId": "Stands_pop-up-3x3-curve",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-3x3-curve",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 11200
+        }
+      },
+      {
+        "docId": "Stands_pop-up-3x4-straight",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-3x4-straight",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 12200
+        }
+      },
+      {
+        "docId": "Stands_pop-up-3x4-curve",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-3x4-curve",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 12400
+        }
+      },
+      {
+        "docId": "Stands_pop-up-3x5-straight",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-3x5-straight",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 13200
+        }
+      },
+      {
+        "docId": "Stands_pop-up-3x5-curve",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-3x5-curve",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 13400
+        }
+      },
+      {
+        "docId": "Stands_pop-up-counter",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-counter",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 7200
+        }
+      },
+      {
+        "docId": "Stands_pop-up-promotion-table",
+        "data": {
+          "categoryId": "Stands",
+          "productId": "pop-up-promotion-table",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 5800
+        }
+      },
+      {
+        "docId": "DTF_config",
+        "data": {
+          "categoryId": "DTF",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 110
+        }
+      },
+      {
+        "docId": "Stamps_config",
+        "data": {
+          "categoryId": "Stamps",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 140
+        }
+      },
+      {
+        "docId": "SublimationGift_mug_white_printed",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "mug_white_printed",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 125
+        }
+      },
+      {
+        "docId": "SublimationGift_mug_colored_printed",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "mug_colored_printed",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 155
+        }
+      },
+      {
+        "docId": "SublimationGift_mug_magic",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "mug_magic",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 150
+        }
+      },
+      {
+        "docId": "SublimationGift_coaster_wood",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "coaster_wood",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 45
+        }
+      },
+      {
+        "docId": "SublimationGift_cap",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "cap",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 95
+        }
+      },
+      {
+        "docId": "SublimationGift_medallion_wood_4x6_single",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "medallion_wood_4x6_single",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 38
+        }
+      },
+      {
+        "docId": "SublimationGift_medallion_wood_4x6_double",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "medallion_wood_4x6_double",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 50
+        }
+      },
+      {
+        "docId": "SublimationGift_mouse_pad",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "mouse_pad",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 70
+        }
+      },
+      {
+        "docId": "SublimationGift_puzzle_small",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "puzzle_small",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 100
+        }
+      },
+      {
+        "docId": "SublimationGift_puzzle_large",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "puzzle_large",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 115
+        }
+      },
+      {
+        "docId": "SublimationGift_sublimation_paper",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "sublimation_paper",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 40
+        }
+      },
+      {
+        "docId": "SublimationGift_single_press",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "single_press",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 25
+        }
+      },
+      {
+        "docId": "SublimationGift_car_sun_visor",
+        "data": {
+          "categoryId": "SublimationGift",
+          "productId": "car_sun_visor",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 80
+        }
+      },
+      {
+        "docId": "promotional_gifts_enamel_name_tag",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_enamel_name_tag",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 45
+        }
+      },
+      {
+        "docId": "promotional_gifts_gold_silver_name_tag_pin",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_gold_silver_name_tag_pin",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 45
+        }
+      },
+      {
+        "docId": "promotional_gifts_gold_silver_name_tag_magnet",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_gold_silver_name_tag_magnet",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 45
+        }
+      },
+      {
+        "docId": "promotional_gifts_acrylic_medal_custom_shapes",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_acrylic_medal_custom_shapes",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 40
+        }
+      },
+      {
+        "docId": "promotional_gifts_wooden_medal_custom_shapes",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_wooden_medal_custom_shapes",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 38
+        }
+      },
+      {
+        "docId": "promotional_gifts_acrylic_coaster_velvet_back",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_acrylic_coaster_velvet_back",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 55
+        }
+      },
+      {
+        "docId": "promotional_gifts_acrylic_coaster_double_layer",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_acrylic_coaster_double_layer",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 62
+        }
+      },
+      {
+        "docId": "promotional_gifts_wooden_coaster_laser_engraved",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_wooden_coaster_laser_engraved",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 45
+        }
+      },
+      {
+        "docId": "promotional_gifts_acrylic_stand_a5",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_acrylic_stand_a5",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 120
+        }
+      },
+      {
+        "docId": "promotional_gifts_acrylic_stand_a4",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_acrylic_stand_a4",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 310
+        }
+      },
+      {
+        "docId": "promotional_gifts_balloon_min_500",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_balloon_min_500",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 8.5
+        }
+      },
+      {
+        "docId": "promotional_gifts_wristbands",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_wristbands",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 28
+        }
+      },
+      {
+        "docId": "promotional_gifts_swimming_pool_wristbands",
+        "data": {
+          "categoryId": "promotional",
+          "productId": "gifts_swimming_pool_wristbands",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 11
+        }
+      },
+      {
+        "docId": "safety_printing_worker_vest",
+        "data": {
+          "categoryId": "safety",
+          "productId": "printing_worker_vest",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 190
+        }
+      },
+      {
+        "docId": "safety_printing_engineer_vest",
+        "data": {
+          "categoryId": "safety",
+          "productId": "printing_engineer_vest",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 260
+        }
+      },
+      {
+        "docId": "safety_printing_safety_helmet",
+        "data": {
+          "categoryId": "safety",
+          "productId": "printing_safety_helmet",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 210
+        }
+      },
+      {
+        "docId": "safety_printing_vip_helmet",
+        "data": {
+          "categoryId": "safety",
+          "productId": "printing_vip_helmet",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 340
+        }
+      },
+      {
+        "docId": "dafater_config",
+        "data": {
+          "categoryId": "dafater",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 750
+        }
+      },
+      {
+        "docId": "notebooks_invoices_config",
+        "data": {
+          "categoryId": "notebooks",
+          "productId": "invoices_config",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 750
+        }
+      },
+      {
+        "docId": "notebooks_books_booklets_config",
+        "data": {
+          "categoryId": "notebooks",
+          "productId": "books_booklets_config",
+          "currency": "EGP",
+          "updatedAt": "2026-07-29T00:17:44.525Z",
+          "sellingPrice": 100
         }
       }
     ],
