@@ -19,16 +19,16 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <Image src={publicPath("/logo/logo.png")} alt="Logo" width={64} height={64} className="w-16 h-16 object-contain" />
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src={publicPath("/logo/logo-full.png")}
+                alt="مطابع أحمد الدريني — صرح الطباعة وأصلها"
+                width={260}
+                height={70}
+                className="h-14 w-auto max-w-[240px] object-contain"
+              />
             </Link>
-            <p className="text-brand-600 text-sm font-display font-medium mb-1">{t("tagline")}</p>
             <p className="text-brand-500/70 text-xs tracking-[0.2em] uppercase mb-3">{t("since")}</p>
-            <p className="text-brand-700 text-sm leading-relaxed">
-              {locale === "ar"
-                ? "مطابع أحمد الدريني — تراث طباعة مصري منذ 1918"
-                : "Ahmed El-Deriny Printing — Egyptian printing heritage since 1918"}
-            </p>
           </div>
 
           <div>

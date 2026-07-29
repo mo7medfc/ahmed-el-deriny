@@ -35,23 +35,15 @@ export function Header() {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-200/80 to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+          <Link href="/" className="flex items-center shrink-0 group">
             <Image
-              src={publicPath("/logo/logo.png")}
-              alt="Ahmed El-Deriny"
-              width={52}
-              height={52}
-              className="w-13 h-13 object-contain group-hover:scale-105 transition-transform"
+              src={publicPath("/logo/logo-full.png")}
+              alt="مطابع أحمد الدريني — صرح الطباعة وأصلها"
+              width={280}
+              height={72}
+              className="h-12 sm:h-14 w-auto max-w-[220px] sm:max-w-[280px] object-contain group-hover:opacity-90 transition-opacity"
               priority
             />
-            <div className="hidden sm:block">
-              <p className="text-sm font-display font-bold text-brand-900 leading-tight">
-                {locale === "ar" ? "مطابع أحمد الدريني" : "Ahmed El-Deriny"}
-              </p>
-              <p className="text-[10px] text-brand-500 tracking-[0.15em] uppercase">
-                {locale === "ar" ? "منذ 1918" : "Since 1918"}
-              </p>
-            </div>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">

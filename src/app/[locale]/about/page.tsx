@@ -31,11 +31,11 @@ export default async function AboutPage({
         <div className="flex justify-center mb-10">
           <div className="p-4 border border-brand-200 bg-brand-50 rounded-lg">
             <Image
-              src={publicPath("/logo/logo.png")}
-              alt="Logo"
-              width={200}
-              height={200}
-              className="w-40 h-40 object-contain"
+              src={publicPath("/logo/logo-full.png")}
+              alt="مطابع أحمد الدريني — صرح الطباعة وأصلها"
+              width={420}
+              height={280}
+              className="w-full max-w-sm h-auto object-contain"
             />
           </div>
         </div>
