@@ -5,12 +5,18 @@ import { ProductConfigurator } from "@/components/products/ProductConfigurator";
 import Image from "next/image";
 import { resolveProductImage, resolveProductImageAlt } from "@/lib/product-images";
 import { allowedCategoryFilter, allowedProductFilter } from "@/lib/storefront-categories";
+import { Link } from "@/i18n/navigation";
+
+/** `output: export` rejects an empty param list, so keep one stub route while the catalog is empty. */
+const PLACEHOLDER_SLUG = "coming-soon";
 
 export async function generateStaticParams() {
   const products = await prisma.product.findMany({
     where: allowedProductFilter,
     select: { slug: true },
   });
+
+  if (products.length === 0) return [{ slug: PLACEHOLDER_SLUG }];
 
   return products.map(({ slug }) => ({ slug }));
 }
@@ -29,7 +35,32 @@ export default async function ProductDetailPage({
     include: { category: true, options: { orderBy: { sortOrder: "asc" } } },
   });
 
-  if (!product) notFound();
+  if (!product) {
+    if (slug !== PLACEHOLDER_SLUG) notFound();
+
+    return (
+      <div className="pt-28 pb-20 heritage-section min-h-screen">
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="heritage-card rounded-sm text-center py-20 px-6">
+            <h1 className="font-display text-2xl font-semibold text-brand-900 mb-3">
+              {currentLocale === "ar" ? "المنتجات في الطريق" : "Products coming soon"}
+            </h1>
+            <p className="text-brand-700/60 mb-8">
+              {currentLocale === "ar"
+                ? "بنجهّز كتالوج منتجاتنا الجديد بأسعاره."
+                : "We are preparing our new product catalog and pricing."}
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-base font-semibold text-white gradient-bg shadow-md hover:opacity-90 transition-opacity"
+            >
+              {currentLocale === "ar" ? "اطلب عرض سعر" : "Request a quote"}
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const imageInput = {
     slug: product.slug,

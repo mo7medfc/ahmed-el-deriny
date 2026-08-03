@@ -103,6 +103,9 @@
     "dimensions": "Dimensions",
     "minMax": "Min {min} — Max {max} cm",
     "noProducts": "No products in this category",
+    "comingSoonTitle": "Products coming soon",
+    "comingSoonDesc": "We are preparing our new product catalog and pricing. Contact us now and we will prepare a custom quote for your order.",
+    "comingSoonCta": "Request a quote",
     "featured": "Most Popular",
     "showAll": "Show all",
     "showLess": "Show less"

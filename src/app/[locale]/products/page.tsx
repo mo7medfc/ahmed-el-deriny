@@ -9,6 +9,8 @@ import {
   getStorefrontCategoryName,
 } from "@/lib/storefront-categories";
 import { Suspense } from "react";
+import { Link } from "@/i18n/navigation";
+import { PackageOpen } from "lucide-react";
 
 export default async function ProductsPage({
   params,
@@ -79,26 +81,40 @@ export default async function ProductsPage({
           <p className="text-brand-700/60">{t("subtitle")}</p>
         </div>
 
-        <Suspense fallback={<div className="h-24" />}>
-          <ProductSearch categories={searchCategories} />
-        </Suspense>
+        {items.length === 0 ? (
+          <div className="heritage-card rounded-sm text-center py-20 px-6">
+            <PackageOpen className="w-12 h-12 mx-auto mb-5 text-brand-500/60" />
+            <h2 className="font-display text-2xl font-semibold text-brand-900 mb-3">
+              {t("comingSoonTitle")}
+            </h2>
+            <p className="text-brand-700/60 max-w-lg mx-auto mb-8 leading-relaxed">
+              {t("comingSoonDesc")}
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md text-base font-semibold text-white gradient-bg shadow-md hover:opacity-90 transition-opacity"
+            >
+              {t("comingSoonCta")}
+            </Link>
+          </div>
+        ) : (
+          <>
+            <Suspense fallback={<div className="h-24" />}>
+              <ProductSearch categories={searchCategories} />
+            </Suspense>
 
-        <Suspense fallback={<div className="text-center py-20 text-brand-600/50">{t("calculating")}</div>}>
-          {items.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-brand-600/50 text-lg">{t("noProducts")}</p>
-            </div>
-          ) : (
-            <FilteredProductsGrid
-              products={items}
-              locale={currentLocale}
-              fromLabel={t("from")}
-              configureLabel={t("configure")}
-              showAllLabel={t("showAll")}
-              showLessLabel={t("showLess")}
-            />
-          )}
-        </Suspense>
+            <Suspense fallback={<div className="text-center py-20 text-brand-600/50">{t("calculating")}</div>}>
+              <FilteredProductsGrid
+                products={items}
+                locale={currentLocale}
+                fromLabel={t("from")}
+                configureLabel={t("configure")}
+                showAllLabel={t("showAll")}
+                showLessLabel={t("showLess")}
+              />
+            </Suspense>
+          </>
+        )}
       </div>
     </div>
   );

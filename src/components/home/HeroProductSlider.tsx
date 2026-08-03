@@ -4,6 +4,7 @@ import { resolveSliderHeroImage } from "@/lib/slider-images";
 import { resolveProductImageAlt } from "@/lib/product-images";
 import { allowedProductFilter } from "@/lib/storefront-categories";
 import { ProductHeroSliderClient } from "./ProductHeroSliderClient";
+import { HeroBrand } from "./HeroBrand";
 
 export async function HeroProductSlider() {
   const locale = await getLocale();
@@ -17,7 +18,7 @@ export async function HeroProductSlider() {
     include: { category: true },
   });
 
-  if (products.length === 0) return null;
+  if (products.length === 0) return <HeroBrand />;
 
   const slides = products.map((product) => {
     const imageInput = {

@@ -1,25 +1,16 @@
-/** Categories visible on storefront + admin (legacy Firebase category IDs) */
-export const ALLOWED_STOREFRONT_CATEGORIES = [
-  "Outdoor",
-  "Indoor",
-  "UVPrinting",
-  "DTF",
-  "safety_printing",
-  "promotional_gifts",
-  "SublimationGift",
-  "Stamps",
-  "Stands",
-  "dafater",
-  "notebooks_invoices",
-  "notebooks_books_booklets",
-  "envelopes",
-] as const;
+/**
+ * Categories visible on storefront + admin.
+ *
+ * Empty = storefront shows no products at all. Add legacy category IDs here
+ * (matching prisma/catalog-export.json) to publish a category and its products.
+ */
+export const ALLOWED_STOREFRONT_CATEGORIES: readonly string[] = [];
 
-export type AllowedCategoryId = (typeof ALLOWED_STOREFRONT_CATEGORIES)[number];
+export type AllowedCategoryId = string;
 
-export function isAllowedCategory(legacyId: string | null | undefined): legacyId is AllowedCategoryId {
+export function isAllowedCategory(legacyId: string | null | undefined): boolean {
   if (!legacyId) return false;
-  return (ALLOWED_STOREFRONT_CATEGORIES as readonly string[]).includes(legacyId);
+  return ALLOWED_STOREFRONT_CATEGORIES.includes(legacyId);
 }
 
 export const allowedCategoryFilter = {
@@ -36,22 +27,14 @@ export function filterAllowedCatalogCategories<T extends { categoryId: string }>
 }
 
 /** Arabic display names override for storefront */
-export const STOREFRONT_CATEGORY_NAMES: Partial<Record<AllowedCategoryId, { nameAr: string; nameEn: string }>> = {
-  safety_printing: { nameAr: "الفيستات", nameEn: "Safety Vests" },
-  promotional_gifts: { nameAr: "هدايا ترويجية", nameEn: "Promotional Gifts" },
-  SublimationGift: { nameAr: "هدايا sublimation", nameEn: "Sublimation Gifts" },
-  dafater: { nameAr: "دفاتر", nameEn: "Notebooks" },
-  notebooks_invoices: { nameAr: "دفاتر وفواتير", nameEn: "Notebooks & Invoices" },
-  notebooks_books_booklets: { nameAr: "كتب وكتيبات", nameEn: "Books & Booklets" },
-  envelopes: { nameAr: "المظاريف", nameEn: "Envelopes" },
-};
+export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn: string }> = {};
 
 export function getStorefrontCategoryName(
   legacyId: string,
   locale: string,
   fallback: { nameAr: string; nameEn: string }
 ) {
-  const custom = STOREFRONT_CATEGORY_NAMES[legacyId as AllowedCategoryId];
+  const custom = STOREFRONT_CATEGORY_NAMES[legacyId];
   if (custom) return locale === "ar" ? custom.nameAr : custom.nameEn;
   return locale === "ar" ? fallback.nameAr : fallback.nameEn;
 }
