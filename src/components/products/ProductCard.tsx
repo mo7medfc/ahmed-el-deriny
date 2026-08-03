@@ -12,6 +12,7 @@ interface ProductCardProps {
   imageAlt?: string;
   locale: string;
   fromLabel: string;
+  priceUnitLabel?: string;
   configureLabel?: string;
   variant?: "default" | "featured";
 }
@@ -26,6 +27,7 @@ export function ProductCard({
   imageAlt,
   locale,
   fromLabel,
+  priceUnitLabel,
   configureLabel,
   variant = "default",
 }: ProductCardProps) {
@@ -70,6 +72,9 @@ export function ProductCard({
                 <p className="text-xl sm:text-2xl font-display font-bold text-brand-800 leading-none">
                   {formatPrice(basePrice, locale)}
                 </p>
+                {priceUnitLabel && (
+                  <p className="text-[11px] text-brand-600/70 mt-1">{priceUnitLabel}</p>
+                )}
               </>
             ) : (
               <p className="text-sm font-medium text-brand-600">{configureLabel || fromLabel}</p>

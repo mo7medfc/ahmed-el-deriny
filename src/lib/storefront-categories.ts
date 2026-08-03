@@ -4,7 +4,13 @@
  * Empty = storefront shows no products at all. Add legacy category IDs here
  * (matching prisma/catalog-export.json) to publish a category and its products.
  */
-export const ALLOWED_STOREFRONT_CATEGORIES: readonly string[] = [];
+export const ALLOWED_STOREFRONT_CATEGORIES: readonly string[] = [
+  "Outdoor",
+  "Indoor",
+  "Stands",
+  "PopUp",
+  "DTF",
+];
 
 export type AllowedCategoryId = string;
 
@@ -27,7 +33,13 @@ export function filterAllowedCatalogCategories<T extends { categoryId: string }>
 }
 
 /** Arabic display names override for storefront */
-export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn: string }> = {};
+export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn: string }> = {
+  Outdoor: { nameAr: "اليفط الأوت دور", nameEn: "Outdoor Signage" },
+  Indoor: { nameAr: "اليفط الإن دور", nameEn: "Indoor Signage" },
+  Stands: { nameAr: "الأستندات", nameEn: "Stands" },
+  PopUp: { nameAr: "البوب أب", nameEn: "Pop-Up Displays" },
+  DTF: { nameAr: "طباعة DTF و UV DTF", nameEn: "DTF & UV DTF Printing" },
+};
 
 export function getStorefrontCategoryName(
   legacyId: string,

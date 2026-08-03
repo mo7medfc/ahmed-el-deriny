@@ -13,6 +13,7 @@ export interface ProductItem {
   categorySlug: string;
   description: string;
   basePrice: number;
+  priceUnitLabel?: string;
   image: string;
   imageAlt: string;
 }
@@ -53,6 +54,7 @@ export function ProductsGrid({
             categoryName={product.categoryName}
             description={product.description}
             basePrice={product.basePrice}
+            priceUnitLabel={product.priceUnitLabel}
             image={product.image}
             imageAlt={product.imageAlt}
             locale={locale}

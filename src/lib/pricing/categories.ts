@@ -8,15 +8,16 @@ export const PRICING_CATEGORY_META: Record<
     editorType: "sqm_groups" | "stands" | "stamps" | "business_cards" | "unit" | "config" | "dtf" | "nbb" | "notebooks_invoices";
   }
 > = {
-  Outdoor: { nameAr: "الأوت دور", nameEn: "Outdoor", icon: "sun", sortOrder: 1, editorType: "sqm_groups" },
-  Indoor: { nameAr: "الإندور", nameEn: "Indoor", icon: "home", sortOrder: 2, editorType: "sqm_groups" },
-  Stands: { nameAr: "الاستندات", nameEn: "Stands", icon: "layout", sortOrder: 3, editorType: "stands" },
+  Outdoor: { nameAr: "اليفط الأوت دور", nameEn: "Outdoor Signage", icon: "sun", sortOrder: 1, editorType: "sqm_groups" },
+  Indoor: { nameAr: "اليفط الإن دور", nameEn: "Indoor Signage", icon: "home", sortOrder: 2, editorType: "sqm_groups" },
+  Stands: { nameAr: "الأستندات", nameEn: "Stands", icon: "layout", sortOrder: 3, editorType: "stands" },
+  PopUp: { nameAr: "البوب أب", nameEn: "Pop-Up Displays", icon: "layout", sortOrder: 4, editorType: "unit" },
   Stamps: { nameAr: "الأختام", nameEn: "Stamps", icon: "stamp", sortOrder: 4, editorType: "stamps" },
   BusinessCard: { nameAr: "كروت شخصية", nameEn: "Business Cards", icon: "credit-card", sortOrder: 5, editorType: "business_cards" },
   envelopes: { nameAr: "المظاريف", nameEn: "Envelopes", icon: "mail", sortOrder: 6, editorType: "unit" },
   UVPrinting: { nameAr: "طباعة UV", nameEn: "UV Printing", icon: "sparkles", sortOrder: 7, editorType: "unit" },
   Tableaux: { nameAr: "تابلوهات", nameEn: "Tableaux", icon: "frame", sortOrder: 8, editorType: "unit" },
-  DTF: { nameAr: "طباعة DTF", nameEn: "DTF", icon: "shirt", sortOrder: 9, editorType: "dtf" },
+  DTF: { nameAr: "طباعة DTF و UV DTF", nameEn: "DTF & UV DTF Printing", icon: "shirt", sortOrder: 5, editorType: "dtf" },
   Flag: { nameAr: "أعلام", nameEn: "Flags", icon: "flag", sortOrder: 10, editorType: "unit" },
   TShirt: { nameAr: "تيشرتات", nameEn: "T-Shirts", icon: "shirt", sortOrder: 11, editorType: "unit" },
   FabricBag: { nameAr: "شنط قماش", nameEn: "Fabric Bags", icon: "shopping-bag", sortOrder: 12, editorType: "unit" },

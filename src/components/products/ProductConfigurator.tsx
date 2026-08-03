@@ -70,8 +70,12 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
   const locale = useLocale();
   const addItem = useCartStore((s) => s.addItem);
 
-  const [width, setWidth] = useState(product.minWidth);
-  const [height, setHeight] = useState(product.minHeight);
+  // Area-priced products start at 1 m² so the first price the customer sees is meaningful.
+  const defaultSide = (min: number, max: number) =>
+    product.pricingType === "per_sqm" ? Math.min(Math.max(100, min), max) : min;
+
+  const [width, setWidth] = useState(() => defaultSide(product.minWidth, product.maxWidth));
+  const [height, setHeight] = useState(() => defaultSide(product.minHeight, product.maxHeight));
   const [quantity, setQuantity] = useState(product.minQuantity);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [notes, setNotes] = useState("");

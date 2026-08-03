@@ -16,6 +16,8 @@
     "db:export": "node scripts/export-firestore-pricing.mjs",
     "db:catalog": "node scripts/extract-catalog-vm.mjs",
     "db:seed": "tsx prisma/seed.ts",
+    "catalog:build": "node scripts/build-catalog.mjs",
+    "catalog:sync": "node scripts/build-catalog.mjs && npm run db:seed",
     "db:import": "npm run db:export && npm run db:catalog && npm run db:push && npm run db:seed",
     "images:download": "node scripts/download-product-images.mjs",
     "images:generate": "node scripts/generate-product-images.mjs",

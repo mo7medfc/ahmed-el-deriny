@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ProductCard } from "@/components/products/ProductCard";
 import { getCategoryImage, resolveProductImage, resolveProductImageAlt } from "@/lib/product-images";
 import { allowedCategoryFilter, allowedProductFilter, getStorefrontCategoryName } from "@/lib/storefront-categories";
+import { getPriceUnitLabel } from "@/lib/price-unit";
 
 export async function CategoriesSection() {
   const locale = await getLocale();
@@ -113,6 +114,7 @@ export async function FeaturedProducts() {
               categoryName={locale === "ar" ? product.category.nameAr : product.category.nameEn}
               description={locale === "ar" ? product.descriptionAr : product.descriptionEn}
               basePrice={product.basePrice}
+              priceUnitLabel={getPriceUnitLabel(product.unit, locale)}
               image={resolveProductImage(imageInput)}
               imageAlt={resolveProductImageAlt(imageInput, locale)}
               locale={locale}

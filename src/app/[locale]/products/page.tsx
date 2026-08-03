@@ -9,6 +9,7 @@ import {
   getStorefrontCategoryName,
 } from "@/lib/storefront-categories";
 import { Suspense } from "react";
+import { getPriceUnitLabel } from "@/lib/price-unit";
 import { Link } from "@/i18n/navigation";
 import { PackageOpen } from "lucide-react";
 
@@ -55,6 +56,7 @@ export default async function ProductsPage({
       ),
       description: currentLocale === "ar" ? product.descriptionAr : product.descriptionEn,
       basePrice: product.basePrice,
+      priceUnitLabel: getPriceUnitLabel(product.unit, currentLocale),
       image: resolveProductImage(imageInput),
       imageAlt: resolveProductImageAlt(imageInput, currentLocale),
     };

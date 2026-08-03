@@ -11,6 +11,7 @@ export const categoryImages: Record<string, string> = {
   outdoor: `${BASE}/outdoor-banner.jpg`,
   indoor: `${BASE}/indoor-print.jpg`,
   stands: `${BASE}/roll-up.jpg`,
+  "pop-up": `${BASE}/pop-up.jpg`,
   stamps: `${BASE}/stamps.jpg`,
   envelopes: `${BASE}/envelopes.jpg`,
   uvprinting: `${BASE}/uv-printing.jpg`,
@@ -54,10 +55,34 @@ const RULES: ImageRule[] = [
     altEn: "X-Banner display stand",
   },
   {
-    test: (t) => /pop-up|popup|pop_up|بوب\s*أ?ب|كاونتر|طاولة\s*ترويج/i.test(t),
+    test: (t) => /pop-up|popup|pop_up|بوب\s*أ?ب|كاونتر|طاولة\s*ترويج|adjust|أدجاست/i.test(t),
     image: `${BASE}/pop-up.jpg`,
     altAr: "ستاند Pop Up للمعارض",
     altEn: "Pop-up exhibition display",
+  },
+  {
+    test: (t) => /uv[-_\s]?dtf/i.test(t),
+    image: `${BASE}/uv-printing.jpg`,
+    altAr: "طباعة UV DTF بنص بارز",
+    altEn: "UV DTF printing with raised finish",
+  },
+  {
+    test: (t) => /plotter|كاتر\s*بلوتر|تقطيع/i.test(t),
+    image: `${BASE}/vinyl-roll.jpg`,
+    altAr: "تقطيع كاتر بلوتر للفينيل",
+    altEn: "Cutter-plotter vinyl cutting",
+  },
+  {
+    test: (t) => /see-through|سي\s*ثرو/i.test(t),
+    image: `${BASE}/vinyl-roll.jpg`,
+    altAr: "خامة سي ثرو للواجهات الزجاجية",
+    altEn: "See-through media for glass façades",
+  },
+  {
+    test: (t) => /indoor-glossy|indoor-banner|جلوسي|canvas|كانفس|backlight|باك\s*لايت/i.test(t),
+    image: `${BASE}/indoor-print.jpg`,
+    altAr: "مطبوعات إندور — جلوسي وكانفس وباك لايت",
+    altEn: "Indoor prints — glossy, canvas and backlight",
   },
   {
     test: (t) => /vinyl|فينيل|frosted|صقيل|transparent-vinyl|reflective-vinyl/i.test(t),

@@ -6,6 +6,8 @@ import Image from "next/image";
 import { resolveProductImage, resolveProductImageAlt } from "@/lib/product-images";
 import { allowedCategoryFilter, allowedProductFilter } from "@/lib/storefront-categories";
 import { Link } from "@/i18n/navigation";
+import { getPriceUnitLabel } from "@/lib/price-unit";
+import { formatPrice } from "@/lib/utils";
 
 /** `output: export` rejects an empty param list, so keep one stub route while the catalog is empty. */
 const PLACEHOLDER_SLUG = "coming-soon";
@@ -73,6 +75,7 @@ export default async function ProductDetailPage({
   };
   const image = resolveProductImage(imageInput);
   const imageAlt = resolveProductImageAlt(imageInput, currentLocale);
+  const priceUnitLabel = getPriceUnitLabel(product.unit, currentLocale);
 
   return (
     <div className="pt-28 pb-20 heritage-section min-h-screen">
@@ -86,9 +89,23 @@ export default async function ProductDetailPage({
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 mb-4">
               {currentLocale === "ar" ? product.nameAr : product.nameEn}
             </h1>
-            <p className="text-brand-700/70 leading-relaxed mb-8">
+            <p className="text-brand-700/70 leading-relaxed mb-6">
               {currentLocale === "ar" ? product.descriptionAr : product.descriptionEn}
             </p>
+
+            {product.basePrice > 0 && (
+              <div className="inline-flex items-baseline gap-2 mb-8 px-5 py-3 rounded-md bg-brand-50 border border-brand-100">
+                <span className="text-xs uppercase tracking-[0.16em] text-brand-500">
+                  {currentLocale === "ar" ? "يبدأ من" : "From"}
+                </span>
+                <span className="font-display text-2xl font-bold text-brand-800">
+                  {formatPrice(product.basePrice, currentLocale)}
+                </span>
+                {priceUnitLabel && (
+                  <span className="text-sm text-brand-600/70">{priceUnitLabel}</span>
+                )}
+              </div>
+            )}
 
             <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden border border-brand-200 shadow-lg">
               <Image

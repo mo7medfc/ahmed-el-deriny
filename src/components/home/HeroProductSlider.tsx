@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { resolveSliderHeroImage } from "@/lib/slider-images";
 import { resolveProductImageAlt } from "@/lib/product-images";
 import { allowedProductFilter } from "@/lib/storefront-categories";
+import { getPriceUnitLabel } from "@/lib/price-unit";
 import { ProductHeroSliderClient } from "./ProductHeroSliderClient";
 import { HeroBrand } from "./HeroBrand";
 
@@ -36,6 +37,7 @@ export async function HeroProductSlider() {
       categoryName: locale === "ar" ? product.category.nameAr : product.category.nameEn,
       description: locale === "ar" ? product.descriptionAr : product.descriptionEn,
       basePrice: product.basePrice,
+      priceUnitLabel: getPriceUnitLabel(product.unit, locale),
       image: resolveSliderHeroImage(imageInput),
       imageAlt: resolveProductImageAlt(imageInput, locale),
     };

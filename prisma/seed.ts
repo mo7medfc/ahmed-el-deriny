@@ -22,15 +22,22 @@ type CatalogExport = {
   categories: Array<{
     categoryId: string;
     slug: string;
+    nameAr?: string | null;
+    nameEn?: string | null;
+    priceUnit?: string | null;
+    pricingType?: string | null;
     products: Array<{
       id: string;
       nameAr: string;
       nameEn: string;
+      descriptionAr?: string | null;
+      descriptionEn?: string | null;
       groupId?: string | null;
       subCategoryId?: string | null;
       hasLamination?: boolean;
       widthCm?: number | null;
       heightCm?: number | null;
+      featured?: boolean;
     }>;
     groups: Array<{ id: string; nameAr: string; nameEn: string; products?: string[] }>;
     addons: Record<string, unknown>;
@@ -101,11 +108,11 @@ async function main() {
       data: {
         slug: cat.slug || slugify(cat.categoryId),
         legacyId: cat.categoryId,
-        nameAr: meta.nameAr,
-        nameEn: meta.nameEn,
+        nameAr: cat.nameAr || meta.nameAr,
+        nameEn: cat.nameEn || meta.nameEn,
         icon: meta.icon,
         sortOrder: meta.sortOrder || sortOrder,
-        pricingType: inferPricingType(cat.categoryId, meta.editorType),
+        pricingType: cat.pricingType || inferPricingType(cat.categoryId, meta.editorType),
       },
     });
     categoryIdToDbId.set(cat.categoryId, created.id);
@@ -203,16 +210,19 @@ async function main() {
       const costPrice = getCostPriceFromData(costData);
 
       const pricingType =
-        meta.editorType === "sqm_groups"
+        cat.pricingType ||
+        (meta.editorType === "sqm_groups"
           ? "per_sqm"
           : meta.editorType === "stands"
             ? "stands"
             : meta.editorType === "unit"
               ? "per_unit"
-              : inferPricingType(cat.categoryId, meta.editorType);
+              : inferPricingType(cat.categoryId, meta.editorType));
 
       const nameAr = p.nameAr || p.nameEn || p.id;
       const nameEn = p.nameEn || p.nameAr || p.id;
+      const categoryNameAr = cat.nameAr || meta.nameAr;
+      const categoryNameEn = cat.nameEn || meta.nameEn;
 
       await prisma.product.create({
         data: {
@@ -221,10 +231,11 @@ async function main() {
           categoryId: categoryDbId,
           nameAr,
           nameEn,
-          descriptionAr: `${nameAr} — ${meta.nameAr}`,
-          descriptionEn: `${nameEn} — ${meta.nameEn}`,
+          descriptionAr: p.descriptionAr || `${nameAr} — ${categoryNameAr}`,
+          descriptionEn: p.descriptionEn || `${nameEn} — ${categoryNameEn}`,
           pricingCategory: cat.categoryId,
           pricingType,
+          unit: cat.priceUnit || "cm",
           basePrice,
           costPrice,
           minWidth: p.widthCm || (pricingType === "per_sqm" ? 30 : 1),
@@ -239,7 +250,7 @@ async function main() {
             heightCm: p.heightCm,
             sellDocId,
           }),
-          featured: i < 2 && ["Outdoor", "Indoor", "Stands"].includes(cat.categoryId),
+          featured: p.featured ?? (i < 2 && ["Outdoor", "Indoor", "Stands"].includes(cat.categoryId)),
           sortOrder: i,
         },
       });

@@ -13,6 +13,7 @@ export interface SliderProduct {
   categoryName: string;
   description: string;
   basePrice: number;
+  priceUnitLabel?: string;
   image: string;
   imageAlt: string;
 }
@@ -121,6 +122,9 @@ export function ProductHeroSliderClient({
             </p>
             <p className="text-white font-semibold text-xl sm:text-2xl mb-6">
               {fromLabel} {formatPrice(product.basePrice, locale)}
+              {product.priceUnitLabel && (
+                <span className="text-white/70 text-sm font-normal ms-2">{product.priceUnitLabel}</span>
+              )}
             </p>
 
             <div className="flex flex-wrap gap-3">
