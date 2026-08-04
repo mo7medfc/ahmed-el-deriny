@@ -9,6 +9,7 @@ import { isServerlessRuntime, saveUploadBuffer } from "@/lib/server-upload";
 
 import { getImageModel } from "@/lib/ai/openai-models";
 import { corsPreflight, withCors } from "@/lib/cors";
+import { describeOpenAiError } from "@/lib/ai/openai-errors";
 
 const OPENAI_IMAGE_URL = "https://api.openai.com/v1/images/generations";
 const IMAGE_MODEL = getImageModel();
@@ -56,14 +57,11 @@ async function generateOneImage(
   });
 
   if (!res.ok) {
-    const err = await res.text();
-    let detail = "Image generation failed";
-    try {
-      detail = JSON.parse(err)?.error?.message || detail;
-    } catch {
-      /* keep */
-    }
-    throw new Error(detail);
+    const described = describeOpenAiError(await res.text(), res.status);
+    throw Object.assign(new Error(described.error), {
+      aiCode: described.code,
+      aiStatus: described.status,
+    });
   }
 
   const data = await res.json();
@@ -182,6 +180,7 @@ async function handleGenerate(request: NextRequest) {
   } catch (error) {
     console.error("Design generate error:", error);
     const msg = error instanceof Error ? error.message : "Design generation failed";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    const { aiCode, aiStatus } = (error || {}) as { aiCode?: string; aiStatus?: number };
+    return NextResponse.json({ error: msg, code: aiCode }, { status: aiStatus || 500 });
   }
 }

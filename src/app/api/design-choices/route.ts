@@ -9,6 +9,7 @@ import {
 } from "@/lib/ai/design-choice-prompts";
 import { getChoicesModel } from "@/lib/ai/openai-models";
 import { corsPreflight, withCors } from "@/lib/cors";
+import { describeOpenAiError } from "@/lib/ai/openai-errors";
 
 const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
 
@@ -96,7 +97,11 @@ async function handleChoices(request: NextRequest) {
     if (!res.ok) {
       const err = await res.text();
       console.error("OpenAI design-choices error:", err);
-      return NextResponse.json({ error: "AI service unavailable" }, { status: 502 });
+      const described = describeOpenAiError(err, res.status);
+      return NextResponse.json(
+        { error: described.error, code: described.code },
+        { status: described.status }
+      );
     }
 
     const data = await res.json();

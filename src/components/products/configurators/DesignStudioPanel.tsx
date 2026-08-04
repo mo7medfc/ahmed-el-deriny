@@ -38,6 +38,29 @@ interface DesignStudioPanelProps {
 
 type Phase = "intro" | "describe" | "question" | "ready" | "preview";
 
+function aiErrorMessage(
+  data: { error?: string; code?: string } | null,
+  isAr: boolean,
+  fallback: string
+): string {
+  switch (data?.code) {
+    case "no_credit":
+      return isAr
+        ? "رصيد خدمة التصميم الذكي خلص. كلّم إدارة الموقع تشحن الرصيد والخدمة هترجع تشتغل على طول."
+        : "The AI design service has run out of credit. Ask the site admin to top it up.";
+    case "rate_limit":
+      return isAr
+        ? "الخدمة مزحومة دلوقتي، جرّب تاني بعد دقيقة."
+        : "The service is busy right now — try again in a minute.";
+    case "auth":
+      return isAr
+        ? "إعدادات خدمة التصميم الذكي محتاجة مراجعة من إدارة الموقع."
+        : "The AI design service credentials need review.";
+    default:
+      return data?.error || fallback;
+  }
+}
+
 interface DesignVariant {
   url: string;
   dataUrl: string;
@@ -174,7 +197,11 @@ export function DesignStudioPanel({
       }),
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || "choices failed");
+    if (!res.ok) {
+      throw new Error(
+        aiErrorMessage(data, isAr, isAr ? "فشل الاتصال بخدمة التصميم" : "Design service unavailable")
+      );
+    }
     return data as DesignChoiceResponse;
   };
 
@@ -344,7 +371,11 @@ export function DesignStudioPanel({
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "generate failed");
+      if (!res.ok) {
+        throw new Error(
+          aiErrorMessage(data, isAr, isAr ? "فشل إنشاء التصميم" : "Design generation failed")
+        );
+      }
 
       const list: DesignVariant[] = data.variants?.length
         ? data.variants
