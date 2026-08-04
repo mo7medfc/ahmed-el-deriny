@@ -99,6 +99,7 @@ export function getProductTypeFromCategory(category?: string | null): string {
     Outdoor: "banner",
     Indoor: "banner",
     Stands: "banner",
+    PopUp: "banner",
     DTF: "banner",
   };
   return map[category || ""] || "other";

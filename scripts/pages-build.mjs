@@ -30,6 +30,8 @@ const buildEnv = {
   GITHUB_PAGES: "true",
   NEXT_PUBLIC_STATIC_PRICING: "true",
   NEXT_PUBLIC_BASE_PATH: "/ahmed-el-deriny",
+  // GitHub Pages has no server — the design studio calls the Vercel deployment.
+  NEXT_PUBLIC_API_BASE: process.env.NEXT_PUBLIC_API_BASE || "https://ahmed-deriny.vercel.app",
   DATABASE_URL: "file:./prisma/pages.db",
   ADMIN_EMAIL: process.env.ADMIN_EMAIL || "admin@ahmedderiny.com",
   ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || "Admin@123",

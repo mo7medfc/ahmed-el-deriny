@@ -7,6 +7,7 @@ import { formatPrice } from "@/lib/utils";
 import { Upload, Check, ShoppingCart, Sparkles } from "lucide-react";
 import { DesignStudioPanel } from "./DesignStudioPanel";
 import type { DesignConfigurationState } from "@/lib/ai/design-studio";
+import { apiUrl } from "@/lib/api-base";
 import { cn } from "@/lib/utils";
 
 export function useDesignUpload(isAr: boolean) {
@@ -21,7 +22,7 @@ export function useDesignUpload(isAr: boolean) {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await fetch("/api/upload", { method: "POST", body: formData });
+      const res = await fetch(apiUrl("/api/upload"), { method: "POST", body: formData });
       const data = await res.json();
       if (data.url) {
         setDesignFile(data.url);

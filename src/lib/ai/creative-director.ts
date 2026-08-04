@@ -72,6 +72,9 @@ Include:
 - EXACT dimensions and aspect ratio from the brief
 - FLAT 2D artwork, straight-on, NO mockup, NO device, NO watermark
 
+The brief contains a "PRINT MEDIUM & ART DIRECTION" block describing the physical product this artwork is printed on.
+Every constraint in that block is non-negotiable — restate the relevant ones inside your prompt (safe zones, transparent background, viewing distance, cut limits) so the image model cannot ignore them.
+
 STAMP: black ink on white cliche only.
 Make it VISUALLY STUNNING — not boring, not template-like.`;
 

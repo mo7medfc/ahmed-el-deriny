@@ -18,7 +18,7 @@ import {
   Check,
   Pencil,
 } from "lucide-react";
-import { isStaticHosting } from "@/lib/pricing-url";
+import { apiUrl, isApiAvailable } from "@/lib/api-base";
 import type { DesignChoiceResponse } from "@/lib/ai/design-choice-prompts";
 import type { DesignConfigurationState } from "@/lib/ai/design-studio";
 import { parseStampSizeId, resolveProductType } from "@/lib/ai/design-studio";
@@ -143,7 +143,7 @@ export function DesignStudioPanel({
 
   const selectedVariant = variants[selectedIndex];
 
-  if (isStaticHosting()) {
+  if (!isApiAvailable()) {
     return (
       <p className="text-sm text-brand-500 p-4 border border-brand-200 rounded-sm">
         {isAr
@@ -158,7 +158,7 @@ export function DesignStudioPanel({
     nextSelections: Record<string, string>,
     skip = false
   ): Promise<DesignChoiceResponse> => {
-    const res = await fetch("/api/design-choices", {
+    const res = await fetch(apiUrl("/api/design-choices"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -322,7 +322,7 @@ export function DesignStudioPanel({
     }
 
     try {
-      const res = await fetch("/api/design-generate", {
+      const res = await fetch(apiUrl("/api/design-generate"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -555,6 +555,13 @@ export function DesignStudioPanel({
             {isAr
               ? `مقاس التصميم: ${dims.widthCm} × ${dims.heightCm} سم (بالظبط)`
               : `Design size: ${dims.widthCm} × ${dims.heightCm} cm (exact)`}
+          </p>
+        )}
+        {dims.spec && (
+          <p className="text-xs text-brand-600/70">
+            {isAr
+              ? `هيتصمم على أساس إنه ${dims.spec.mediumAr}`
+              : `Art-directed as a ${dims.spec.medium}`}
           </p>
         )}
       </div>

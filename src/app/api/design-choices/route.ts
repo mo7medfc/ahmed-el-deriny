@@ -8,10 +8,19 @@ import {
   applyDimensionEnrichment,
 } from "@/lib/ai/design-choice-prompts";
 import { getChoicesModel } from "@/lib/ai/openai-models";
+import { corsPreflight, withCors } from "@/lib/cors";
 
 const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
 
+export function OPTIONS(request: NextRequest) {
+  return corsPreflight(request.headers.get("origin"));
+}
+
 export async function POST(request: NextRequest) {
+  return withCors(await handleChoices(request), request.headers.get("origin"));
+}
+
+async function handleChoices(request: NextRequest) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     return NextResponse.json(

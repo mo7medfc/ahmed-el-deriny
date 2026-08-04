@@ -3,6 +3,11 @@ import {
   type DesignConfigurationState,
   parseStampSizeId,
 } from "./design-studio";
+import {
+  buildProductDesignBlock,
+  getProductDesignSpec,
+  type ProductDesignSpec,
+} from "./product-design-specs";
 
 const ENVELOPE_DIMENSIONS: Record<string, { widthCm: number; heightCm: number }> = {
   american_22_11: { widthCm: 22, heightCm: 11 },
@@ -79,6 +84,7 @@ export interface ResolvedDimensions {
   sizeLabel: string | null;
   imageSize: DesignImageSize;
   isStamp: boolean;
+  spec: ProductDesignSpec | null;
 }
 
 const SHAPE_LABELS: Record<string, string> = {
@@ -96,9 +102,15 @@ export function resolveDimensions(
   const isStamp = category === "Stamps";
   const parsed = parseStampSizeId(config?.sizeId as string | undefined);
   const fixed = resolveFixedBounds(config);
-  const fromSlug = parseDimensionsFromText(config?.productSlug as string | undefined);
-  const fromName = parseDimensionsFromText(config?.productName as string | undefined);
-  const fromSummary = parseDimensionsFromText(config?.summary as string | undefined);
+  const spec = getProductDesignSpec({
+    pricingCategory: category,
+    productSlug: config?.productSlug,
+    productName: config?.productName,
+  });
+  const noText = spec?.ignoreTextDimensions === true;
+  const fromSlug = noText ? {} : parseDimensionsFromText(config?.productSlug as string | undefined);
+  const fromName = noText ? {} : parseDimensionsFromText(config?.productName as string | undefined);
+  const fromSummary = noText ? {} : parseDimensionsFromText(config?.summary as string | undefined);
   const fromSizeId =
     ENVELOPE_DIMENSIONS[config?.sizeId as string] ||
     parseDimensionsFromText(config?.sizeId as string | undefined);
@@ -112,6 +124,7 @@ export function resolveDimensions(
     fromSlug.widthCm ??
     fromName.widthCm ??
     fromSummary.widthCm ??
+    spec?.printWidthCm ??
     null;
   const heightCm =
     config?.heightCm ??
@@ -122,6 +135,7 @@ export function resolveDimensions(
     fromSlug.heightCm ??
     fromName.heightCm ??
     fromSummary.heightCm ??
+    spec?.printHeightCm ??
     null;
 
   const shape = (config?.shape as string) || parsed.shape || null;
@@ -134,7 +148,7 @@ export function resolveDimensions(
     aspectRatio = 1;
   }
 
-  const imageSize = computeImageSize(widthCm, heightCm, shape);
+  const imageSize = computeImageSize(widthCm, heightCm, shape) ?? spec?.imageSize ?? "1024x1024";
 
   return {
     widthCm,
@@ -144,14 +158,16 @@ export function resolveDimensions(
     sizeLabel,
     imageSize,
     isStamp,
+    spec,
   };
 }
 
+/** Returns null when nothing about the product hints at an orientation. */
 function computeImageSize(
   widthCm?: number | null,
   heightCm?: number | null,
   shape?: string | null
-): DesignImageSize {
+): DesignImageSize | null {
   if (shape === "round" || shape === "square") {
     return "1024x1024";
   }
@@ -166,7 +182,7 @@ function computeImageSize(
     return "1024x1024";
   }
 
-  return "1024x1024";
+  return null;
 }
 
 export function buildDimensionPromptBlock(
@@ -206,22 +222,41 @@ export function buildDimensionPromptBlock(
       "STAMP: flat rubber cliche imprint artwork, black ink on pure white background, crisp commercial stamp quality.",
       "View straight-on, no 3D stamp object, no shadow, no mockup."
     );
-  } else if (
-    _pricingCategory === "Outdoor" ||
-    _pricingCategory === "Indoor" ||
-    _pricingCategory === "Stands" ||
-    _pricingCategory === "DTF"
-  ) {
-    lines.push(
-      "BANNER / ROLL-UP: bold large-format print layout — strong headline hierarchy, readable from distance, full bleed edge-to-edge artwork.",
-      "Design for the exact banner proportions — NOT a square social media post."
-    );
   }
 
   lines.push(`Canvas orientation for image AI: ${dims.imageSize}`);
+
+  const stretchNote = buildCanvasMismatchNote(dims);
+  if (stretchNote) lines.push(stretchNote);
+
   lines.push("=== END DIMENSIONS ===");
 
-  return lines.join("\n");
+  const mediumBlock = buildProductDesignBlock(dims.spec);
+
+  return mediumBlock ? `${lines.join("\n")}\n\n${mediumBlock}` : lines.join("\n");
+}
+
+const CANVAS_RATIOS: Record<DesignImageSize, number> = {
+  "1024x1024": 1,
+  "1792x1024": 1.75,
+  "1024x1792": 0.5714,
+};
+
+/**
+ * The image model only offers square, 3:2 and 2:3 canvases. Roll-ups (1:2.5) and
+ * similar formats are far taller than anything it can render, so the layout has
+ * to survive being stretched to the real print ratio.
+ */
+function buildCanvasMismatchNote(dims: ResolvedDimensions): string | null {
+  if (!dims.aspectRatio) return null;
+
+  const canvasRatio = CANVAS_RATIOS[dims.imageSize];
+  const drift = dims.aspectRatio / canvasRatio;
+  if (drift > 0.75 && drift < 1.33) return null;
+
+  return dims.aspectRatio < canvasRatio
+    ? "NOTE: the real print is even TALLER than this canvas. Compose in clear horizontal bands (top brand zone, middle hero zone, bottom contact zone) with generous vertical breathing space, so the layout still reads correctly when stretched to the true height. Do NOT rely on a single full-height photo or on elements that must touch both the top and bottom edges."
+    : "NOTE: the real print is even WIDER than this canvas. Compose in clear vertical zones with generous horizontal breathing space, so the layout still reads correctly when stretched to the true width. Do NOT rely on elements that must touch both the left and right edges.";
 }
 
 export const QUALITY_PROMPT_BLOCK = `DESIGN QUALITY REQUIREMENTS:

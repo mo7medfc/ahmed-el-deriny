@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { isServerlessRuntime, saveUploadBuffer, toDataUrl } from "@/lib/server-upload";
+import { corsPreflight, withCors } from "@/lib/cors";
 
 const MAX_SIZE = 25 * 1024 * 1024;
 const ALLOWED_TYPES = [
@@ -25,7 +26,15 @@ function mimeFromExt(ext: string) {
   return map[ext.toLowerCase()] || "application/octet-stream";
 }
 
+export function OPTIONS(request: NextRequest) {
+  return corsPreflight(request.headers.get("origin"));
+}
+
 export async function POST(request: NextRequest) {
+  return withCors(await handleUpload(request), request.headers.get("origin"));
+}
+
+async function handleUpload(request: NextRequest) {
   try {
     const formData = await request.formData();
     const file = formData.get("file") as File | null;

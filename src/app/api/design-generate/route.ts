@@ -8,6 +8,7 @@ import { resolveProductType } from "@/lib/ai/design-studio";
 import { isServerlessRuntime, saveUploadBuffer } from "@/lib/server-upload";
 
 import { getImageModel } from "@/lib/ai/openai-models";
+import { corsPreflight, withCors } from "@/lib/cors";
 
 const OPENAI_IMAGE_URL = "https://api.openai.com/v1/images/generations";
 const IMAGE_MODEL = getImageModel();
@@ -91,7 +92,15 @@ async function generateOneImage(
   };
 }
 
+export function OPTIONS(request: NextRequest) {
+  return corsPreflight(request.headers.get("origin"));
+}
+
 export async function POST(request: NextRequest) {
+  return withCors(await handleGenerate(request), request.headers.get("origin"));
+}
+
+async function handleGenerate(request: NextRequest) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
