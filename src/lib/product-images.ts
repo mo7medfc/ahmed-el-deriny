@@ -17,6 +17,7 @@ export const categoryImages: Record<string, string> = {
   uvprinting: `${BASE}/uv-printing.jpg`,
   dtf: `${BASE}/dtf-tshirt.jpg`,
   "desk-sets": `${BASE}/desk-set-black.jpg`,
+  "wood-desk-sets": `${BASE}/wood-desk-dark-brown.jpg`,
   nameplates: `${BASE}/nameplate-gold.jpg`,
   dafater: `${BASE}/notebooks.jpg`,
   "notebooks-invoices": `${BASE}/notebooks.jpg`,
@@ -67,6 +68,30 @@ const RULES: ImageRule[] = [
     image: `${BASE}/nameplate-silver.jpg`,
     altAr: "باغة فضى محفور عليها الاسم",
     altEn: "Silver engraved desk nameplate",
+  },
+  {
+    test: (t) => /wood-desk-dark-brown|بنى\s*غامق/i.test(t),
+    image: `${BASE}/wood-desk-dark-brown.jpg`,
+    altAr: "طقم مكتب خشب بنى غامق",
+    altEn: "Dark brown wood desk set",
+  },
+  {
+    test: (t) => /wood-desk-espresso|بنى\s*داكن/i.test(t),
+    image: `${BASE}/wood-desk-espresso.jpg`,
+    altAr: "طقم مكتب خشب بنى داكن",
+    altEn: "Espresso dark wood desk set",
+  },
+  {
+    test: (t) => /wood-desk-leather-brown|خشب\s*جلد\s*بنى/i.test(t),
+    image: `${BASE}/wood-desk-leather-brown.jpg`,
+    altAr: "طقم مكتب خشب جلد بنى",
+    altEn: "Brown leather-wood desk set",
+  },
+  {
+    test: (t) => /wood-desk|wooddesk|خشب\s*الزان|خشب\s*بنى/i.test(t),
+    image: `${BASE}/wood-desk-dark-brown.jpg`,
+    altAr: "طقم مكتب خشب الزان",
+    altEn: "Beech wood desk set",
   },
   {
     test: (t) => /desk-set|desksets|طقم\s*مكتب/i.test(t),

@@ -102,6 +102,7 @@ export function getProductTypeFromCategory(category?: string | null): string {
     PopUp: "banner",
     DTF: "banner",
     DeskSets: "other",
+    WoodDeskSets: "other",
     Nameplates: "other",
   };
   return map[category || ""] || "other";

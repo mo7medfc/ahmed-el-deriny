@@ -937,6 +937,74 @@
       "defaults": {}
     },
     {
+      "categoryId": "WoodDeskSets",
+      "slug": "wood-desk-sets",
+      "nameAr": "طقم المكتب خشب الزان",
+      "nameEn": "Beech Wood Desk Sets",
+      "priceUnit": "piece",
+      "pricingType": "per_unit",
+      "priceNoteAr": "يُباع جاهزًا كما هو — بدون حفر اسم",
+      "priceNoteEn": "Sold ready as shown — no name engraving",
+      "products": [
+        {
+          "id": "dark-brown",
+          "nameAr": "طقم مكتب خشب بنى غامق",
+          "nameEn": "Dark Brown Wood Desk Set",
+          "descriptionAr": "طقم مكتب خشب زان بنى غامق جاهز للبيع كما هو — يشمل صينية أوراق دورين وحامل أقلام وساعة ومفرش المكتب. بدون حفر اسم.",
+          "descriptionEn": "Ready-to-sell dark brown beech wood desk set — includes two-tier tray, pen holder, clock, and desk pad. No name engraving.",
+          "image": "/images/products/wood-desk-dark-brown.jpg",
+          "groupId": "beech",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "espresso",
+          "nameAr": "طقم مكتب خشب بنى داكن",
+          "nameEn": "Espresso Dark Wood Desk Set",
+          "descriptionAr": "طقم مكتب خشب زان بنى داكن بتشطيب فاخر — تشكيلة مكتملة تُباع جاهزة بدون حفر اسم.",
+          "descriptionEn": "Premium espresso-dark beech wood desk set — a complete ready-made collection sold without name engraving.",
+          "image": "/images/products/wood-desk-espresso.jpg",
+          "groupId": "beech",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "leather-brown",
+          "nameAr": "طقم مكتب خشب جلد بنى",
+          "nameEn": "Brown Leather-Wood Desk Set",
+          "descriptionAr": "طقم مكتب خشب زان مع لمسة جلد بنى — جاهز للبيع كما هو بدون حفر اسم على الباغة.",
+          "descriptionEn": "Beech wood desk set with brown leather accents — sold ready as shown, without name engraving.",
+          "image": "/images/products/wood-desk-leather-brown.jpg",
+          "groupId": "beech",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "beech",
+          "nameAr": "خشب الزان",
+          "nameEn": "Beech Wood",
+          "products": [
+            "dark-brown",
+            "espresso",
+            "leather-brown"
+          ]
+        }
+      ],
+      "addons": {},
+      "defaults": {}
+    },
+    {
       "categoryId": "Nameplates",
       "slug": "nameplates",
       "nameAr": "باغة محفور عليها الاسم",
