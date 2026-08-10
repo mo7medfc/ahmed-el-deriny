@@ -93,7 +93,7 @@ export default async function ProductDetailPage({
               {currentLocale === "ar" ? product.descriptionAr : product.descriptionEn}
             </p>
 
-            {product.basePrice > 0 && (
+            {product.basePrice > 0 ? (
               <div className="inline-flex items-baseline gap-2 mb-8 px-5 py-3 rounded-md bg-brand-50 border border-brand-100">
                 <span className="text-xs uppercase tracking-[0.16em] text-brand-500">
                   {currentLocale === "ar" ? "يبدأ من" : "From"}
@@ -104,6 +104,12 @@ export default async function ProductDetailPage({
                 {priceUnitLabel && (
                   <span className="text-sm text-brand-600/70">{priceUnitLabel}</span>
                 )}
+              </div>
+            ) : (
+              <div className="inline-flex items-baseline gap-2 mb-8 px-5 py-3 rounded-md bg-brand-50 border border-brand-100">
+                <span className="font-display text-lg font-semibold text-brand-700">
+                  {currentLocale === "ar" ? "السعر عند الطلب" : "Price on request"}
+                </span>
               </div>
             )}
 

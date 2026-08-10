@@ -10,6 +10,8 @@ export const ALLOWED_STOREFRONT_CATEGORIES: readonly string[] = [
   "Stands",
   "PopUp",
   "DTF",
+  "DeskSets",
+  "Nameplates",
 ];
 
 export type AllowedCategoryId = string;
@@ -39,6 +41,8 @@ export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn:
   Stands: { nameAr: "الأستندات", nameEn: "Stands" },
   PopUp: { nameAr: "البوب أب", nameEn: "Pop-Up Displays" },
   DTF: { nameAr: "طباعة DTF و UV DTF", nameEn: "DTF & UV DTF Printing" },
+  DeskSets: { nameAr: "طقم المكتب محفور الاسم", nameEn: "Engraved Desk Sets" },
+  Nameplates: { nameAr: "باغة محفور عليها الاسم", nameEn: "Engraved Nameplates" },
 };
 
 export function getStorefrontCategoryName(

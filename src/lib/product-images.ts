@@ -16,6 +16,8 @@ export const categoryImages: Record<string, string> = {
   envelopes: `${BASE}/envelopes.jpg`,
   uvprinting: `${BASE}/uv-printing.jpg`,
   dtf: `${BASE}/dtf-tshirt.jpg`,
+  "desk-sets": `${BASE}/desk-set-black.jpg`,
+  nameplates: `${BASE}/nameplate-gold.jpg`,
   dafater: `${BASE}/notebooks.jpg`,
   "notebooks-invoices": `${BASE}/notebooks.jpg`,
   "notebooks-books-booklets": `${BASE}/catalogs.jpg`,
@@ -42,6 +44,42 @@ type ImageRule = {
 };
 
 const RULES: ImageRule[] = [
+  {
+    test: (t) => /desk-set-black|black-grained|مجزع\s*أسود/i.test(t),
+    image: `${BASE}/desk-set-black.jpg`,
+    altAr: "طقم مكتب جلد مجزع أسود",
+    altEn: "Black grained leather desk set",
+  },
+  {
+    test: (t) => /desk-set-brown|brown-grained|بنى\s*محروق/i.test(t),
+    image: `${BASE}/desk-set-brown.jpg`,
+    altAr: "طقم مكتب جلد مجزع بنى محروق",
+    altEn: "Burnt brown grained leather desk set",
+  },
+  {
+    test: (t) => /nameplate-gold|باغة\s*ذهب/i.test(t),
+    image: `${BASE}/nameplate-gold.jpg`,
+    altAr: "باغة ذهبى محفور عليها الاسم",
+    altEn: "Gold engraved desk nameplate",
+  },
+  {
+    test: (t) => /nameplate-silver|باغة\s*فض/i.test(t),
+    image: `${BASE}/nameplate-silver.jpg`,
+    altAr: "باغة فضى محفور عليها الاسم",
+    altEn: "Silver engraved desk nameplate",
+  },
+  {
+    test: (t) => /desk-set|desksets|طقم\s*مكتب/i.test(t),
+    image: `${BASE}/desk-set-black.jpg`,
+    altAr: "طقم مكتب محفور الاسم",
+    altEn: "Engraved leather desk set",
+  },
+  {
+    test: (t) => /nameplate|باغة/i.test(t),
+    image: `${BASE}/nameplate-gold.jpg`,
+    altAr: "باغة محفور عليها الاسم",
+    altEn: "Engraved desk nameplate",
+  },
   {
     test: (t) => /roll-up|rollup|roll_up|رول\s*أ?ب/i.test(t),
     image: `${BASE}/roll-up.jpg`,
@@ -223,7 +261,7 @@ function buildSearchText(input: ProductImageInput): string {
 }
 
 export function resolveProductImage(input: ProductImageInput): string {
-  if (input.image?.startsWith("/")) return input.image;
+  if (input.image?.startsWith("/")) return publicPath(input.image);
   if (input.image?.startsWith("http")) return input.image;
 
   const text = buildSearchText(input);

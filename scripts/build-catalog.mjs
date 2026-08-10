@@ -37,6 +37,7 @@ const catalog = {
       nameEn: p.nameEn,
       descriptionAr: p.descriptionAr ?? null,
       descriptionEn: p.descriptionEn ?? null,
+      image: p.image ?? null,
       groupId: p.groupId ?? null,
       subCategoryId: null,
       hasLamination: false,

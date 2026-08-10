@@ -31,6 +31,7 @@ type CatalogExport = {
       nameAr: string;
       nameEn: string;
       descriptionAr?: string | null;
+      image?: string | null;
       descriptionEn?: string | null;
       groupId?: string | null;
       subCategoryId?: string | null;
@@ -233,6 +234,7 @@ async function main() {
           nameEn,
           descriptionAr: p.descriptionAr || `${nameAr} — ${categoryNameAr}`,
           descriptionEn: p.descriptionEn || `${nameEn} — ${categoryNameEn}`,
+          image: p.image || null,
           pricingCategory: cat.categoryId,
           pricingType,
           unit: cat.priceUnit || "cm",

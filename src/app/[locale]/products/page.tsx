@@ -111,6 +111,7 @@ export default async function ProductsPage({
                 locale={currentLocale}
                 fromLabel={t("from")}
                 configureLabel={t("configure")}
+                priceOnRequestLabel={t("priceOnRequest")}
                 showAllLabel={t("showAll")}
                 showLessLabel={t("showLess")}
               />

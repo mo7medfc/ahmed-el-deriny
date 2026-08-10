@@ -119,6 +119,7 @@ export async function FeaturedProducts() {
               imageAlt={resolveProductImageAlt(imageInput, locale)}
               locale={locale}
               fromLabel={t("from")}
+              priceOnRequestLabel={t("priceOnRequest")}
               variant="featured"
             />
             );

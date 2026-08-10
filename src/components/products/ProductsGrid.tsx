@@ -23,6 +23,7 @@ interface ProductsGridProps {
   locale: string;
   fromLabel: string;
   configureLabel: string;
+  priceOnRequestLabel?: string;
   showAllLabel: string;
   showLessLabel: string;
   initialCount?: number;
@@ -35,6 +36,7 @@ export function ProductsGrid({
   locale,
   fromLabel,
   configureLabel,
+  priceOnRequestLabel,
   showAllLabel,
   showLessLabel,
   initialCount = DEFAULT_INITIAL,
@@ -60,6 +62,7 @@ export function ProductsGrid({
             locale={locale}
             fromLabel={fromLabel}
             configureLabel={configureLabel}
+            priceOnRequestLabel={priceOnRequestLabel}
           />
         ))}
       </div>

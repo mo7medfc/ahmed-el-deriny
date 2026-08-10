@@ -14,6 +14,7 @@ interface ProductCardProps {
   fromLabel: string;
   priceUnitLabel?: string;
   configureLabel?: string;
+  priceOnRequestLabel?: string;
   variant?: "default" | "featured";
 }
 
@@ -29,6 +30,7 @@ export function ProductCard({
   fromLabel,
   priceUnitLabel,
   configureLabel,
+  priceOnRequestLabel,
   variant = "default",
 }: ProductCardProps) {
   const imageHeight = variant === "featured" ? "h-52" : "h-48";
@@ -77,7 +79,9 @@ export function ProductCard({
                 )}
               </>
             ) : (
-              <p className="text-sm font-medium text-brand-600">{configureLabel || fromLabel}</p>
+              <p className="text-sm font-medium text-brand-600">
+                {priceOnRequestLabel || configureLabel || fromLabel}
+              </p>
             )}
           </div>
           {configureLabel && basePrice > 0 && (
