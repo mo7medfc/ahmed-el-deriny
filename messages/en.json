@@ -81,6 +81,24 @@
     "subtitle": "Success Partners",
     "title": "Trusted by leading institutions"
   },
+  "machines": {
+    "badge": "Production Lines",
+    "title": "Our Advanced Machines",
+    "subtitle": "Modern indoor and DTF capacity — color accuracy and speed worthy of Ahmed El-Deriny",
+    "centerLine": "From the press floor to your product",
+    "centerDesc": "Wide-format indoor printers and professional DTF lines working side by side for market-ready results.",
+    "cta": "Browse products",
+    "indoor": {
+      "label": "Indoor",
+      "title": "Indoor Press",
+      "desc": "High-precision wide-format indoor printing for posters, vinyl, backlight, and canvas."
+    },
+    "dtf": {
+      "label": "DTF",
+      "title": "DTF Printer",
+      "desc": "Direct-to-film for apparel and gifts — rich color and crisp detail."
+    }
+  },
   "products": {
     "title": "Our Products",
     "subtitle": "All print products with professional quality",

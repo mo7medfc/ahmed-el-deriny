@@ -322,4 +322,215 @@ input, textarea, select {
   .partners-marquee-track {
     animation: none;
   }
+
+  .machines-panel__float,
+  .machines-panel__scan,
+  .machines-showcase__pulse {
+    animation: none !important;
+  }
+}
+
+/* ── Machines showcase (homepage finale) ── */
+.machines-showcase {
+  background:
+    radial-gradient(ellipse 55% 70% at 0% 50%, color-mix(in srgb, var(--color-brand-100) 70%, transparent), transparent 70%),
+    radial-gradient(ellipse 55% 70% at 100% 50%, color-mix(in srgb, var(--color-brand-100) 55%, transparent), transparent 70%),
+    linear-gradient(180deg, #f7fbfe 0%, #ffffff 45%, #f3f8fc 100%);
+}
+
+.machines-showcase__atmosphere {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 40%, color-mix(in srgb, var(--color-brand-400) 12%, transparent), transparent 28%),
+    radial-gradient(circle at 82% 55%, color-mix(in srgb, var(--color-brand-500) 10%, transparent), transparent 30%);
+  pointer-events: none;
+}
+
+.machines-showcase__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-brand-200) 35%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-brand-200) 35%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 20%, transparent 75%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.machines-showcase__pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--color-brand-500);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-brand-500) 45%, transparent);
+  animation: machines-pulse 2.4s ease-out infinite;
+}
+
+@keyframes machines-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-brand-500) 45%, transparent); opacity: 1; }
+  70% { box-shadow: 0 0 0 18px transparent; opacity: 0.55; }
+  100% { box-shadow: 0 0 0 0 transparent; opacity: 0.35; }
+}
+
+.machines-panel {
+  text-decoration: none;
+  color: inherit;
+}
+
+.machines-panel__frame {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, #ffffff 0%, #eef6fb 100%);
+  border: 1px solid color-mix(in srgb, var(--color-brand-200) 90%, transparent);
+  box-shadow:
+    0 18px 50px color-mix(in srgb, var(--color-brand-900) 8%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  aspect-ratio: 4 / 3;
+}
+
+.machines-panel__float {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem;
+  animation: machines-float 5.5s ease-in-out infinite;
+}
+
+.machines-panel:nth-of-type(2) .machines-panel__float,
+.machines-panel.order-3 .machines-panel__float {
+  animation-delay: -2.4s;
+  animation-duration: 6.2s;
+}
+
+@keyframes machines-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.015); }
+}
+
+.machines-panel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 28px color-mix(in srgb, var(--color-brand-900) 18%, transparent));
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.machines-panel:hover .machines-panel__image {
+  transform: scale(1.04);
+}
+
+.machines-panel__scan {
+  position: absolute;
+  inset-inline: 8%;
+  top: 12%;
+  height: 2px;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-brand-400) 80%, white),
+    transparent
+  );
+  box-shadow: 0 0 18px color-mix(in srgb, var(--color-brand-400) 55%, transparent);
+  animation: machines-scan 3.8s ease-in-out infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes machines-scan {
+  0% { top: 14%; opacity: 0; }
+  15% { opacity: 0.85; }
+  85% { opacity: 0.85; }
+  100% { top: 78%; opacity: 0; }
+}
+
+.machines-panel__glow {
+  position: absolute;
+  inset: auto 15% 0;
+  height: 35%;
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--color-brand-400) 22%, transparent), transparent 70%);
+  pointer-events: none;
+}
+
+.machines-panel__copy {
+  margin-top: 1.1rem;
+  text-align: center;
+  padding-inline: 0.5rem;
+}
+
+.machines-panel__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand-500);
+  margin-bottom: 0.35rem;
+}
+
+.machines-panel__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-brand-950);
+  margin-bottom: 0.4rem;
+}
+
+[dir="rtl"] .machines-panel__title {
+  font-family: var(--font-arabic);
+}
+
+.machines-panel__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--color-brand-700) 70%, transparent);
+  margin-bottom: 0.75rem;
+}
+
+.machines-panel__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-brand-700);
+}
+
+.machines-panel:hover .machines-panel__cta {
+  color: var(--color-brand-500);
+}
+
+@media (min-width: 1024px) {
+  .machines-panel.order-1 .machines-panel__copy {
+    text-align: start;
+  }
+
+  .machines-panel.order-3 .machines-panel__copy {
+    text-align: end;
+  }
+
+  .machines-panel.order-1 .machines-panel__frame {
+    transform: perspective(1200px) rotateY(6deg);
+  }
+
+  .machines-panel.order-3 .machines-panel__frame {
+    transform: perspective(1200px) rotateY(-6deg);
+  }
+
+  [dir="rtl"] .machines-panel.order-1 .machines-panel__frame {
+    transform: perspective(1200px) rotateY(-6deg);
+  }
+
+  [dir="rtl"] .machines-panel.order-3 .machines-panel__frame {
+    transform: perspective(1200px) rotateY(6deg);
+  }
+
+  .machines-panel:hover .machines-panel__frame {
+    transform: perspective(1200px) rotateY(0deg) translateY(-4px);
+  }
 }
