@@ -9,6 +9,7 @@ interface FilteredProductsGridProps {
   locale: string;
   fromLabel: string;
   configureLabel: string;
+  priceOnRequestLabel?: string;
   showAllLabel: string;
   showLessLabel: string;
 }
