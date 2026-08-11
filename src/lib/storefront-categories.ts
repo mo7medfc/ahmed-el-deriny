@@ -12,7 +12,9 @@ export const ALLOWED_STOREFRONT_CATEGORIES: readonly string[] = [
   "DTF",
   "DeskSets",
   "WoodDeskSets",
+  "Certificates",
   "Nameplates",
+  "Stamps",
 ];
 
 export type AllowedCategoryId = string;
@@ -44,7 +46,9 @@ export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn:
   DTF: { nameAr: "طباعة DTF و UV DTF", nameEn: "DTF & UV DTF Printing" },
   DeskSets: { nameAr: "طقم المكتب محفور الاسم", nameEn: "Engraved Desk Sets" },
   WoodDeskSets: { nameAr: "طقم المكتب الخشب الزان", nameEn: "Beech Wood Desk Sets" },
+  Certificates: { nameAr: "شهادات التقدير", nameEn: "Appreciation Certificates" },
   Nameplates: { nameAr: "باغة محفور عليها الاسم", nameEn: "Engraved Nameplates" },
+  Stamps: { nameAr: "الأختام", nameEn: "Stamps" },
 };
 
 export function getStorefrontCategoryName(

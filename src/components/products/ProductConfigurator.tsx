@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Input } from "@/components/ui/Input";
 import { calculatePrice, formatPrice, cn } from "@/lib/utils";
 import { useCartStore } from "@/store/cart";
-import { StampsConfigurator } from "@/components/products/configurators/StampsConfigurator";
+import { FlyerStampsConfigurator } from "@/components/products/configurators/FlyerStampsConfigurator";
 import { DafaterConfigurator } from "@/components/products/configurators/DafaterConfigurator";
 import { NBBConfigurator } from "@/components/products/configurators/NBBConfigurator";
 import { EnvelopesConfigurator } from "@/components/products/configurators/EnvelopesConfigurator";
@@ -42,7 +42,7 @@ export function ProductConfigurator({ product }: ProductConfiguratorProps) {
   const cat = product.pricingCategory;
 
   if (product.pricingType === "stamps" || cat === "Stamps") {
-    return <StampsConfigurator product={product} />;
+    return <FlyerStampsConfigurator product={product} />;
   }
   if (cat === "dafater") {
     return <DafaterConfigurator product={product} />;
