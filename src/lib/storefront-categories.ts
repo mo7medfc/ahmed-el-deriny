@@ -47,7 +47,7 @@ export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn:
   DeskSets: { nameAr: "طقم المكتب محفور الاسم", nameEn: "Engraved Desk Sets" },
   WoodDeskSets: { nameAr: "طقم المكتب الخشب الزان", nameEn: "Beech Wood Desk Sets" },
   Certificates: { nameAr: "شهادات التقدير", nameEn: "Appreciation Certificates" },
-  Nameplates: { nameAr: "باغة محفور عليها الاسم", nameEn: "Engraved Nameplates" },
+  Nameplates: { nameAr: "لوحات إرشادية", nameEn: "Wayfinding Signs" },
   Stamps: { nameAr: "الأختام", nameEn: "Stamps" },
 };
 

@@ -145,8 +145,8 @@ const RULES: ImageRule[] = [
   {
     test: (t) => /nameplate|باغة/i.test(t),
     image: `${BASE}/nameplate-gold.jpg`,
-    altAr: "باغة محفور عليها الاسم",
-    altEn: "Engraved desk nameplate",
+    altAr: "لوحات إرشادية",
+    altEn: "Wayfinding signs",
   },
   {
     test: (t) => /roll-up|rollup|roll_up|رول\s*أ?ب/i.test(t),
