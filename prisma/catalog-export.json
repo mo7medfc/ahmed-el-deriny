@@ -1005,6 +1005,59 @@
       "defaults": {}
     },
     {
+      "categoryId": "DeskBases",
+      "slug": "desk-bases",
+      "nameAr": "قاعدات المكتب",
+      "nameEn": "Desk Bases",
+      "priceUnit": "piece",
+      "pricingType": "per_unit",
+      "priceNoteAr": "تنفع حفر أبيض أو طباعة ألوان",
+      "priceNoteEn": "White engraving or full-color printing",
+      "products": [
+        {
+          "id": "crystal-color",
+          "nameAr": "قاعدة مكتب كريستال — طباعة ألوان أو حفر أبيض",
+          "nameEn": "Crystal Desk Base — Color Print or White Engraving",
+          "descriptionAr": "قاعدة مكتب كريستال بعدة أشكال — السعر يشمل الطباعة بالألوان أو الحفر بالأبيض وعلبة قطيفة. اختَر الشكل المناسب لك.",
+          "descriptionEn": "Crystal desk base in multiple shapes — price includes color printing or white engraving plus a velvet box. Choose your preferred shape.",
+          "image": "/images/products/crystal-desk-bases.jpg",
+          "groupId": "crystal",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "crystal-gold-imported",
+          "nameAr": "قاعدة كريستال مستورد ذهبى",
+          "nameEn": "Imported Gold Crystal Desk Base",
+          "descriptionAr": "قاعدة كريستال مستورد ذهبى فاخرة مع حاملَي أقلام — تنفع عليها الطباعة بالألوان أو الحفر بالأبيض.",
+          "descriptionEn": "Premium imported gold crystal desk base with dual pen holders — suitable for color printing or white engraving.",
+          "image": "/images/products/crystal-base-gold.jpg",
+          "groupId": "crystal",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "crystal",
+          "nameAr": "قواعد كريستال",
+          "nameEn": "Crystal Bases",
+          "products": [
+            "crystal-color",
+            "crystal-gold-imported"
+          ]
+        }
+      ],
+      "addons": {},
+      "defaults": {}
+    },
+    {
       "categoryId": "Nameplates",
       "slug": "nameplates",
       "nameAr": "باغة محفور عليها الاسم",

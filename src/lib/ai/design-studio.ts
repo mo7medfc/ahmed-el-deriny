@@ -103,6 +103,7 @@ export function getProductTypeFromCategory(category?: string | null): string {
     DTF: "banner",
     DeskSets: "other",
     WoodDeskSets: "other",
+    DeskBases: "other",
     Nameplates: "other",
   };
   return map[category || ""] || "other";

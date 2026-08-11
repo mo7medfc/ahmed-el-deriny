@@ -18,6 +18,7 @@ export const categoryImages: Record<string, string> = {
   dtf: `${BASE}/dtf-tshirt.jpg`,
   "desk-sets": `${BASE}/desk-set-black.jpg`,
   "wood-desk-sets": `${BASE}/wood-desk-dark-brown.jpg`,
+  "desk-bases": `${BASE}/crystal-desk-bases.jpg`,
   nameplates: `${BASE}/nameplate-gold.jpg`,
   dafater: `${BASE}/notebooks.jpg`,
   "notebooks-invoices": `${BASE}/notebooks.jpg`,
@@ -92,6 +93,18 @@ const RULES: ImageRule[] = [
     image: `${BASE}/wood-desk-dark-brown.jpg`,
     altAr: "طقم مكتب خشب الزان",
     altEn: "Beech wood desk set",
+  },
+  {
+    test: (t) => /crystal-base-gold|مستورد\s*ذهب/i.test(t),
+    image: `${BASE}/crystal-base-gold.jpg`,
+    altAr: "قاعدة كريستال مستورد ذهبى",
+    altEn: "Imported gold crystal desk base",
+  },
+  {
+    test: (t) => /crystal-desk|desk-base|deskbase|قاعدة\s*مكتب|قاعدات\s*مكتب|كريستال/i.test(t),
+    image: `${BASE}/crystal-desk-bases.jpg`,
+    altAr: "قاعدة مكتب كريستال",
+    altEn: "Crystal desk base",
   },
   {
     test: (t) => /desk-set|desksets|طقم\s*مكتب/i.test(t),

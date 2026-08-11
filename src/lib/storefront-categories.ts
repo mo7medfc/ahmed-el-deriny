@@ -12,6 +12,7 @@ export const ALLOWED_STOREFRONT_CATEGORIES: readonly string[] = [
   "DTF",
   "DeskSets",
   "WoodDeskSets",
+  "DeskBases",
   "Nameplates",
 ];
 
@@ -44,6 +45,7 @@ export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn:
   DTF: { nameAr: "طباعة DTF و UV DTF", nameEn: "DTF & UV DTF Printing" },
   DeskSets: { nameAr: "طقم المكتب محفور الاسم", nameEn: "Engraved Desk Sets" },
   WoodDeskSets: { nameAr: "طقم المكتب خشب الزان", nameEn: "Beech Wood Desk Sets" },
+  DeskBases: { nameAr: "قاعدات المكتب", nameEn: "Desk Bases" },
   Nameplates: { nameAr: "باغة محفور عليها الاسم", nameEn: "Engraved Nameplates" },
 };
 
