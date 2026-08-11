@@ -21,24 +21,24 @@ export async function CategoriesSection() {
   if (categories.length === 0) return null;
 
   return (
-    <section className="py-24 heritage-section">
+    <section className="py-16 heritage-section">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-10">
           <div>
-            <span className="heritage-badge mb-3">{t("badge")}</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 mb-2">{t("title")}</h2>
-            <p className="text-brand-700/55">{t("subtitle")}</p>
+            <span className="heritage-badge mb-2 text-[0.65rem]">{t("badge")}</span>
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-brand-900 mb-1">{t("title")}</h2>
+            <p className="text-brand-700/50 text-sm">{t("subtitle")}</p>
           </div>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-brand-600 hover:text-brand-500 font-medium text-sm transition-colors"
+            className="inline-flex items-center gap-2 text-brand-600 hover:text-brand-500 font-medium text-xs transition-colors"
           >
             {t("viewAll")}
-            {locale === "ar" ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+            {locale === "ar" ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {categories.map((cat) => {
             const image = getCategoryImage(cat.slug);
             return (
@@ -47,7 +47,7 @@ export async function CategoriesSection() {
                 href={`/products?category=${cat.slug}`}
                 className="heritage-card rounded-sm overflow-hidden card-hover group"
               >
-                <div className="relative h-36 overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
                   <Image
                     src={image}
                     alt={locale === "ar" ? cat.nameAr : cat.nameEn}
@@ -57,14 +57,14 @@ export async function CategoriesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-brand-900/20 to-transparent" />
                 </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-display font-semibold text-brand-900 mb-1 group-hover:text-brand-600 transition-colors">
+                <div className="p-4">
+                  <h3 className="text-sm sm:text-base font-display font-semibold text-brand-900 mb-0.5 group-hover:text-brand-600 transition-colors">
                     {getStorefrontCategoryName(cat.legacyId || cat.slug, locale, {
                       nameAr: cat.nameAr,
                       nameEn: cat.nameEn,
                     })}
                   </h3>
-                  <p className="text-brand-700/45 text-sm">{cat._count.products} {locale === "ar" ? "منتج" : "products"}</p>
+                  <p className="text-brand-700/40 text-xs">{cat._count.products} {locale === "ar" ? "منتج" : "products"}</p>
                 </div>
               </Link>
             );

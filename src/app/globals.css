@@ -163,14 +163,13 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 1.2rem;
-  border: 1px solid color-mix(in srgb, white 35%, transparent);
-  background: color-mix(in srgb, black 25%, transparent);
-  color: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--color-brand-300) 70%, transparent);
+  background: color-mix(in srgb, var(--color-brand-50) 90%, white);
+  color: var(--color-brand-700);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
 }
 
 .hero-badge::before,
@@ -722,5 +721,217 @@ input, textarea, select {
 
   .product-card:hover .product-card__shell {
     transform: none;
+  }
+}
+
+/* ── Hero circular product orbit ── */
+.hero-orbit {
+  min-height: min(92vh, 920px);
+  background:
+    radial-gradient(ellipse 70% 55% at 70% 45%, color-mix(in srgb, var(--color-brand-100) 80%, transparent), transparent 65%),
+    radial-gradient(ellipse 50% 40% at 10% 20%, color-mix(in srgb, var(--color-brand-50) 90%, transparent), transparent 60%),
+    linear-gradient(165deg, #f7fbfe 0%, #ffffff 42%, #eef5fa 100%);
+}
+
+.hero-orbit__atmosphere {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 42%, color-mix(in srgb, var(--color-brand-400) 14%, transparent), transparent 28%),
+    radial-gradient(circle at 18% 70%, color-mix(in srgb, var(--color-brand-300) 12%, transparent), transparent 30%);
+  pointer-events: none;
+}
+
+.hero-orbit__rings {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 55%, transparent 12%, color-mix(in srgb, var(--color-brand-200) 40%, transparent) 12.5%, transparent 13%),
+    radial-gradient(circle at 50% 55%, transparent 22%, color-mix(in srgb, var(--color-brand-200) 30%, transparent) 22.5%, transparent 23%),
+    radial-gradient(circle at 50% 55%, transparent 32%, color-mix(in srgb, var(--color-brand-200) 22%, transparent) 32.5%, transparent 33%);
+  opacity: 0.4;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent, black 25%, black 75%, transparent);
+}
+
+.hero-orbit__active-card {
+  max-width: 26rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 1rem;
+  background: color-mix(in srgb, white 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-brand-200) 85%, transparent);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--color-brand-900) 7%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.hero-orbit__cat {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-500);
+  margin-bottom: 0.4rem;
+}
+
+.hero-orbit__stage {
+  position: relative;
+  height: clamp(340px, 52vw, 520px);
+  perspective: 1200px;
+  perspective-origin: 50% 45%;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+.hero-orbit__stage.is-dragging {
+  cursor: grabbing;
+}
+
+.hero-orbit__glow {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: min(70%, 420px);
+  height: 36%;
+  transform: translate(-50%, -20%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--color-brand-400) 22%, transparent), transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.hero-orbit__wheel {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-orbit__item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(118px, 18vw, 200px);
+  height: clamp(150px, 22vw, 250px);
+  margin: calc(clamp(150px, 22vw, 250px) / -2) 0 0 calc(clamp(118px, 18vw, 200px) / -2);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.hero-orbit__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, #ffffff 0%, #eef6fb 100%);
+  border: 1px solid color-mix(in srgb, var(--color-brand-200) 90%, transparent);
+  box-shadow:
+    0 16px 36px color-mix(in srgb, var(--color-brand-900) 12%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s ease,
+    border-color 0.4s ease,
+    opacity 0.4s ease,
+    filter 0.4s ease;
+  opacity: 0.55;
+  filter: saturate(0.85) brightness(0.96);
+}
+
+.hero-orbit__item.is-active .hero-orbit__frame {
+  opacity: 1;
+  filter: none;
+  border-color: color-mix(in srgb, var(--color-brand-400) 70%, white);
+  box-shadow:
+    0 28px 55px color-mix(in srgb, var(--color-brand-900) 18%, transparent),
+    0 0 0 3px color-mix(in srgb, var(--color-brand-400) 35%, transparent);
+  transform: scale(1.08);
+}
+
+.hero-orbit__item.dist-1 .hero-orbit__frame {
+  opacity: 0.78;
+  filter: saturate(0.95);
+}
+
+.hero-orbit__item.dist-2 .hero-orbit__frame,
+.hero-orbit__item.dist-3 .hero-orbit__frame {
+  opacity: 0.42;
+}
+
+.hero-orbit__controls {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0.25rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.hero-orbit__nav,
+.hero-orbit__dot {
+  pointer-events: auto;
+}
+
+.hero-orbit__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--color-brand-200) 90%, transparent);
+  background: color-mix(in srgb, white 88%, transparent);
+  color: var(--color-brand-800);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-brand-900) 8%, transparent);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-orbit__nav:hover {
+  background: white;
+  transform: translateY(-1px);
+}
+
+.hero-orbit__dots {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, white 75%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-brand-200) 80%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.hero-orbit__dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: color-mix(in srgb, var(--color-brand-400) 35%, transparent);
+  transition: width 0.35s ease, background 0.35s ease;
+}
+
+.hero-orbit__dot.is-active {
+  width: 1.35rem;
+  background: var(--color-brand-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit__wheel,
+  .hero-orbit__frame {
+    transition: none !important;
   }
 }
