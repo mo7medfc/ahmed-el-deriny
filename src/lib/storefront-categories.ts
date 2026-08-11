@@ -12,8 +12,6 @@ export const ALLOWED_STOREFRONT_CATEGORIES: readonly string[] = [
   "DTF",
   "DeskSets",
   "WoodDeskSets",
-  "DeskBases",
-  "AppreciationCertificates",
   "Nameplates",
 ];
 
@@ -45,9 +43,7 @@ export const STOREFRONT_CATEGORY_NAMES: Record<string, { nameAr: string; nameEn:
   PopUp: { nameAr: "البوب أب", nameEn: "Pop-Up Displays" },
   DTF: { nameAr: "طباعة DTF و UV DTF", nameEn: "DTF & UV DTF Printing" },
   DeskSets: { nameAr: "طقم المكتب محفور الاسم", nameEn: "Engraved Desk Sets" },
-  WoodDeskSets: { nameAr: "طقم المكتب خشب الزان", nameEn: "Beech Wood Desk Sets" },
-  DeskBases: { nameAr: "قاعدات المكتب", nameEn: "Desk Bases" },
-  AppreciationCertificates: { nameAr: "شهادات التقدير", nameEn: "Appreciation Certificates" },
+  WoodDeskSets: { nameAr: "طقم المكتب الخشب الزان", nameEn: "Beech Wood Desk Sets" },
   Nameplates: { nameAr: "باغة محفور عليها الاسم", nameEn: "Engraved Nameplates" },
 };
 

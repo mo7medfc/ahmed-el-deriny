@@ -7,14 +7,12 @@ import path from "path";
 
 const root = process.cwd();
 const middlewarePath = path.join(root, "src/middleware.ts");
-const middlewareBackup = path.join(root, ".pages-build-tmp/middleware.ts");
+const middlewareBackup = path.join(root, "src/middleware.ts.pages-build-bak");
 const apiPath = path.join(root, "src/app/api");
-// Keep the API backup OUTSIDE src/ so Next.js typecheck never scans it.
-const apiBackup = path.join(root, ".pages-build-tmp/api");
+const apiBackup = path.join(root, "src/app/_api_pages_build_bak");
 
 function hideDir(source, backup) {
   if (!fs.existsSync(source)) return false;
-  fs.mkdirSync(path.dirname(backup), { recursive: true });
   if (fs.existsSync(backup)) fs.rmSync(backup, { recursive: true, force: true });
   fs.cpSync(source, backup, { recursive: true });
   fs.rmSync(source, { recursive: true, force: true });
@@ -52,9 +50,7 @@ let middlewareDisabled = false;
 let apiHidden = false;
 
 try {
-  fs.mkdirSync(path.join(root, ".pages-build-tmp"), { recursive: true });
   if (fs.existsSync(middlewarePath)) {
-    if (fs.existsSync(middlewareBackup)) fs.rmSync(middlewareBackup, { force: true });
     fs.renameSync(middlewarePath, middlewareBackup);
     middlewareDisabled = true;
   }
