@@ -147,4 +147,10 @@ export default async function ProductDetailPage({
                 nameEn: o.nameEn,
                 priceAddon: o.priceAddon,
               })),
-       
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
