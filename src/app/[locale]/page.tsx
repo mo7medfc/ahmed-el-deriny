@@ -3,7 +3,7 @@ import { HeroProductSlider } from "@/components/home/HeroProductSlider";
 import { IntroSection } from "@/components/home/IntroSection";
 import { CategoriesSection, FeaturedProducts } from "@/components/home/CategoriesSection";
 import { HomePartnersMarquee } from "@/components/home/HomePartnersMarquee";
-import { MachinesShowcase } from "@/components/home/MachinesShowcase";
+import { HeritageStory } from "@/components/home/HeritageStory";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export default async function HomePage({
@@ -23,7 +23,7 @@ export default async function HomePage({
       <FeaturedProducts />
       <IntroSection />
       <FeaturesSection />
-      <MachinesShowcase />
+      <HeritageStory />
     </>
   );
 }

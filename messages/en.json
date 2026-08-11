@@ -81,6 +81,16 @@
     "subtitle": "Success Partners",
     "title": "Trusted by leading institutions"
   },
+  "heritageStory": {
+    "badge": "Our History",
+    "since": "Est. 1918",
+    "title": "The Edifice of Printing",
+    "subtitle": "Over a century of craftsmanship and quality in Egyptian printing",
+    "p1": "Ahmed El-Deriny Printing is a heritage house passed from generation to generation. Founded in 1918, we built deep expertise in comprehensive, high-quality print solutions — becoming a symbol of excellence for individuals and businesses.",
+    "p2": "From paper goods, brochures, and books to stamps, bags, and gifts — we print with precision and innovation that reflect your needs, while upholding the highest standards of quality and speed.",
+    "cta": "Read our full story",
+    "videoLabel": "Since 1918"
+  },
   "machines": {
     "badge": "Production Lines",
     "title": "Our Advanced Machines",

@@ -21,7 +21,7 @@ export function IntroSection() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-900 mb-3">{t("title")}</h2>
             <p className="text-brand-700/70 text-lg mb-6">{t("subtitle")}</p>
 
-            <p className="text-brand-500 text-sm font-display tracking-[0.25em] uppercase mb-3">{t("since")}</p>
+            <p className="heritage-story__since mb-3">{t("since")}</p>
             <h3 className="font-display text-2xl font-bold text-brand-800 leading-tight mb-4">
               {t("heritageLine")}
             </h3>
