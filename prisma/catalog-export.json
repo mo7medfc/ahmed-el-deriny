@@ -1058,6 +1058,119 @@
       "defaults": {}
     },
     {
+      "categoryId": "AppreciationCertificates",
+      "slug": "appreciation-certificates",
+      "nameAr": "شهادات التقدير",
+      "nameEn": "Appreciation Certificates",
+      "priceUnit": "piece",
+      "pricingType": "per_unit",
+      "priceNoteAr": "السعر شامل الكافر والشهادة",
+      "priceNoteEn": "Price includes cover and certificate",
+      "products": [
+        {
+          "id": "ribbon",
+          "nameAr": "كافر فيونكة بالشهادة",
+          "nameEn": "Ribbon Bow Cover with Certificate",
+          "descriptionAr": "كافر شهادة تقدير بفيونكة أنيقة ولوحة شكر وتقدير ذهبية — شامل الشهادة.",
+          "descriptionEn": "Appreciation certificate cover with an elegant ribbon bow and gold plaque — certificate included.",
+          "image": "/images/products/cert-cover-ribbon.jpg",
+          "groupId": "covers",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "wood",
+          "nameAr": "كافر خشب بالشهادة",
+          "nameEn": "Wooden Cover with Certificate",
+          "descriptionAr": "كافر خشب محفور بنقوش دقيقة ولوحة شكر وتقدير — شامل الشهادة.",
+          "descriptionEn": "Laser-cut wooden certificate cover with an appreciation plaque — certificate included.",
+          "image": "/images/products/cert-cover-wood.jpg",
+          "groupId": "covers",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "grad-cap",
+          "nameAr": "كافر كاب تخرج بالشهادة",
+          "nameEn": "Graduation Cap Cover with Certificate",
+          "descriptionAr": "كافر أسود بزخارف ذهبية وكاب تخرج — مثالي لحفلات التخرج، شامل الشهادة.",
+          "descriptionEn": "Black cover with gold accents and a graduation-cap motif — ideal for graduations, certificate included.",
+          "image": "/images/products/cert-cover-grad-cap.jpg",
+          "groupId": "covers",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "stamp",
+          "nameAr": "كافر بالبصمة بالشهادة",
+          "nameEn": "Embossed Stamp Cover with Certificate",
+          "descriptionAr": "كافر أحمر ببصمة ذهبية ولوحة شكر وتقدير — شامل الشهادة.",
+          "descriptionEn": "Red embossed cover with a gold stamp plaque — certificate included.",
+          "image": "/images/products/cert-cover-stamp.jpg",
+          "groupId": "covers",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "frame",
+          "nameAr": "كافر برواز بصمة بالشهادة",
+          "nameEn": "Framed Stamp Cover with Certificate",
+          "descriptionAr": "كافر كحلي ببرواز بصمة ذهبي فخم — شامل الشهادة.",
+          "descriptionEn": "Navy cover with a luxurious gold stamped frame — certificate included.",
+          "image": "/images/products/cert-cover-frame.jpg",
+          "groupId": "covers",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        },
+        {
+          "id": "tassel",
+          "nameAr": "كافر شريطة بالشهادة",
+          "nameEn": "Tassel Cover with Certificate",
+          "descriptionAr": "كافر بلونين مع شريطة ذهبية ولوحة شكر وتقدير — شامل الشهادة.",
+          "descriptionEn": "Two-tone cover with a gold tassel and appreciation plaque — certificate included.",
+          "image": "/images/products/cert-cover-tassel.jpg",
+          "groupId": "covers",
+          "subCategoryId": null,
+          "hasLamination": false,
+          "widthCm": null,
+          "heightCm": null,
+          "featured": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "covers",
+          "nameAr": "كافر بالشهادة",
+          "nameEn": "Cover with Certificate",
+          "products": [
+            "ribbon",
+            "wood",
+            "grad-cap",
+            "stamp",
+            "frame",
+            "tassel"
+          ]
+        }
+      ],
+      "addons": {},
+      "defaults": {}
+    },
+    {
       "categoryId": "Nameplates",
       "slug": "nameplates",
       "nameAr": "باغة محفور عليها الاسم",
