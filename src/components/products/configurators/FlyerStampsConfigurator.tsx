@@ -110,13 +110,31 @@ export function FlyerStampsConfigurator({ product }: FlyerStampsConfiguratorProp
 
   return (
     <div className="heritage-card rounded-sm p-6 lg:p-8 space-y-6">
-      <h2 className="text-xl font-display font-bold text-brand-900">
-        {isAr ? "اختر نوع الختم" : "Choose stamp type"}
-      </h2>
+      <div>
+        <h2 className="text-xl font-display font-bold text-brand-900">
+          {isAr ? "قسم الأختام" : "Stamps"}
+        </h2>
+        <p className="text-sm text-brand-600/70 mt-1">
+          {isAr
+            ? "اختَر نوع الختم من القائمة — الاسم جنب صورته"
+            : "Pick a stamp from the list — name next to its photo"}
+        </p>
+      </div>
+
+      <div className="relative h-40 sm:h-48 rounded-xl border border-brand-100 bg-brand-50/60 overflow-hidden">
+        <Image
+          src={publicPath(selected.image)}
+          alt={productDisplayName}
+          fill
+          className="object-contain p-4"
+          sizes="(max-width: 768px) 100vw, 420px"
+          priority
+        />
+      </div>
 
       <div ref={rootRef} className="relative">
         <p className="text-sm font-medium text-brand-700 mb-2">
-          {isAr ? "الأختام" : "Stamps"}
+          {isAr ? "اختر الختم" : "Select stamp"}
         </p>
         <button
           type="button"
@@ -125,26 +143,26 @@ export function FlyerStampsConfigurator({ product }: FlyerStampsConfiguratorProp
           aria-controls={listId}
           onClick={() => setOpen((v) => !v)}
           className={cn(
-            "w-full flex items-center gap-3 p-3 rounded-xl border text-start transition-colors",
+            "w-full flex items-center gap-3 p-3.5 rounded-xl border text-start transition-colors",
             open
-              ? "border-brand-500 bg-brand-500/5"
-              : "border-brand-200 hover:border-brand-300 bg-white"
+              ? "border-brand-500 bg-brand-500/5 ring-2 ring-brand-500/15"
+              : "border-brand-200 hover:border-brand-400 bg-white"
           )}
         >
-          <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-brand-100 bg-brand-50">
+          <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-brand-100 bg-white">
             <Image
               src={publicPath(selected.image)}
               alt={productDisplayName}
               fill
-              className="object-contain p-1"
-              sizes="56px"
+              className="object-contain p-1.5"
+              sizes="64px"
             />
           </span>
           <span className="flex-1 min-w-0">
-            <span className="block text-sm font-medium text-brand-900 truncate">
+            <span className="block text-sm font-semibold text-brand-900 truncate">
               {productDisplayName}
             </span>
-            <span className="block text-xs text-brand-500 mt-0.5">
+            <span className="block text-sm text-brand-600 mt-0.5 font-medium">
               {formatPrice(unitPrice, locale)}
             </span>
           </span>
@@ -161,7 +179,7 @@ export function FlyerStampsConfigurator({ product }: FlyerStampsConfiguratorProp
             id={listId}
             role="listbox"
             aria-label={isAr ? "قائمة الأختام" : "Stamp list"}
-            className="absolute z-30 mt-2 w-full max-h-80 overflow-auto rounded-xl border border-brand-200 bg-white shadow-lg py-1"
+            className="absolute z-30 mt-2 w-full max-h-96 overflow-auto rounded-xl border border-brand-200 bg-white shadow-xl py-1"
           >
             {STAMP_FLYER_OPTIONS.map((option) => {
               const label = isAr ? option.nameAr : option.nameEn;
@@ -172,27 +190,32 @@ export function FlyerStampsConfigurator({ product }: FlyerStampsConfiguratorProp
                     type="button"
                     onClick={() => selectStamp(option.id)}
                     className={cn(
-                      "w-full flex items-center gap-3 px-3 py-2.5 text-start transition-colors",
+                      "w-full flex items-center gap-3 px-3 py-3 text-start transition-colors",
                       active ? "bg-brand-500/10" : "hover:bg-brand-50"
                     )}
                   >
-                    <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md border border-brand-100 bg-brand-50">
+                    <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-brand-100 bg-white">
                       <Image
                         src={publicPath(option.image)}
                         alt={label}
                         fill
-                        className="object-contain p-0.5"
-                        sizes="48px"
+                        className="object-contain p-1"
+                        sizes="56px"
                       />
                     </span>
                     <span className="flex-1 min-w-0">
-                      <span className="block text-sm text-brand-900 leading-snug">
+                      <span className="block text-sm font-medium text-brand-900 leading-snug">
                         {label}
                       </span>
                       <span className="block text-xs text-brand-500 mt-0.5">
                         {formatPrice(option.price, locale)}
                       </span>
                     </span>
+                    {active && (
+                      <span className="text-[11px] font-semibold text-brand-600 shrink-0">
+                        {isAr ? "مختار" : "Selected"}
+                      </span>
+                    )}
                   </button>
                 </li>
               );

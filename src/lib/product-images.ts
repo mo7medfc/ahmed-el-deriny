@@ -12,7 +12,7 @@ export const categoryImages: Record<string, string> = {
   indoor: `${BASE}/indoor-print.jpg`,
   stands: `${BASE}/roll-up.jpg`,
   "pop-up": `${BASE}/pop-up.jpg`,
-  stamps: `${BASE}/stamp-auto-medium.jpg`,
+  stamps: `${BASE}/stamp-wood-hand.jpg`,
   envelopes: `${BASE}/envelopes.jpg`,
   uvprinting: `${BASE}/uv-printing.jpg`,
   dtf: `${BASE}/dtf-tshirt.jpg`,
