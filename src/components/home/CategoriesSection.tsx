@@ -96,7 +96,7 @@ export async function FeaturedProducts() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => {
+          {products.map((product, index) => {
             const imageInput = {
               slug: product.slug,
               image: product.image,
@@ -120,7 +120,9 @@ export async function FeaturedProducts() {
               locale={locale}
               fromLabel={t("from")}
               priceOnRequestLabel={t("priceOnRequest")}
+              configureLabel={t("configure")}
               variant="featured"
+              index={index}
             />
             );
           })}

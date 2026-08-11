@@ -48,7 +48,7 @@ export function ProductsGrid({
   return (
     <>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {visible.map((product) => (
+        {visible.map((product, index) => (
           <ProductCard
             key={product.id}
             slug={product.slug}
@@ -63,6 +63,7 @@ export function ProductsGrid({
             fromLabel={fromLabel}
             configureLabel={configureLabel}
             priceOnRequestLabel={priceOnRequestLabel}
+            index={index}
           />
         ))}
       </div>

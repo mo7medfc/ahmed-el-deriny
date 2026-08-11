@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, cn } from "@/lib/utils";
 
 interface ProductCardProps {
   slug: string;
@@ -16,6 +19,7 @@ interface ProductCardProps {
   configureLabel?: string;
   priceOnRequestLabel?: string;
   variant?: "default" | "featured";
+  index?: number;
 }
 
 export function ProductCard({
@@ -32,63 +36,72 @@ export function ProductCard({
   configureLabel,
   priceOnRequestLabel,
   variant = "default",
+  index = 0,
 }: ProductCardProps) {
-  const imageHeight = variant === "featured" ? "h-52" : "h-48";
+  const isAr = locale === "ar";
+  const Arrow = isAr ? ArrowLeft : ArrowRight;
+  const imageHeight = variant === "featured" ? "h-56" : "h-52";
 
   return (
     <Link
       href={`/products/${slug}`}
-      className="heritage-card rounded-2xl overflow-hidden card-hover group block"
+      className="product-card group block"
+      style={{ animationDelay: `${Math.min(index, 11) * 60}ms` }}
     >
-      <div className={`relative ${imageHeight} overflow-hidden bg-gradient-to-br from-brand-50 to-white`}>
-        {image ? (
-          <Image
-            src={image}
-            alt={imageAlt || name}
-            fill
-            className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
-            <span className="text-5xl opacity-40">🖨️</span>
-          </div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-900/75 via-brand-900/15 to-transparent" />
-        <div className="absolute bottom-3 start-3">
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-white bg-brand-700/80 backdrop-blur px-2 py-1 rounded border border-white/20">
-            {categoryName}
-          </span>
-        </div>
-      </div>
-      <div className="p-5">
-        <h3 className="text-lg font-display font-semibold text-brand-900 mb-2 group-hover:text-brand-600 transition-colors">
-          {name}
-        </h3>
-        <p className="text-brand-700/55 text-sm line-clamp-2 mb-4 leading-relaxed">{description}</p>
-        <div className="flex items-end justify-between gap-3 pt-4 border-t border-brand-100">
-          <div>
-            {basePrice > 0 ? (
-              <>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-brand-500 mb-0.5">{fromLabel}</p>
-                <p className="text-xl sm:text-2xl font-display font-bold text-brand-800 leading-none">
-                  {formatPrice(basePrice, locale)}
-                </p>
-                {priceUnitLabel && (
-                  <p className="text-[11px] text-brand-600/70 mt-1">{priceUnitLabel}</p>
-                )}
-              </>
-            ) : (
-              <p className="text-sm font-medium text-brand-600">
-                {priceOnRequestLabel || configureLabel || fromLabel}
-              </p>
-            )}
-          </div>
-          {configureLabel && basePrice > 0 && (
-            <span className="text-xs font-medium text-brand-500 group-hover:text-brand-700 transition-colors shrink-0 pb-0.5">
-              {configureLabel}
-            </span>
+      <div className="product-card__shell">
+        <div className={cn("product-card__media", imageHeight)}>
+          <div className="product-card__media-glow" aria-hidden />
+          <div className="product-card__shine" aria-hidden />
+
+          {image ? (
+            <Image
+              src={image}
+              alt={imageAlt || name}
+              fill
+              className="product-card__image"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center text-brand-300 text-4xl font-display">
+              AD
+            </div>
           )}
+
+          <div className="product-card__badge">
+            <span>{categoryName}</span>
+          </div>
+        </div>
+
+        <div className="product-card__body">
+          <h3 className="product-card__title">{name}</h3>
+          <p className="product-card__desc">{description}</p>
+
+          <div className="product-card__footer">
+            <div className="min-w-0">
+              {basePrice > 0 ? (
+                <>
+                  <p className="product-card__from">{fromLabel}</p>
+                  <p className="product-card__price">{formatPrice(basePrice, locale)}</p>
+                  {priceUnitLabel && (
+                    <p className="product-card__unit">{priceUnitLabel}</p>
+                  )}
+                </>
+              ) : (
+                <p className="product-card__request">
+                  {priceOnRequestLabel || configureLabel || fromLabel}
+                </p>
+              )}
+            </div>
+
+            <span className="product-card__cta">
+              <span className="product-card__cta-label">
+                {configureLabel || (isAr ? "اطلب" : "Order")}
+              </span>
+              <span className="product-card__cta-icon">
+                <Arrow className="w-3.5 h-3.5" />
+              </span>
+            </span>
+          </div>
         </div>
       </div>
     </Link>
