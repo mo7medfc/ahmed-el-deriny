@@ -40,13 +40,13 @@ export function ProductCard({
       href={`/products/${slug}`}
       className="heritage-card rounded-2xl overflow-hidden card-hover group block"
     >
-      <div className={`relative ${imageHeight} overflow-hidden`}>
+      <div className={`relative ${imageHeight} overflow-hidden bg-gradient-to-br from-brand-50 to-white`}>
         {image ? (
           <Image
             src={image}
             alt={imageAlt || name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         ) : (

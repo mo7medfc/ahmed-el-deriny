@@ -113,16 +113,16 @@ export default async function ProductDetailPage({
               </div>
             )}
 
-            <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden border border-brand-200 shadow-lg">
+            <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden border border-brand-200 shadow-lg bg-gradient-to-br from-brand-50 to-white">
               <Image
                   src={image}
                   alt={imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-              <div className="absolute inset-0 bg-gradient-to-t from-heritage-950/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-heritage-950/20 to-transparent pointer-events-none" />
             </div>
           </div>
 
@@ -147,10 +147,4 @@ export default async function ProductDetailPage({
                 nameEn: o.nameEn,
                 priceAddon: o.priceAddon,
               })),
-            }}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
+       
