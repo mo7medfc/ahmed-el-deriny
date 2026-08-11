@@ -21,14 +21,16 @@ const SLIDER_HERO_BY_SLUG: Record<string, string> = {
   "stands-roll-up-85-200-banner": `${BASE}/roll-up.jpg`,
   "stands-x-banner": `${BASE}/x-banner.jpg`,
   "stands-pop-up": `${BASE}/pop-up.jpg`,
+  "nameplates-acrylic-white": `${BASE}/acrylic-white.png`,
+  "nameplates-acrylic-clear-print": `${BASE}/acrylic-clear.png`,
+  "nameplates-acrylic-gold": `${BASE}/acrylic-gold.png`,
+  "nameplates-acrylic-silver": `${BASE}/acrylic-silver.png`,
   "desksets-black-grained": `${BASE}/desk-set-black.jpg`,
   "desksets-brown-grained": `${BASE}/desk-set-brown.jpg`,
   "wooddesksets-dark-brown": `${BASE}/wood-desk-dark.jpg`,
   "wooddesksets-deep-brown": `${BASE}/wood-desk-deep.jpg`,
   "certificates-ribbon": `${BASE}/cert-ribbon.jpg`,
   "certificates-wood": `${BASE}/cert-wood.jpg`,
-  "nameplates-gold": `${BASE}/nameplate-gold.jpg`,
-  "nameplates-silver": `${BASE}/nameplate-silver.jpg`,
 };
 
 const SLIDER_HERO_BY_CATEGORY: Record<string, string> = {
@@ -48,7 +50,7 @@ const SLIDER_HERO_BY_CATEGORY: Record<string, string> = {
   "desk-sets": `${BASE}/desk-set-black.jpg`,
   "wood-desk-sets": `${BASE}/wood-desk-beech.jpg`,
   certificates: `${BASE}/cert-grad.jpg`,
-  nameplates: `${BASE}/nameplate-gold.jpg`,
+  nameplates: `${BASE}/acrylic-sheets-composite.png`,
 };
 
 export function resolveSliderHeroImage(input: ProductImageInput): string {

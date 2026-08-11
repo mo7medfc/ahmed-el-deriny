@@ -27,13 +27,16 @@ export function calculatePrice(
   width: number,
   height: number,
   quantity: number,
-  optionAddons: number = 0
+  optionAddons: number = 0,
+  options?: { minBillableSqm?: number }
 ): number {
   let unitPrice = basePrice;
 
   if (pricingType === "per_sqm") {
     const areaSqm = (width * height) / 10000;
-    unitPrice = basePrice * areaSqm + optionAddons;
+    const minBillable = options?.minBillableSqm ?? 0;
+    const billableSqm = Math.max(areaSqm, minBillable);
+    unitPrice = basePrice * billableSqm + optionAddons;
   } else if (pricingType === "per_meter") {
     unitPrice = basePrice * (width / 100) + optionAddons;
   } else if (pricingType === "per_unit" || pricingType === "stands") {

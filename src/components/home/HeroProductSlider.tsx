@@ -12,15 +12,15 @@ const HERO_ORBIT_SLUGS = [
   "desksets-black-grained",
   "wooddesksets-dark-brown",
   "certificates-ribbon",
-  "nameplates-gold",
+  "nameplates-acrylic-gold",
+  "nameplates-acrylic-white",
   "stamps-wood-hand",
   "outdoor-banner-380g",
   "dtf-6-pass",
   "certificates-wood",
+  "nameplates-acrylic-clear-print",
+  "nameplates-acrylic-silver",
   "desksets-brown-grained",
-  "stamps-embosser",
-  "nameplates-silver",
-  "wooddesksets-deep-brown",
 ] as const;
 
 export async function HeroProductSlider() {

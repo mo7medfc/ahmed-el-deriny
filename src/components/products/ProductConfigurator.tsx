@@ -107,9 +107,18 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
       width,
       height,
       quantity,
-      optionAddons
+      optionAddons,
+      product.pricingCategory === "Nameplates" ? { minBillableSqm: 1 } : undefined
     );
   }, [product, width, height, quantity, optionAddons]);
+
+  const areaSqm = (width * height) / 10000;
+  const billableSqm =
+    product.pricingCategory === "Nameplates" ? Math.max(areaSqm, 1) : areaSqm;
+  const showsMinMeterNote =
+    product.pricingCategory === "Nameplates" &&
+    product.pricingType === "per_sqm" &&
+    areaSqm < 1;
 
   const unitPrice = totalPrice / quantity;
 
@@ -172,6 +181,13 @@ function GenericProductConfigurator({ product }: ProductConfiguratorProps) {
           <p className="text-xs text-brand-500 mt-2">
             {t("minMax", { min: product.minWidth, max: product.maxWidth })}
           </p>
+          {product.pricingType === "per_sqm" && (
+            <p className="text-xs text-brand-600/80 mt-2">
+              {isAr
+                ? `المساحة: ${areaSqm.toFixed(2)} م²${showsMinMeterNote ? ` — تُحسب كـ ${billableSqm.toFixed(0)} م² (أقل من متر يحسب متر)` : ""}`
+                : `Area: ${areaSqm.toFixed(2)} m²${showsMinMeterNote ? ` — billed as ${billableSqm.toFixed(0)} m² (minimum 1 m²)` : ""}`}
+            </p>
+          )}
         </div>
       )}
 

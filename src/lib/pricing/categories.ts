@@ -21,7 +21,7 @@ export const PRICING_CATEGORY_META: Record<
   DeskSets: { nameAr: "طقم المكتب محفور الاسم", nameEn: "Engraved Desk Sets", icon: "briefcase", sortOrder: 6, editorType: "unit" },
   WoodDeskSets: { nameAr: "طقم المكتب الخشب الزان", nameEn: "Beech Wood Desk Sets", icon: "box", sortOrder: 7, editorType: "unit" },
   Certificates: { nameAr: "شهادات التقدير", nameEn: "Appreciation Certificates", icon: "award", sortOrder: 8, editorType: "unit" },
-  Nameplates: { nameAr: "لوحات إرشادية", nameEn: "Wayfinding Signs", icon: "badge", sortOrder: 9, editorType: "unit" },
+  Nameplates: { nameAr: "لوحات إرشادية", nameEn: "Wayfinding Signs", icon: "badge", sortOrder: 9, editorType: "sqm_groups" },
   Flag: { nameAr: "أعلام", nameEn: "Flags", icon: "flag", sortOrder: 10, editorType: "unit" },
   TShirt: { nameAr: "تيشرتات", nameEn: "T-Shirts", icon: "shirt", sortOrder: 11, editorType: "unit" },
   FabricBag: { nameAr: "شنط قماش", nameEn: "Fabric Bags", icon: "shopping-bag", sortOrder: 12, editorType: "unit" },
